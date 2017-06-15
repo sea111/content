@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" href="../css/personcenter.css" />
+		<script src="../js/rem.js"></script>
+		<script type="text/javascript" src="../js/jquery-1.11.3.js" ></script>
+	</head>
+	<body>
+		<div id="top">
+			<a href="javascript:;" onclick="javascript:history.back(-1)"><i class="i1"><img src="../img/re.gif" /> </a></i>
+			<p>个人中心</p>
+			<i class="i2"><img src="../img/ri.gif"/> </i>
+		</div>
+		<div id="nav">
+			<div class="top">
+				<div class="left">
+					<img src="../img/userPhoto.png" /> 
+				</div>
+				<div class="right">
+					<p class="p1">jxw17028374</p>
+					<p class="p2">下载客户端 美酒随时抢</p>
+				</div>
+			</div>
+			<div class="bottom">
+				<div class="left">
+					<img src="../img/grade.png"  />
+					<p>LV1 酒虫</p>
+				</div>
+				<div class="right">
+					<div class="div1">
+						<p class="p1">1</p>
+						<p class="p2">代付款</p>
+					</div>
+					<div class="div2"> 
+						<p class="p1">1</p>
+						<p class="p2">代发货</p>
+					</div>
+					<div class="div3">
+						<p class="p1">1</p>
+						<p class="p2">待收货</p>
+					</div>
+					<div class="div4">
+						<p class="p1">1</p>
+						<p class="p2">已完成</p>
+					</div>
+					<img src="../img/line.gif" class="img1"/>
+					<img src="../img/line.gif" class="img2" />
+					<img src="../img/line.gif" class="img3" />
+				</div>
+			</div>
+		</div>
+		<div id="main">
+			<ul>
+				<li>
+					<img src="../img/order.png" /> 
+					<span>全部订单</span>
+				</li>
+				<li>
+					<a href="shopcar.html">
+					<img src="../img/cart.png" /> 
+					<span>购物车</span>
+					</a>
+				</li>
+				<li>
+					<img src="../img/collect.png" /> 
+					<span>我的收藏</span>
+				</li>
+				<li>
+					<a href="youhui.html">
+					<img src="../img/coupon.png" /> 
+					<span>我的优惠券</span>
+					</a>
+				</li>
+				<li>
+					<img src="../img/history.png" />
+					<span>浏览记录</span>
+				</li>
+				<li>
+					<img src="../img/wallet.png" /> 
+					<span>我的钱包</span>
+				</li>
+				<li>
+					<img src="../img/exchange.png" /> 
+					<span>商品兑换</span>
+				</li>
+				<li>
+					<img src="../img/address.png" />
+					<span>地址管理</span>
+				</li>
+				<li>
+					<img src="../img/safe.png" /> 
+					<span>账户安全</span>
+				</li>
+			</ul>
+		</div>
+		<div id="bottom">
+			<p class="login"><img src="../img/redenglu.gif" /> </p>
+		</div>
+		<script>
+			$(".login").click(function(){
+				localStorage.removeItem("name")
+				localStorage.removeItem("login")
+				window.location.href = "login.html"
+			})
+		</script>
+	</body>
+</html>

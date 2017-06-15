@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+			window.addEventListener("resize",function(){
+				if(document.documentElement.clientWidth>760){
+					document.documentElement.style.fontSize=54+"px";
+				}else{
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+				}
+			},false);
+		</script>
+		<style type="text/css">
+			body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+			a{
+				text-decoration:none;
+			}
+			@media screen and (min-width:767px){
+				#wrap{width:10rem;margin: 0 auto;position:relative;height:100%}
+				#footer{width:10rem;}
+				#goods_info .goods_img{width:25%;}
+				#goods_info .goods_word{width:75%}
+				.goods_word #wt_details{right:0.4rem}
+			}
+			@media screen and (max-width:767px){
+				#wrap{width: 100%;height:100%}
+				#footer{width:100%}
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.top{width: 100%;height: 0.88rem;background:#333;color: white;font-size: 0.35rem;position: relative;}
+			.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/result_sprite.png) no-repeat ;background-size:1.92rem 0.64rem;position:absolute;}
+			#back{background-position:-0.64rem 0;left:0.1rem;bottom:0.12rem;}
+			#personal{right: 0.2rem;top: 0.12rem;background-position:0rem 0;}
+			.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+			.brand{width: 100%;height: 49%;font-size: 0.25rem;position: relative;}
+			.brand-bg{width:5.58rem;height:1.1rem;margin:0 auto;position:absolute;left:50%;margin-left:-2.75rem;top:1.51rem;background:url("images/fireworks.png") no-repeat 0rem 0rem;background-size:5.58rem 1.1rem;}
+			#brand_logo{height: 60%;position:relative}
+			.imgWrap{width:2.36rem;height: 2.36rem;position:absolute;border-radius:50%;left:0;top:0;right:0;bottom:0;margin:auto;overflow: hidden;}
+			#brand_logo img{width:100%;height:100%}
+			.brand .brand-info{position: absolute;bottom: 1.2rem;width: 100%;height: }
+			#brand_name{font-size: 0.38rem;color: #333}
+			#product_name{font-size: 0.34rem;color: #666}
+			.brand p{text-align: center;margin-top: 0.2rem;}
+			.brand #product_name{color: #606060}
+			#findItem{color:#0aa1f8}
+			#goods_info{width: 100%;height: 2.2rem;font-size:0.15rem;box-shadow:0 0 10px #f1f1f1;}
+			.goods_outer{width: 100%;height: 100%;display: flex;background: white;}
+			.goods_img{width: 2.1rem;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;height: 100%;float:left}
+			.goods_img .img-border{width: 100%;height: 100%;border-radius: 3px;border:1px solid #d3d3d3;}
+			.img-border img{width:100%;height:100%}
+			.goods_word{width: 5.4rem;position: relative;float:left;}
+			h3.goods_name{color: #daaf39;font-size: 0.32rem;height:0.5rem;line-height: 0.5rem;margin-top:0.3rem;padding-left:0.35rem;font-weight:normal;}
+			#goods_detail{margin-top:0.20rem;margin-bottom:0.2rem;display: block;font-size: 0.3rem;color:#333}
+			.goods_name .bg-icon{left:-0.2rem;background-position:-1.28rem 0;top:0.21rem;}
+			#footer{font-size: 0.15rem;position: absolute;bottom: 0.3rem;width: 100%;color: #666;font-size: 0.26rem;}
+			#footer p{text-align: center;margin-bottom: 0.22rem;}
+			#footer em{text-align: center;width: 100%;display: block;color: #6f6f6f;font-style:normal;}
+			strong.goods_name{color:#daaf39;font-weight:normal;}
+			#wt_details{width: 1.82rem;height: 0.69rem;background: #fdd100;color: white;border-radius: 0.4rem;display: block;position: absolute;right: 0.2rem;top: 0.76rem;text-align: center;line-height: 0.69rem;font-size: 0.28rem;}
+			#time{display: block;color: #666;font-size: 0.26rem;}
+			
+			.fail,.success{height:100%;display: none;}
+			.result{width: 100%;height: 65%;text-align: center;position: relative;}
+			.middle{width:100%;position:absolute;height:6rem;;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto;}
+			.middle img{width: 2.1rem;margin:0 auto;margin-bottom:0.6rem;display:block;}
+			.middle .scan_delay{width: 2.54rem;margin-bottom: 0.4rem;}
+			.middle .verify_error{width: 2.3rem;}
+			.middle p{color: #999;font-size: 0.3rem;}
+			.info_item{width: 100%;height: 1rem;margin-bottom: 0.6rem;}
+			#rescan{width: 4.7rem;height: 1rem;background:#cb9418 ;display: block;margin: 0 auto;text-align: center;color: white;border-radius: 10px;line-height: 1rem;font-size: 0.36rem;}
+			.search_item{width: 100%;height: 1rem; text-align: center}
+			.search_wrap{position:relative;width: 4.7rem;height: 1rem;margin: 0 auto;border-radius: 10px;border: 2px solid #e6e6e6}
+			label.bg-icon{background-position:0rem 0rem;left:0.15rem;top:0.18rem;}
+			#search{-webkit-tap-highlight-color:rgba(255,0,0,0);width: 3.8rem;height: 1rem;color: #c6c7cc;border-radius: 10px;outline: none;border: 0;font-size: 0.3rem;color: #333;float:right}
+			.loading{width:100%;position:relative;height:100%;}
+			#loading-gif{position:absolute;top:0;left:0;right:0;bottom:50px;margin:auto;width:1.4rem;height:1.2rem;}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="top">
+				<i id="back" class="bg-icon"></i>
+				<div></div>
+			</div>
+			<div class="success" >
+				<div class="brand">
+					<div id="brand_logo">
+						<div class="imgWrap"><img src="http://image.wpwl.org/uploadfile/1/20161207/new/1481096754639-f680a57c3ce64ec6853b180b47a424d0.jpg" alt=""></div>
+						<div class="brand-bg"></div>
+					</div>
+					<div class="brand-info">
+						<p id="brand_name">SANFER 帅丰</p>
+						<p id="product_name">帅丰集成灶</p>
+					</div>
+				</div>
+				<!-- <div id="result">恭喜你 你的宝贝是正品</div> -->
+				<div id="goods_info">
+					<dl class="goods_outer">
+						<dt class="goods_img">
+							<p class="img-border"><img src=""></p>
+						</dt>
+						<dd class="goods_word">
+							<h3 class="goods_name"><i class="bg-icon"></i><span>沃朴产品演示</span></h3>
+							<span id="goods_detail">演示产品02 W0000040000</span>
+							<b id="time">2016-04-01</b>
+							<a href="javascript:;" id="wt_details">查看详情</a>
+						</dd> 
+					</dl>
+				</div>
+				<div id="footer">
+					<p>正品数据来源于<strong class="goods_name"><span>接口</span></strong></p>
+					<em>中国防伪行业协会成员理事单位--正品控 提供支持</em>
+				</div>
+			</div>
+			<div class="fail">
+				<div class="result">
+					<div class="middle">
+						<img src="" alt="">
+						<p>很抱歉，没有找到您扫描的商品</p>
+					</div>
+				</div>
+				<div class="info_item">
+					<a href="javascript:;" id="rescan">再次扫描</a>
+				</div>
+				<div class="search_item">
+					<div class="search_wrap">
+						<form action="javascript:return true;" style="overflow-x:hidden">
+							<label for="search" class="bg-icon"></label>
+							<input type="search" id="search" placeholder="请输入您要找的商品"/>
+						</form>
+					</div>
+				</div>
+			</div>
+			<div class="loading">
+				<img src="images/loading2.gif" alt="" id="loading-gif"/>
+			</div>
+		</div>
+		<script src="lib/WPBridge.js"></script>
+		<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+		<script>
+			alert(8)
+			$.ajax({
+				url:'http://192.168.199.182/wpwl/getKey',
+				success:function(res){
+					key = res.data;
+					localStorage.setItem('key',res.data)
+					test(key);
+				}
+			})
+			function getUrlRequest() {
+	            var url = location.search; //获取url中"?"符后的字串
+	            var theRequest = new Object();
+	            if (url.indexOf("?") != -1) {
+	                var str = url.substr(1);
+	                if (str.indexOf("&") != -1) {
+	                    strs = str.split("&");
+	                    for (var i = 0; i < strs.length; i++) {
+	                        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+	                    }
+	                } else {
+	                    theRequest[str.split("=")[0]] = unescape(str.split("=")[1]);
+	                }
+	            }
+	            return theRequest;
+	        }
+			function test(key){
+				var type=getUrlRequest().failType;
+				var labelCode=getUrlRequest().labelCode;
+				//var keyValue=localStorage.getItem('key');
+				if(type=='200'){
+					WPBridge.callMethod("JsInvokeNative","wpEncrypt",{key:key,params:[labelCode]},function(msg){codeValue=msg.data.result[0];
+						$.ajax({
+							url:"http://192.168.199.182/wpwl/product/productGoodsInfo",
+							type:"post",
+							data:{
+								"labelCode":codeValue
+							},
+							success:function(res){
+								if(res.errMsg=="AES加密解密失败"){
+									$.ajax({
+										url:'http://192.168.199.182/wpwl/getKey',
+										success:function(res){
+											key = res.data;
+											localStorage.setItem('key',res.data)
+											test(key);
+										}
+									})
+								}else{
+									if(res.success==false){
+										$(".top div").html('验证有误');
+										$(".result img").attr("src",'images/vrf_wrong.png').addClass('verify_error').siblings('p').html('很抱歉，没有找到您扫描的商品');
+										$(".fail").show().siblings('.top').show().siblings('.loading').hide()
+									}else {
+										var data=res.data;
+										localStorage.setItem('productGoodsInfo',JSON.stringify(data.productGoodsInfo))
+										$("#time").html(res.data.productGoodsInfo.produceDate);	
+										delete	data.productGoodsInfo;
+										var productDetails=data.productDetails;
+										var brand=data.brand;
+	//									alert(JSON.stringify(data))
+										localStorage.setItem('productDetails',JSON.stringify(data));
+										var nameType=productDetails.productName+data.productParams.standard;
+										$(".top div").html('扫描结果');
+										$("#brand_logo").find('img').attr('src',brand.brandIcon);
+										$("#brand_name").html(brand.brandName).siblings('#product_name').html(productDetails.productName)
+										$(".goods_name span").html(brand.brandName)
+										$(".img-border").find('img').attr("src",productDetails.productUrls[0]);
+										$("#goods_detail").html(nameType)
+										$(".success").show().siblings('.top').show().siblings('.loading').hide();
+									}	
+								}
+								
+							},
+							error:function(){
+								
+							}
+						})
+					})
+				}
+				else if(type=="0"){
+					//1.验证有误（标签未绑定产品或无种子）
+					$(".top div").html('验证有误');
+					$(".result img").attr("src",'images/vrf_wrong.png').addClass('verify_error').siblings('p').html('很抱歉，没有找到您扫描的商品');
+					$(".fail").show().siblings('.top').show().siblings('.loading').hide();
+				}else if(type=='2'){
+					//2. 扫描超时
+					$(".top div").html('扫描超时');
+					$(".result img").attr("src",'images/scan_delay.png').addClass('scan_delay');
+					$(".result p").html('扫描超时，请重新扫描');
+					$(".fail").show().siblings('.top').show().siblings('.loading').hide()
+				}else if(type=="3"){
+					//3. 电子签验证码错误
+					$(".top div").html('扫描失败');
+					var data=帅丰;
+					var tag="<strong id='findItem'>"+data+"</strong>"
+					$(".result img").attr("src",'images/scan_failed.png').addClass('scan_failed').siblings('p').html('扫描失败，是否在找'+tag);
+					$(".fail").show().siblings('.top').show().siblings('.loading').hide()
+				}else if(type=="1"){
+					//4. 网络问题
+					$(".top div").html('扫描失败');
+					$(".result img").attr("src",'images/scan_net.png').addClass('scan_error');
+					$(".result p").html('抱歉，网络受阻，请再次扫描');
+					$(".fail").show().siblings('.top').show().siblings('.loading').hide()
+				}
+				
+		}
+		
+		
+		$(function(){
+			$("#wt_details").click(function(){
+				localStorage.setItem("H5",true);
+				window.location.href="details.html";
+	//			pushPoint()
+			})
+		})
+		//交互
+		$(function(){
+			$("#back").click(function(){
+				WPBridge.callMethod("JsInvokeNative","wpFinishH5",{},function(){})
+			})
+			$("#rescan").click(function(){
+				WPBridge.callMethod("JsInvokeNative","wpStartScan",{},function(){})
+			})
+//			$('input').on('focus', function () {
+//				var o=$(this).parents('.search_item');
+//				o.css({
+//					position:'fixed',
+//					top:'50px',
+//					zIndex:"10"
+//				})
+//			})
+//			$('input').on('blur', function () {
+//				var o=$(this).parents('.search_item');
+//				o.css({
+//					position:'static',
+//					top:"auto"
+//				})
+//			})
+
+			var timer, windowInnerHeight;
+		    function eventCheck(e) {
+		        if (e) { //blur,focus事件触发的
+//		            $('#dv').html('android键盘' + (e.type == 'focus' ? '弹出' : '隐藏') + '--通过' + e.type + '事件');
+		            if (e.type == 'click') {//如果是点击事件启动计时器监控是否点击了键盘上的隐藏键盘按钮，没有点击这个按钮的事件可用，keydown中也获取不到keyCode值
+		                alert(8)
+		                setTimeout(function () {//由于键盘弹出是有动画效果的，要获取完全弹出的窗口高度，使用了计时器
+		                    windowInnerHeight = window.innerHeight;//获取弹出android软键盘后的窗口高度
+		                    timer = setInterval(function () { eventCheck() }, 100);
+		                }, 500);
+		            }
+		            else clearInterval(timer);
+		        }
+		        else { //计时器执行的，需要判断窗口可视高度，如果改变说明android键盘隐藏了
+		            if (window.innerHeight > windowInnerHeight) {
+		                clearInterval(timer);
+//		                $('#dv').html('android键盘隐藏--通过点击键盘隐藏按钮');
+		            }
+		        }
+		    }
+		    $('#search').focus(eventCheck).blur(eventCheck);
+			$("#search").on("keypress",function(e){
+				if($(this).val()!=''&&e.keyCode==13){
+					var value=$(this).val();
+					WPBridge.callMethod("JsInvokeNative",'wpSelectProducts',{'keyword':value},function(){})					
+				} 
+			})
+		})
+		</script>
+	</body>
+</html>

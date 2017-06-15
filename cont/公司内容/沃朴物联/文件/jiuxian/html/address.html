@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="../js/zepto.js" ></script>	
+		<script src="../js/rem.js"></script>
+		<link rel="stylesheet" href="../css/address.css" />
+	</head>
+	<body>
+		<div id="top">
+			<i class="i1" onclick="javascript:history.back(-1)"><img src="../img/re.gif" /> </i>
+			<p>配送地址</p>
+		</div>
+		<div id="main">
+			<div class="div1">
+				<span class="span1">收货人：</span>
+				<input type="text" class="name" />
+			</div>
+			<div class="div2">
+				<span class="span1">手机号码：</span>
+				<input type="text"  />
+			</div>
+			<div class="div3">
+				<span class="span1">固定电话（选填）：</span>
+				
+				<input type="text"  />	
+				</div>
+			<div class="div4">
+				<span class="span1">所在地区：</span>					
+					<div class="info">
+						<select id="s_province" ></select>  
+					    <select id="s_city"  ></select>  
+					    <select id="s_county" ></select>
+					    <script class="resources library" src="../js/area.js" type="text/javascript"></script>					    
+					    <script type="text/javascript">_init_area();</script>
+					</div>						
+			</div>
+			<div class="div5">
+				<span class="span1">详细地址：</span>
+				<input type="text"  />
+			</div>
+		</div>
+		<div id="bottom">
+			<p><img src="../img/true.gif" /> </p>
+		</div>
+	<script src="../js/address.js"></script>	
+	</body>
+</html>

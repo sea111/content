@@ -1,0 +1,115 @@
+#box{
+	margin-top: 0.88rem;
+}
+.current{
+	color: #fff;
+}
+/*-----------------------优惠券内容  unactivity：失效优惠券   current是当前显示，没有隐藏---------------------------*/
+#discountContent,#undiscountContent{
+	margin:0 auto;
+	display:none;
+}
+#discountContent.current,#undiscountContent.current{
+	display: block;
+}
+#discountContent{
+	margin-top: 1.08rem;
+}
+#undiscountContent{
+	margin-top: 1.08rem;
+}
+
+.discountBox{
+	margin:0 auto;
+	width:6.7rem;
+	height:2.1rem;
+	background:url(../images/discount_03.png) repeat-x;
+	margin-bottom:0.2rem;
+	background-size:auto 100%;
+	position: relative;
+	padding-top: 0.3rem;
+}
+.cont{
+	width:6.7rem;
+	height:1.64rem;
+}
+.left{
+	height:1.64rem;
+	line-height:1.64rem;
+	width:29%;
+	float:left;
+	color:#FB4746;
+	text-align:center;
+	box-sizing: border-box;
+	border-right: 1px dashed #ccc;
+}
+.num{
+	font-size:0.72rem;
+	font-weight:bold;
+}
+.sign{
+	font-size:0.3rem;	
+}
+.introduce{
+	width:70%;
+    float:left;
+    padding-left:0.4rem;
+    box-sizing:border-box;
+}
+.intro,.data{
+	margin-top:0.2rem;
+	font-size:0.24rem;
+	color:#666;
+}
+.intro{
+/*	height: 0.64rem;*/
+	line-height: 0.32rem;
+	overflow:hidden;
+	white-space:nowrap;
+	text-overflow:ellipsis;
+}
+.title{
+	color:#333;
+	margin-top:0.2rem;
+}
+.status{
+	width:100%;
+	height:0.32rem;
+	line-height:0.32rem;
+	font-size:0.2rem;
+	color:#666;
+	padding-left:0.1rem;
+	position: absolute;
+	bottom: 0px;
+}
+.look{
+	margin-top:0.2rem;
+	font-size:0.24rem;
+	text-align:center;
+	color:#666;
+	padding-bottom:0.2rem;
+}
+.more{
+	color:#D6A41D;
+}
+.discountBox.unactivity{
+	background:url(../images/outDiscount2_03.png) repeat-x;
+	background-size:auto 100%;
+}
+.unactivity .left{
+	color:#999;
+}
+.unactivity .intro,.unactivity .data{
+	color:#666;
+}
+
+
+
+
+
+
+
+
+
+
+

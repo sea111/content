@@ -1,0 +1,41 @@
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img,section{margin:0;padding:0;}
+a{text-decoration:none;}
+ul,li{list-style:none;}
+b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+html,body{
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+#box{
+	width:100%;
+	height:100%;
+	margin:0 auto;
+}
+#top{
+	height:0.88rem;
+	line-height:0.88rem;
+	background:#333;
+	color:white;
+	font-size:0.35rem;
+	text-align:center;
+	position:relative;
+}
+.bgIcon{
+	width:0.64rem;
+	height:0.64rem;
+	display:block;
+	background:url() no-repeat;
+	background-size:;
+}
+.back{
+	background-position:0rem 0rem;
+	position:absolute;
+	left:0rem;
+	bottom:0rem;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+.head{
+	
+}

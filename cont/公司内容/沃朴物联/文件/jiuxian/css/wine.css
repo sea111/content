@@ -1,0 +1,291 @@
+/* reset */
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em{ font-style:normal; }
+ul,ol,dl{list-style:none;}
+img{ border:none; vertical-align:top; }
+table{ border-collapse:collapse; }
+input,textarea{ outline:none; border:0;}
+textarea{ resize:none; overflow:auto; }
+body{ font-family:"微软雅黑" "Time New Roman"; }
+a{text-decoration:none; color:#5d5d5d; }
+a:hover{color:#f60;}
+html,body{
+	width:100%;
+	height:100%;
+	font-size:20px;
+	overflow:hidden;
+}
+#header{
+	width:100%;
+	height:auto;
+	font-size:14px;
+	z-index:5;
+	position:relative;
+}
+#header .top{
+	width:100%;
+	height:40px;
+	background:#de4943;
+}
+#header .top a.goback{
+	display:block;
+	width:30px;
+	height:40px;
+	background:#de4943 url(../img/headBack.jpg) center center no-repeat;
+	margin:0 10px;
+	float:left;
+}
+#header .top h2{
+	width:70%;
+	height:40px;
+	line-height:40px;				
+	text-align:center;
+	float:left;
+	color:#fff;
+	margin-left:5px;
+}
+#header .top a.menus{
+	display:block;
+	float:right;
+	width:20px;
+	height:20px;
+	margin:10px 10px;
+	background:url(../img/headIcon.png) -155px -5px no-repeat;
+}
+#header .list-menu{
+	width:100%;
+	height:45px;
+	background:#efefef;
+	display:none;
+}
+#header .list-menu li{
+	width:25%;
+	height:100%;
+	float:left;
+}
+#header .list-menu li a{
+	display:block;
+	width:100%;
+	height:100%;
+	overflow:hidden;
+}
+#header .list-menu li:nth-child(1) a i{
+	display:block;
+	width:26px;
+	height:20px;
+	margin:0 auto;
+	margin-top:5px;
+	background:url(../img/headIcon.png) -3px -5px no-repeat;
+}
+#header .list-menu li:nth-child(2) a i{
+	display:block;
+	width:26px;
+	height:20px;
+	margin:0 auto;
+	margin-top:5px;
+	background:url(../img/headIcon.png) -36px -5px no-repeat;
+}
+#header .list-menu li:nth-child(3) a i{
+	display:block;
+	width:26px;
+	height:20px;
+	margin:0 auto;
+	margin-top:5px;
+	background:url(../img/headIcon.png) -74px -5px no-repeat;
+}
+#header .list-menu li:nth-child(4) a i{
+	display:block;
+	width:26px;
+	height:20px;
+	margin:0 auto;
+	margin-top:5px;
+	background:url(../img/headIcon.png) -112px -5px no-repeat;
+}
+#header .list-menu li a p{
+	width:100%;
+	height:20px;
+	font-size:12px;
+	line-height:20px;
+	text-align:center;
+}
+
+#content{
+	width:96%;
+	height: 90%;
+    overflow: hidden;
+	margin:10px auto 0;
+	position:relative;
+}
+#content .content-box{
+	width:100%;
+	overflow: hidden;
+    position:absolute;
+}
+#content .img-three{
+	width:100%;
+	height:200px;	
+}
+#content .img-three img{
+	display:block;
+	width:100%;
+}
+#content .img-three .red-wine{
+	width:60%;
+	float:left;
+}
+#content .img-three .red-wine img{
+	width:100%;
+	height:auto;
+}
+#content .img-three .brand{
+	width:40%;
+	float:left;
+}
+#content .img-three .brand img{
+	width:100%;
+	height:auto;
+}
+#content .img-three .gifts{
+	width:40%;
+	float:left;
+}
+#content .img-three .gifts img{
+	width:100%;
+	height:auto;
+}
+#content .list-type{
+	width:100%;
+	height:90px;
+}
+#content .list-type ul{
+	width:100%;
+	height:100px;
+	margin-top:10px;
+}
+#content .list-type ul li{
+	width: 23%;
+    margin: 1% 0 0 1.33%;
+    line-height:2;
+    float:left;
+    font-size:15px;
+    border:1px solid #ccc;
+    text-align:center;
+}
+#content .list-type ul li a{
+	 width:100%;
+	 height:100%;
+	 display:block;
+	 color:#373737;
+}
+#content .list-type ul li a.last{
+	 color:#de4943;
+}
+#content .title-line{
+	width:98%;
+	height:40px;
+	margin:0 3px;
+	position:relative;
+}
+#content .title-line p.line{
+	width:100%;
+	height:20px;	
+	border-bottom:1px solid #000;
+}
+#content .title-line p.title{
+	display:block;
+	height:40px;
+	line-height:40px;
+	text-align:center;
+	position:absolute;
+	padding:0 10px;
+	top:0;
+	left:37%;
+	background:#fff;
+}
+#content .list-goods{
+	width:100%;
+}
+#content .list-goods ul{
+	width:100%;
+}
+#content .list-goods ul li{
+	height:100px;
+	padding:10px;
+	border-top: 2px solid #e7e7e7;
+	font-size:14px;
+}
+#content .list-goods ul li:nth-child(1){
+	border-top:0;
+}
+#content .list-goods ul li img{
+	display:block;
+	height:100px;
+	float:left;
+}
+#content .list-goods ul li img{
+	display:block;
+	height:100px;
+	float:left;
+}
+#content .list-goods ul li .introduce{
+	height:100px;
+	width:65%;
+	float:right;
+}
+#content .list-goods ul li .introduce p{
+	width:100%;
+	line-height:1.5;
+	color:#373737;
+	font-size:14px;
+}
+#content .list-goods ul li .introduce p.wine-name{
+	height:36px;
+	line-height:18px;
+}
+
+#content .list-goods ul li .introduce p.wine-intro{
+    color: #f58f2b;
+    height: 18px;
+    overflow: hidden;
+    font-size:14px;
+    margin-bottom: 10px;
+}
+#content .list-goods ul li .introduce p.price{
+	color:#df4a44;
+	font-size:18px;
+    margin-left:3px;
+    font-weight:900;
+}
+#content .content-box .all-search{
+	width:100%;
+	height:30px;
+	background:#fff;
+}
+#content .content-box .all-search input.search-all{
+	width:110px;
+	height:30px;
+	display:block;
+	line-height:30px;
+	text-align:center;
+	font-size:12px;
+	color:#fff;
+	background:#DE4943;
+	margin:0 auto;
+	border-radius:3px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

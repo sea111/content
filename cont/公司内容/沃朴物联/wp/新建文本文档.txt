@@ -1,0 +1,37 @@
+方案：采用https://github.com/coderifous/jquery-localize/ 一个本地化插件 
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=1311115
+12-12 10:21
+特别关注 大叔 12-12 10:21:48
+
+大叔
+
+流程规范：
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=2523238
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=1310933
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=3145913
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=5144663
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=5603341
+
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=4456498
+
+
+技术部规范：
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=1310993
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=3801326
+
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=1310997
+
+
+新人日报：
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=6160389
+
+
+学习产品文档：
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=1310973

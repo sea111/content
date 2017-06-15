@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>咨询留言</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	
+	<link rel="stylesheet" href="lib/swipebox.min.css">
+	<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		},false);
+	</script>
+	<style type="text/css">
+		body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+		body,html{
+			width: 100%;
+			height: 100%;
+		}
+		a{text-decoration: none;}
+		body{font-size: 0.3rem}
+		.top{width: 100%;height: 0.88rem;background: black;color: white;font-size: 0.35rem;position: relative;z-index: 9}
+		.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/consult-sprite.png) no-repeat ;background-size:3.2rem 0.64rem;position:absolute;}
+		#back{background-position:0rem 0rem;left:0.1rem;top:0.12rem;}
+		.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+		#content{width: 100%;}
+		dl{width: 100%;overflow: hidden;border-bottom: 1px solid #ccc;}
+		dt{width: 95%;overflow: hidden;padding:0.2rem 0;border-bottom: 1px solid #e6e6e6;margin: 0 auto;}
+		dl h4{height: 0.55rem;line-height: 0.55rem;padding-left: 0.6rem;font-size: 0.3rem;font-weight: normal;color: #333;position: relative;margin-bottom: 6px}
+		dt i.bg-icon{background-position:-1.92rem 0rem;left: 0;top: -0.1rem;}
+		dd i.bg-icon{background-position:-1.28rem 0rem;left: 0;top: -0.1rem;}
+		.consult_time{float: right;font-size: 0.24rem;color: #999;margin-right: 0.2rem;}
+		.my_consult{padding: 0 0.6rem;font-size: 0.28rem;color: #666}
+		.reply{padding: 0 0.6rem;font-size: 0.28rem;color: #666}
+		dd{width: 95%;overflow: hidden;padding:0.2rem 0;margin: 0 auto;}
+		.scroller-pullDown, .scroller-pullUp {width: 100%;height: 30px;padding: 10px 0;text-align: center;}
+		.gallery{overflow:hidden;margin-top:0.2rem;position:relative;height:2rem;}
+		.gallery div{height:2rem;}
+		.gallery a{float:left;width:2rem;height:2rem;margin-left:0.16rem;}
+		.swipebox img{width:100%;height:100%}
+		#PullUp img{vertical-align:middle}
+		#PullDown img{vertical-align:middle}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<span id="back" class="bg-icon"></span>
+		<div>咨询留言</div>
+	</div>
+	<div id="content">
+		<div id="content-scroll"> 
+			<div id="PullDown" class="scroller-pullDown" style="display: none;">
+	            <img style="width: 30px; height: 30px;" src="images/loading.gif" />
+	            <span id="pullDown-msg" class="pull-down-msg">下拉刷新</span>
+	        </div>
+	        <div class="consult-area">
+				<dl style="display:none">
+					<dt>
+						<h4><i class="bg-icon"></i><span class="account">我的咨询</span><span class="consult_time">2017-01-05 20:45</span></h4>
+						<p class="my_consult">好吃吗</p>
+						<div class="gallery" style="display:none"><div class="gallery-inner"><a href="" class="swipebox" style="display:none"><img src="" alt="" /></a></div></div>
+					</dt>
+					<dd>
+						<h4><i class="bg-icon"></i>企业答复</h4>
+						<p class="reply">等待企业答复中</p>
+					</dd>
+				</dl>
+			 </div>
+				<div id="PullUp" class="scroller-pullUp" style="display: none;">
+		            <img style="width: 30px; height: 30px;" src="images/loading.gif" />
+		           上拉加载
+		        </div>
+	       
+		</div>
+	</div>
+	<script src="lib/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<!--<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/iScroll/5.2.0/iscroll-probe.js"></script>-->
+	<script type="text/javascript" src="lib/iscroll.js"></script>
+	<script src="lib/jquery.swipebox.js"></script>
+	<script type="text/javascript">
+
+		
+//		$(function(){
+//			
+//		})
+		
+		var wpwlConsult={
+			load:function(){
+				var that=this;
+				$.ajax({
+					url:'JSON/consult.json',
+					success:function(res){
+						window.res=res;
+						that.content();
+						that.fresh()
+					}
+				})
+			},
+			content:function(){
+				var data=res[0].data.list;
+				for(var i=0;i<res[0].data.total;i++){
+					var ele=$("dl").eq(0).clone()
+					ele.find('.my_consult').html(data[i].consult).siblings('h4').find('.account').html(data[i].mobile).siblings('.consult_time').html(data[i].consultTime);
+					ele.find(".reply").html(data[i].message)
+					for(var j=0;j<data[i].picUrlList.length;j++){
+						var ele2=ele.find(".swipebox").eq(0).clone();
+						ele2.attr("href",data[i].picUrlList[j].picUrl).addClass('picSeries').find("img").attr("src",data[i].picUrlList[j].picUrl)
+						ele2.css("display","block")
+						ele.find(".gallery").attr("id","gallery"+j).css("display","block").find("div").append(ele2)
+					}
+					ele.css("display","block");
+					ele.find(".gallery div").css("width",data[i].picUrlList.length*2.16+"rem")
+					$(".consult-area").append(ele)
+				}
+				picScroll=new IScroll("#gallery3",{
+					click:true,
+					snap:true,
+					momentum:false,
+					hScroll:true,
+					vScroll:false
+				})
+				setTimeout(function(){
+					myScroll.refresh()
+				},100);
+				$(".picSeries").swipebox();
+				var gallery=document.getElementsByClassName('gallery-inner');
+				var dist=0,init,end;
+				for(var i=0;i<gallery.length;i++){
+					gallery[i].index=i;
+					gallery[i].addEventListener('touchstart',function(e){
+						var e=event||e;
+						init=e.touches[0].pageX;
+					});
+//					gallery[i].addEventListener('touchmove',function(e){
+//						var e=event||e;
+//						console.log(e.touches[0].pageX);
+//						
+//					});
+					gallery[i].addEventListener('touchend',function(e){
+						var e=event||e;
+						end=e.changedTouches[0].pageX;
+						dist+=end-init;
+//						this.style.left=dist+'px';
+						console.log(e.changedTouches[0].pageX);
+						
+					});
+				}
+
+			},
+			fresh:function(){
+				var innerHei=$("#content-scroll").height();
+				var wholeHei=document.documentElement.clientHeight-document.documentElement.clientWidth /7.5*0.88;
+				if(innerHei>wholeHei){
+					$("#content").css("height",wholeHei+"px")
+				}
+				else $("#content").css("height",innerHei-1+"px")
+			}
+		}
+		wpwlConsult.load()
+		wpwlConsult.fresh();
+		
+		$(function(){
+			myScroll = new IScroll( "#content",{
+				probeType:3,
+		 		click:true
+		 	});
+		})
+		
+		$(function(){
+			var downFlag=1;
+			myScroll.on("scroll",function(){
+				
+				if( myScroll.y >=40 ){
+					if(downFlag){
+						$("#PullDown").show();
+
+						downFlag=0;
+					}
+				}
+				else if(myScroll.y<40&&myScroll.y>=0){
+					if(!downFlag){
+						downFlag=1;
+						$(".consult-area").html($('dl').eq(0))
+						wpwlConsult.load();
+						$("#PullDown").hide();
+						return;
+					}
+				}
+				if(  myScroll.maxScrollY -myScroll.y>=40){
+					$("#PullUp").show()
+				}else if( myScroll.maxScrollY -myScroll.y<40&&  myScroll.maxScrollY -myScroll.y>=0){
+					$("#PullUp").hide();
+					return;
+				}
+			})
+//			document.addEventListener("touchend",function(){
+//				if( myScroll.y > 30 ){
+//					console.log( "下拉刷新" );
+//					$("#PullDown").show()
+////					oListWrap.innerHTML = "";
+////					load();
+//				}else if(myScroll.y<30&&myScroll.y>=0){
+//					$("#PullDown").hide();
+//					return;
+//				}
+//				if( myScroll.y < myScroll.maxScrollY ){
+//					console.log( "上啦加载" );
+//					$("#PullUp").show()
+////					load();
+//				}else if( myScroll.maxScrollY -myScroll.y<40&&  myScroll.maxScrollY -myScroll.y>=0){
+//					$("#PullUp").hide();
+//					return;
+//				}
+//			})
+
+
+		})
+				
+		$(function(){
+			$("#back").click(function(){
+				window.history.back()
+			})
+		})
+	</script>
+</body>
+</html>

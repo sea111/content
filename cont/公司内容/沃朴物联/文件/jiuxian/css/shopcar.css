@@ -1,0 +1,248 @@
+html,body{
+	width:100%;
+	height:100%;
+}
+#all{
+	width:100%;
+	height:100%;
+	background:#f3f5f6;	
+	position:relative;
+}
+.header{
+	width:100%;
+	height:1.75rem;
+	text-align: center;
+	background:#fafafa;
+}
+.header a{
+	display:inline-block;
+	width:1.2rem;
+	height:1.28rem;
+	margin-top:0.3rem;
+	margin-left:1rem;
+}
+.header a:nth-child(1){
+	background:url(../img/caticon.png) no-repeat;
+	background-size:150px 150px;
+	margin-left:0.1rem;
+	float:left;
+
+}
+.header a:nth-child(3){
+	margin-right:0.5rem;
+	float:right;
+}
+.header a div{
+	width:1rem;
+	height:0.1rem;
+	margin-top:0.2rem;
+	background:#666;
+}
+.header span{
+	display:inline-block;
+	width:3.5rem;
+	height:1.28rem;
+	float:left;
+	line-height: 1.28rem;
+	font-size:0.8rem;
+	color:#000;
+	margin-left:5rem;
+	margin-top:0.3rem;
+	text-align:center;
+}
+#all .list{
+	width: 100%;
+	height: 3rem;
+	background: #efefef;
+	position: absolute;
+	top: 1.7rem;
+	left: 0;
+	display: none;
+	z-index: 999;
+}
+#all .list ul{
+	width: 100%;
+	height: 100%;
+}
+#all .list ul li{
+	float: left;
+	height: 100%;
+	width: 25%;
+	font-size: 0.5rem;
+	text-align: center;
+}
+#all .list ul li dl{
+	width: 100%;
+	height: 100%;
+}
+#all .list ul li dl dt{
+	width: 40%;
+	height: 70%;
+	margin: 0 0 0 30%;
+	background: url(../img/headIcon.png) no-repeat;
+}
+.message{
+	width:100%;
+	height:1rem;
+	background:#f1c47c;
+	color:red;
+	line-height: 1rem;
+	font-size:0.2rem;
+}
+.message span{
+	display:inline-block;
+	width:1rem;
+	height:1rem;
+	float:left;
+	background:url(../img/caticon.png) no-repeat -1.9rem -2px;
+	background-size:8rem 8rem;
+}
+.content{
+	width:100%;
+	height:85%;
+	overflow:auto;
+}
+.content .goods{
+	width:100%;
+	height:7rem;
+	overflow:hidden;
+	position:relative;
+}
+.content .goods .select{
+	display:inline-block;
+	width:1.1rem;
+	height:1.1rem;
+	float:left;
+	background:url(../img/caticon.png) no-repeat -26px -114px;
+	background-size:150px 150px;
+	margin-top:2rem;
+	margin-left:0.2rem;
+}
+.content .goods .active{
+	background:url(../img/caticon.png) no-repeat 0 -114px;
+	background-size:150px 150px;
+}
+.content .goods dl{
+	margin-top:0.8rem;
+	margin-left:1.5rem;
+	
+}
+
+.content .goods dl dt{
+	float:left;
+}
+.content .goods dl dt img{
+	width:3rem;
+	height:3rem;
+	border:1px solid #888;
+}
+.content .goods dl dd{
+	margin-left:4.5rem;
+	line-height:1rem;
+}
+.content .goods dl dd .price{
+	color:red;
+}
+.content .goods dl input{
+	border:1px solid #888;
+	background:#fff;
+}
+.content .goods dl .num{
+	width:1rem;
+	text-align:center;
+}
+.content .add,.content .reduce{
+	width:0.6rem;
+}
+.content .delet{
+	display:block;
+	width:1.15rem;
+	height:1.15rem;
+	position:absolute;
+	bottom:2.5rem;
+	right:0.5rem;
+	background:url(../img/caticon.png) no-repeat -50px -73px;
+	background-size:150px 150px;
+}
+.content .addprice{
+	width:100%;
+	height:1.4rem;
+	border-top:1px solid #888;
+	border-bottom:1px solid #888;
+	margin-top:0.7rem;
+}
+.footer{
+	width:100%;
+	height:2.5rem;
+	border-top:1px solid #888;
+	position:absolute;
+	bottom:0;
+	left:0;
+}
+.footer ul{
+	width:100%;
+	height:2.5rem;
+}
+.footer li{
+	height:2.5rem;
+	float:left;
+}
+.footer li:nth-child(1){
+	width:3rem;
+	background:#fff ;
+}
+.footer li:nth-child(1) a{
+	display:inline-block;
+	width:1.1rem;
+	height:1.1rem;
+	background:url(../img/caticon.png) no-repeat -26px -114px;
+	background-size:150px 150px;
+	float:left;
+	margin-top:0.7rem;
+	margin-left:0.2rem;
+}
+.footer li:nth-child(1) .active{
+	background:url(../img/caticon.png) no-repeat 0 -114px;
+	background-size:150px 150px;
+}
+.footer li:nth-child(1) span{
+	display:inline-block;
+	width:1.5rem;
+	height:1rem;
+	float:left;
+	margin-top:0.9rem;
+	margin-left:0.2rem;
+	font-size:0.2rem;
+}
+.footer li:nth-child(2){
+	width:9rem;
+	background:#fff;
+}
+.footer li div:nth-child(1){
+	width:100%;
+	height:1.25rem;
+	line-height:1.25rem;
+	font-size:0.7rem;
+	color:red;
+}
+
+.footer li div:nth-child(2){
+	width:100%;
+	height:1.25rem;
+	line-height:1.25rem;
+	color:#888;
+}
+.footer li:nth-child(3){
+	width:4rem;
+	background:#fd5a5b;
+	text-align: center;
+}
+.footer li:nth-child(3) a{
+	display:inline-block;
+	color:#fff;
+	line-height:2.5rem;
+	font-size:0.7rem;
+	text-align: center;
+	text-decoration: none;
+}
+

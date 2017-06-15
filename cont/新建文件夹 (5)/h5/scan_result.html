@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正品控 scan_result</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+			window.addEventListener("resize",function(){
+				if(document.documentElement.clientWidth>760){
+					document.documentElement.style.fontSize=54+"px";
+				}else{
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+				}
+			},false);
+		</script>
+		<style type="text/css">
+			body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+			a{
+				text-decoration:none;
+			}
+			@media screen and (min-width:767px){
+				#wrap{width:10rem;margin: 0 auto;position:relative;height:100%}
+				#footer{width:10rem;}
+				#goods_info .goods_img{width:25%;}
+				#goods_info .goods_word{width:75%}
+				.goods_word #wt_details{right:0.4rem}
+			}
+			@media screen and (max-width:767px){
+				#wrap{width: 100%;height:100%;position:relative;left:0}
+				#footer{width:100%}
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.top{width: 100%;height: 0.88rem;background:#333;color: white;font-size: 0.35rem;position: relative;}
+			.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/result_sprite.png) no-repeat ;background-size:1.92rem 0.64rem;position:absolute;}
+			#back{background-position:-0.64rem 0;left:0.1rem;bottom:0.12rem;}
+			#personal{right: 0.2rem;top: 0.12rem;background-position:0rem 0;}
+			.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+			.brand{width: 100%;height: 55%;font-size: 0.25rem;position: relative;}
+			.brand-bg{width:5.58rem;height:1.1rem;margin:0 auto;position:absolute;left:50%;margin-left:-2.75rem;top:1.51rem;background:url("images/fireworks.png") no-repeat 0rem 0rem;background-size:5.58rem 1.1rem;}
+			#brand_logo{height: 60%;position:relative}
+			.imgWrap{width:2.36rem;height: 2.36rem;position:absolute;border-radius:50%;left:0;top:0;right:0;bottom:0;margin:auto;overflow: hidden;border:2px solid #e5e5e5;text-align:center;}
+			.img-border:before, .imgWrap:before {
+					content: "";
+					display: inline-block;
+					height: 50%;
+					width: 1px;
+					margin-right: -1px
+				}
+			.imgWrap .zoomImg{width:100%;height:100%}
+			.zoomImg{display: inline-block;max-height: 100%;max-width: 100%;margin: 0;padding: 0;width: auto;height: auto;vertical-align: middle;}
+			.brand .brand-info{position: absolute;bottom: 1.3rem;width: 100%;height: }
+			#brand_name{font-size: 0.38rem;color: #333}
+			#product_name{font-size: 0.34rem;color: #666}
+			.brand p{text-align: center;margin-top: 0.2rem;}
+			.brand #product_name{color: #606060}
+			#findItem{color:#0aa1f8}
+			#goods_info{width: 100%;height: 2.2rem;font-size:0.15rem;box-shadow:0 0 10px #f1f1f1;}
+			.goods_outer{width: 100%;height: 100%;display: flex;background: white;}
+			.goods_img{width: 2.1rem;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;height: 100%;float:left}
+			.goods_img .img-border{width: 100%;height: 100%;border-radius: 3px;border:1px solid #d3d3d3;text-align:center}
+			.goods_word{width: 5.4rem;position: relative;float:left;}
+			h3.goods_name{color: #daaf39;font-size: 0.32rem;height:0.5rem;line-height: 0.5rem;margin-top:0.3rem;padding-left:0.35rem;font-weight:normal;}
+			#goods_detail{margin-top:0.20rem;margin-bottom:0.2rem;display: block;font-size: 0.3rem;color:#333;width:62%;white-space:nowrap;overflow: hidden;text-overflow: ellipsis;}
+			.goods_name .bg-icon{left:-0.2rem;background-position:-1.28rem 0;top:0.21rem;}
+			#footer{font-size: 0.15rem;position: absolute;bottom: 0.3rem;width: 100%;color: #666;font-size: 0.26rem;}
+			#footer p{text-align: center;margin-bottom: 0.22rem;}
+			#footer em{text-align: center;width: 100%;display: block;color: #6f6f6f;font-style:normal;}
+			strong.goods_name{color:#daaf39;font-weight:normal;}
+			#wt_details{width: 1.82rem;height: 0.69rem;background: #fdd100;color: white;border-radius: 0.4rem;display: block;position: absolute;right: 0.2rem;top: 0.76rem;text-align: center;line-height: 0.69rem;font-size: 0.28rem;box-shadow: 0 0 10px #fdd100;}
+			#time{display: block;color: #666;font-size: 0.26rem;}
+			strong{font-size:normal}
+			.fail,.success{height:100%;display: none;}
+			.result{width: 100%;height: 65%;text-align: center;position: relative;}
+			.middle{width:100%;position:absolute;height:6rem;;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto;}
+			.middle img{width: 2.1rem;margin:0 auto;margin-bottom:0.6rem;display:block;}
+			.middle .scan_delay{width: 2.54rem;margin-bottom: 0.4rem;}
+			.middle .verify_error{width: 2.3rem;}
+			.middle p{color: #999;font-size: 0.3rem;}
+			.info_item{width: 100%;height: 1rem;margin-bottom: 0.6rem;}
+			#rescan{width: 4.7rem;height: 1rem;background:#cb9418 ;display: block;margin: 0 auto;text-align: center;color: white;border-radius: 10px;line-height: 1rem;font-size: 0.36rem;}
+			.search_item{width: 100%;height: 1rem; text-align: center}
+			.search_wrap{position:relative;width: 4.7rem;height: 1rem;margin: 0 auto;border-radius: 10px;border: 2px solid #e6e6e6}
+			label.bg-icon{background-position:0rem 0rem;left:0.15rem;top:0.18rem;}
+			#search{-webkit-tap-highlight-color:rgba(255,0,0,0);width: 3.8rem;height: 1rem;color: #c6c7cc;border-radius: 10px;outline: 0;border: 0;font-size: 0.3rem;color: #333;float:right}		
+			.loading{width:100%;position:absolute;height:100%;display:none;z-index:99;left:0;top:0.88rem}
+			.errInfo{width:100%;position:absolute;height:6rem;;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto;}
+			.errInfo img{width: 2.1rem;margin:0 auto;margin-bottom:0.6rem;display:block;}
+			.errInfo p{font-size:0.3rem}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="top">
+				<i id="back" class="bg-icon"></i>
+				<div></div>
+			</div>
+			<div class="success" >
+				<div class="brand">
+					<div id="brand_logo">
+						<div class="imgWrap"><img src="images/default_error2.png" alt="" class="zoomImg"></div>
+						<div class="brand-bg"></div>
+					</div>
+					<div class="brand-info">
+						<p id="brand_name"></p>
+						<p id="product_name"></p>
+					</div>
+				</div>
+				<!-- <div id="result">恭喜你 你的宝贝是正品</div> -->
+				<div id="goods_info">
+					<dl class="goods_outer">
+						<dt class="goods_img">
+							<p class="img-border"><img src="" class="zoomImg"></p>
+						</dt>
+						<dd class="goods_word">
+							<h3 class="goods_name"><i class="bg-icon"></i><span></span></h3>
+							<span id="goods_detail"></span>
+							<b id="time"></b>
+							<a href="javascript:;" id="wt_details">查看详情</a>
+						</dd> 
+					</dl>
+				</div>
+				<div id="footer">
+					<p>正品数据来源于<strong class="goods_name"><span>接口</span></strong></p>
+					<em>中国防伪行业协会成员理事单位--沃朴物联 提供支持</em>
+				</div>
+			</div>
+			<div class="fail">
+				<div class="result">
+					<div class="middle">
+						<img src="" alt="">
+						<p>很抱歉，没有找到您扫描的商品</p>
+					</div>
+				</div>
+				<div class="info_item">
+					<a href="javascript:;" id="rescan">再次扫描</a>
+				</div>
+				<div class="search_item">
+					<div class="search_wrap">
+						<form action="javascript:return true;" style="overflow-x:hidden">
+							<label for="search" class="bg-icon"></label>
+							<input type="search" id="search" placeholder="请输入您要找的商品" maxLength="30"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="loading">
+			<div class="errInfo"><img src="images/notFound.png"/><p>出错啦，请稍后再试</p></div>
+		</div>
+		<script src="lib/wpCommon.js"></script>
+		<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+		<script>
+			WPBridge.callMethod("JsInvokeNative","wpShowLoadingDialog",{},function(){});
+			window.aesFail = "";
+			$.ajax({
+				url:wpCommon.Url+'/wpwl/getKey',
+				data:{
+					versionId:"27"
+				},
+				success:function(res){
+					key = res.data;
+					localStorage.setItem('key',res.data)
+					test(key);
+				}
+			})
+
+			function test(key){
+				var type=getUrlRequest().failType;
+				var labelCode=getUrlRequest().labelCode;
+				if(type=='1'){
+					WPBridge.callMethod("JsInvokeNative","wpEncrypt",{key:key,params:[labelCode]},function(msg){codeValue=msg.data.result[0];
+						$.ajax({
+							url:wpCommon.Url+"/wpwl/product/productGoodsInfo",
+							type:"post",
+							data:{
+								"labelCode":codeValue,
+								"versionId":'27'
+							},
+							success:function(res){
+								if(res.errMsg=="AES加密解密失败"){
+									if (!aesFail) {
+			                            $.ajax({
+			                                url: wpCommon.Url+"/wpwl/getKey",
+			                                data: {
+			                                    versionId: "27"
+			                                },
+			                                success: function (res) {
+			                                    key = res.data;
+			                                    localStorage.setItem("key", res.data);
+			                                    test(key)
+			                                }
+			                            });
+			                            aesFail = true
+			                        }
+								}else{
+									if(res.success==false){
+										$(".top div").html('验证有误');
+										$(".result img").attr("src",'images/vrf_wrong.png').addClass('verify_error').siblings('p').html('很抱歉，没有找到您扫描的商品');
+										$(".fail").show().siblings('.top').show();
+										wpCommon.viewShow()
+									}else {
+										try {
+			                                var data = res.data;
+			                                localStorage.setItem("productGoodsInfo", JSON.stringify(data.productGoodsInfo));
+			                                $("#time").html(res.data.productGoodsInfo.produceDate);
+			                                delete data.productGoodsInfo;
+			                                var productDetails = data.productDetails;
+			                                var brand = data.brand;
+			                                window.productId = productDetails.productId;
+			                                localStorage.setItem("productDetails", JSON.stringify(data));
+			                                var nameType = productDetails.productName + data.productParams.standard;
+			                                var tag = "<strong style='color:#d8a31f'>" + productDetails.productName + "</strong>";
+			                               $(".top div").html("扫描结果");
+			                                if (brand.brandIcon != " ") {
+			                                    $("#brand_logo").find("img").attr("src", brand.brandIcon)
+			                                } else {
+			                                    $("#brand_logo").find("img").attr("src", "images/default_error2.png").css({
+			                                        maxWidth: "75%",
+			                                        maxHeight: "75%",
+			                                        marginTop: "0.20rem"
+			                                    })
+			                                }
+			                                $("#brand_name").html(brand.brandName + "提示您").siblings("#product_name").html("您购买的" + tag + "是正品");
+			                                $(".goods_name span").html(brand.brandName);
+			                                $(".img-border").find("img").attr("src", productDetails.productUrls[0]);
+			                                $("#goods_detail").html(nameType);
+			                                $("img").each(function () {
+			                                    var dfd = $.Deferred();
+			                                    $(this).bind("load", function () {
+			                                        dfd.resolve()
+			                                    }).bind("error", function () {
+			                                        $(this).attr("src", "images/default_error2.png")
+			                                    })
+			                                });
+			                                wpCommon.viewShow()
+			                                WPBridge.callMethod("JsInvokeNative", "wpUpOtherId", {
+			                                    otherId: productId
+			                                }, function () {});
+			                                $(".success").show().siblings(".top").show()
+			                            } catch (e) {}
+									}
+								}
+								
+							},
+							error:function(){
+								wpCommon.viewShow()
+								$(".loading").css("height", wholeHei + "px").show()
+							}
+						})
+					})
+				}
+				else if(type=="0"||type=="2"||type=="3"){
+					//1.验证有误（标签未绑定产品或无种子）
+					$(".top div").html('验证有误');
+					$(".result img").attr("src",'images/vrf_wrong.png').addClass('verify_error').siblings('p').html('很抱歉，没有找到您扫描的商品');
+					$(".fail").show().siblings('.top').show();
+					wpCommon.viewShow()
+				}else if(type=='4'){
+					//2. 扫描超时
+					$(".top div").html('扫描超时');
+					$(".result img").attr("src",'images/scan_delay.png').addClass('scan_delay');
+					$(".result p").html('扫描超时，请重新扫描');
+					$(".fail").show().siblings('.top').show();
+					wpCommon.viewShow()
+				}else if(type=="6"){
+					//3. 电子签验证码错误
+					$(".top div").html('扫描失败');
+					WPBridge.callMethod("JsInvokeNative","wpEncrypt",{key:key,params:[labelCode]},function(msg){codeValue=msg.data.result[0];
+						$.ajax({
+							url:wpCommon.Url+"/wpwl/product/productGoodsInfo",
+							type:"post",
+							data:{
+								"labelCode":codeValue,
+								"versionId":'27'
+							},
+							success:function(res){
+								if (res.errMsg == "AES加密解密失败") {
+                                    if (!aesFail) {
+                                        $.ajax({
+                                            url: wpCommon.Url+"/wpwl/getKey",
+                                            data: {
+                                                versionId: "27"
+                                            },
+                                            success: function (res) {
+                                                key = res.data;
+                                                localStorage.setItem("key", res.data);
+                                                test(key)
+                                            }
+                                        });
+                                        aesFail = true
+                                    }
+                                } else{
+									var data=res.data;
+									var name=data.productDetails.productName;
+									var prtId=data.productDetails.productId;
+									window.productId=prtId;
+									localStorage.setItem('productGoodsInfo',JSON.stringify(data.productGoodsInfo))
+									$("#time").html(res.data.productGoodsInfo.produceDate);	
+									delete	data.productGoodsInfo;
+									localStorage.setItem('productDetails',JSON.stringify(data));
+									var tag="<strong id='findItem'>"+name+"</strong>";
+									$(".result img").attr("src",'images/scan_failed.png').addClass('scan_failed').siblings('p').html('扫描失败，是否在找'+tag);
+									$(".fail").show().siblings('.top').show();
+									$('#findItem').click(function(){
+										window.location.href='details.html?pageId=H5_A008&otherId='+prtId;
+									});
+									 $("img").each(function () {
+	                                    var dfd = $.Deferred();
+	                                    $(this).bind("load", function () {
+	                                        dfd.resolve()
+	                                    }).bind("error", function () {
+	                                        $(this).attr("src", "images/default_error2.png")
+	                                    })
+	                                });
+									WPBridge.callMethod("JsInvokeNative","wpUpOtherId",{otherId:productId},function(){})
+									wpCommon.viewShow()
+								}
+							},
+							error:function(){
+								wpCommon.viewShow()
+								$(".loading").css("height", wholeHei + "px").show()
+							}
+						})
+						
+					})				
+				}else if(type=="5"){
+					//4. 网络问题
+					$(".top div").html('扫描失败');
+					$(".result img").attr("src",'images/scan_net.png').addClass('scan_error');
+					$(".result p").html('抱歉，网络受阻，请再次扫描');
+					$(".fail").show().siblings('.top').show();
+					wpCommon.viewShow()
+				}
+				
+		}
+		$(function(){
+			$("#goods_info").click(function(){
+				localStorage.setItem("H5",true);
+				window.location.href='details.html?pageId=H5_A008&otherId='+productId;;
+			})
+		})
+		
+		//交互
+		$(function(){
+			$("#back").click(function(){
+				WPBridge.callMethod("JsInvokeNative","wpFinishH5",{},function(){})
+			})
+			$("#rescan").click(function(){
+				WPBridge.callMethod("JsInvokeNative","wpStartScan",{},function(){})
+			})
+
+			var u = navigator.userAgent;
+
+			$("#search").on("focus",function(){
+				if (u.indexOf('Android') > -1 || u.indexOf('Linux') > -1) {//安卓手机
+					$('#wrap').css({
+						"bottom":'5rem',
+					})
+				}				
+			})
+			$('#search').on("blur",function(){
+				$('#wrap').css({
+					"bottom":''
+				})
+			})
+			
+			$("#search").on("keypress",function(e){
+				if($(this).val()!=''&&e.keyCode==13){
+					WPBridge.callMethod("JsInvokeNative","wpHitDotEvent",{eventId:"h5_e037",otherId:$(this).val()},function(){})
+					$('#wrap').css({"bottom":''})
+					var value=$(this).val();
+					var pat=new RegExp("[ /a-zA-Z0-9\u4e00-\u9fa5-——()（）]")
+					if(pat.test($(this).val())){
+						var inpt=$(this).val().replace(/（/g,'(');
+						var inpt=inpt.replace(/）/g,')');
+						var inpt=inpt.replace(/—/g,'-');
+						var inpt=inpt.replace(/　/g,' ');
+						localStorage.setItem('searchVal',inpt);
+						localStorage.removeItem('brandid');
+						window.location.href="searchResult.html";
+					}else{
+						WPBridge.callMethod('JsInvokeNative','wpShowToast',{message:'您输入的字符不合法'},function(){});
+					}
+				}else if($(this).val()==''&&e.keyCode==13){
+					WPBridge.callMethod('JsInvokeNative','wpShowToast',{message:'请输入您要查询的内容'},function(){});
+				}
+			})
+		})
+		
+		</script>
+	</body>
+</html>

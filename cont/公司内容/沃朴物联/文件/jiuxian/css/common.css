@@ -1,0 +1,53 @@
+/*---------重置样式----------*/
+body,h1,h2,h3,h4,h5,h6,p,ul,li,dl,ol,dt,dd,form,input,img,table,tr,td{padding: 0;margin: 0;}
+ul,ol{list-style: none;}
+img{display: block; border: 0;}
+input,button{outline: none;}
+i{font-style: normal;}
+body{ font: 12px "微软雅黑"; color: #333;}
+a{text-decoration: none; color: #333;}
+a:hover{text-decoration: underline; color: #909090;}
+input{outline: none;}
+
+/*----------公共样式----------------*/
+html,body{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+.w{width: 640px; margin: 0 auto;}
+.l{float: left;}
+.r{float: right;}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

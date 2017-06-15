@@ -1,0 +1,21 @@
+{
+"data": {
+	    "list":[
+		    {
+			    "serviceTel":"111111111111",
+			    "name":"康森医疗设备",
+			    "standard":"NPD-4BS 家庭经济型",
+			    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474678445585-3c9fba5d87c54df8bcce6e3083184084.jpg",
+			    "workOrder":"1111111"
+		    },
+		    {
+			    "serviceTel":"15112341234",
+			    "name":"曹王开凿机",
+			    "standard":"cw6121",
+			    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474678445585-3c9fba5d87c54df8bcce6e3083184084.jpg",
+			    "workOrder":"34e5556"
+		    }
+	   	]
+    },
+   "success": true
+}

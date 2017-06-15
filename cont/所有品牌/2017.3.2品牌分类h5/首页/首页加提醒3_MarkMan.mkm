@@ -1,0 +1,7 @@
+<MKM version="2.0" imageFileUrl="file:///D:/Users/WPWL/Desktop/2017.2.16%e6%89%80%e6%9c%89%e9%a1%b5%e9%9d%a2H5/%e9%a6%96%e9%a1%b5/%e9%a6%96%e9%a1%b5%e5%8a%a0%e6%8f%90%e9%86%923_MarkMan.png">
+  <Marks>
+    <TextMark defaultDirection="9" direction="9" color="16711680" x="429" y="775" textMaxWidth="100" offsetX="25" offsetY="10" text="40px #ffffff"/>
+    <LengthMark direction="3" color="16711680" length="40" x="386" y="713"/>
+    <TextMark defaultDirection="5" direction="5" color="16711680" x="606" y="890" textMaxWidth="100" offsetX="21" offsetY="4" text="有消息时出现，无消息提醒时不出现"/>
+  </Marks>
+</MKM>

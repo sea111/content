@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<title>公司简介</title>
+	
+	<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		},false);
+	</script>
+	<style type="text/css">
+		body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+		body,html{width: 100%;height: 100%;}
+		body{font-size: 0.28rem}
+		a{text-decoration: none;}
+		.top{width: 100%;height: 0.88rem;background: #333;color: white;font-size: 0.35rem;position: fixed;top:0}
+		.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/back-icon.png) no-repeat ;background-size:0.64rem 0.64rem;position:absolute;}
+		#back{background-position:0rem 0rem;left:0.1rem;bottom:0.12rem;}
+		.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 1rem;}
+		.big_img{height: 4rem;text-align: center;}
+		.big_img img{width: 100%;height: 100%}
+		.company_info{overflow: hidden;padding-bottom:10px}
+		h3{font-weight: normal;font-size: 0.32rem;color: #333;box-sizing: border-box;padding: 0.3rem 0 0.32rem 0.6rem;border-bottom: }
+		.company_intro{color: #666;font-size: 0.30rem;line-height: 0.5rem;text-indent: 2em;padding:0 0.2rem;}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<span id="back" class="bg-icon"></span>
+		<div></div>
+	</div>
+	<div class="big_img">
+		<img src="" alt="">
+	</div>
+	<div class="company_info">
+		<h3>企业简介</h3>
+		<p class="company_intro"></p>
+	</div>
+	<script src="lib/jquery-2.1.0.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		$(function(){
+			var data=JSON.parse(localStorage.getItem('brand'))
+			$(".top div").html(data.brandName);
+			var length=data.brandDesc.split("\n").length;
+			var words=data.brandDesc.split("\n");
+			$(".big_img img").attr("src",data.publicityImage);
+			for(var i=0;i<length;i++){
+				var ele=$(".company_intro").eq(0).clone();
+				if(words[i].substring(0,2)=="企业"){
+					ele.html('')
+				}
+				else ele.html(words[i]);
+				$(".company_info").append(ele);
+			}
+			$("#back").on("click",function(e){
+				localStorage.removeItem("brand")
+				window.history.back();
+				e.preventDefault();
+			})
+		})
+	</script>
+</body>
+</html>

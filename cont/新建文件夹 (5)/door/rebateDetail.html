@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />	
+		<title>正品控-我的返利</title>
+	</head>
+	<style>
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,p,img,section{margin:0;padding:0;}
+		a{text-decoration:none;}
+		ul,li{list-style:none;}
+		b,strong{font-weight:normal;}
+		i,em{font-style:normal;}
+		html,body{
+			width:100%;
+			height:100%;
+			overflow:hidden;
+		}
+		#box{
+			width:100%;
+			height:100%;
+			margin:0 auto;
+		}
+		#top{
+			height:0.88rem;
+			line-height:0.88rem;
+			background:#333;
+			color:white;
+			font-size:0.35rem;
+			text-align:center;
+		}
+		.bgIcon{
+			width:0.64rem;
+			height:0.64rem;
+			display:block;
+			background:url(images/message-spirit.png) no-repeat;
+			background-size:3.84rem 0.64rem;
+		}
+		.back{
+			background-position:0rem 0rem;
+			position:absolute;
+			left:0.1rem;
+			top:0.1rem;
+			-webkit-tap-highlight-color:rgba(255,0,0,0);
+		}
+		#rebateCont{
+			width:100%;
+			margin:0 auto;
+		}
+		.user{
+			font-size:0.360rem;
+		    color:#333;
+		    margin:0.4rem 0 0.76rem 0.2rem;
+		}
+		.tel{
+			font-size:0.36rem;
+			color:#555;
+		}
+		.QRcode{
+			width:6.68rem;
+			height:7.98rem;
+			background:url(images/myRebate_03.png) no-repeat;
+			background-size:100% 100%;
+			margin:0 auto;
+			position:relative;
+		}
+		.codeImg{
+			display:block;
+			width:3rem;
+			height:3rem;
+			border:4px solid #D6A41D;		
+			position:absolute;
+			top:1.38rem;
+			left:0;
+			right:0;
+			margin:auto;
+		}
+		.down{
+			position:absolute;
+			bottom:0.69rem;
+		    left:0;
+		    right:0;
+		    margin:auto;
+		}
+		.value{
+			font-size:0.28rem;
+			color:#666;
+			text-align:center;
+		}
+		.money{
+			color:#D6A41D;
+		}
+		.effectiveData,.address{
+			text-align:center;
+			margin-top:0.28rem;
+		}
+		.effective,.place,.article{
+		 	color:#666;
+		 	font-size:0.28rem;	
+		}
+		.notice{
+			width:100%;
+			font-size:0.24rem;
+			color:#999;	
+			position:absolute;
+			bottom:0.22rem;
+		}
+		.stake,.noticeCode{
+			box-sizing:border-box;
+			float:left;
+		}
+		.stake{	    
+			width:10%;
+    		padding-left:0.4rem;
+		}
+		.noticeCode{
+		    width:90%;
+		    padding-left:0.2rem;
+		}
+	</style>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		},false);
+	</script>
+	<body>
+		<div id="box">
+			<div id="top">
+				<a href="javascript:;" class="bgIcon back"></a>
+				<div class="head">我的返利</div>
+			</div>
+			<div id="rebateCont">
+				<div class="user">用户<span class="tel">15212341234</span>通过你的分享购买了产品，你因此获取了一笔现金返利，前往门店领取吧！</div>
+				<div class="QRcode">
+					<i class="codeImg"></i>
+					<div class="down">
+						<p class="value">面值<span class="money">20元</span>前往门店兑现</p>
+						<div class="effectiveData">		
+							<div class="effective">活动时间:<span class="article">2017.3.2至2017.4.2</span></div>	 
+						</div>
+						<div class="address">		
+							<div class="place">门店地址:<span class="article">余杭区五常大道</span></div>	 					
+						</div>
+					</div>
+				</div>
+				
+				<div class="notice">
+					<p class="stake">注：</p>
+					<p class="noticeCode">该二维码为您的专属返利二维码，使用失效后，请妥善保管</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script type="text/javascript" src="lib/iscroll.js" ></script>
+	<script type="text/javascript" src="lib/iscroll-probe.js" ></script>
+	<script type="text/javascript" src="lib/wpCommon.js" ></script>
+	<script>
+		//电话号码
+		var Tel=$(".tel").text();
+		var newTel="";
+		if(Tel.length>0){
+			for(var i=0;i<Tel.length;i++){
+				if(i<3 || i>=Tel.length-4){
+					newTel+=Tel[i];
+				}else{
+					newTel+='*'
+				}
+			}
+		}
+		$(".tel").text(newTel);
+	</script>
+</html>

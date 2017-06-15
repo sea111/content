@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />	
+		<title>正品控</title>
+	</head>
+	<style>
+		body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,p,img,section{margin:0;padding:0;}
+		a{text-decoration:none;}
+		ul,li{list-style:none;}
+		b,strong{font-weight:normal;}
+		i,em{font-style:normal;}
+		html,body{
+			width:100%;
+			height:100%;
+			overflow:hidden;
+		}
+		#box{
+			width:100%;
+			height:100%;
+			margin:0 auto;
+		}
+		#top{
+			height:0.88rem;
+			line-height:0.88rem;
+			background:#333;
+			color:white;
+			font-size:0.35rem;
+			text-align:center;
+		}
+		.head{
+			height:0.88rem;
+		}
+		.bgIcon{
+			/*width:0.64rem;
+			height:0.64rem;
+			display:block;
+			background:url() no-repeat;
+			background-size:;*/
+		}
+		.back{
+			background-position:0rem 0rem;
+			position:absolute;
+			left:0rem;
+			bottom:0rem;
+			-webkit-tap-highlight-color:rgba(255,0,0,0);
+		}
+		#discountCont{
+			width:100%;
+			margin:0 auto;
+		}
+		.code{
+			font-size:0.3rem;
+			color:#555;
+			margin-left:0.4rem;
+			margin-top:0.4rem;
+		}
+		.codeImg{
+			display:block;
+			width:3rem;
+			height:3rem;
+			border:1px solid #ccc;
+			margin:5% 30% 0 30%;
+		}
+		.faceValue{
+			font-size:0.3rem;
+		    color:#555;
+		    margin-left:0.4rem;
+		    margin-top:0.4rem;
+		}
+		.action,.address{
+			margin-left:0.68rem;
+			margin-top:0.4rem;
+			/*position:relative;*/
+		}
+		/*.data{
+			background-position:-1.28rem 0rem;
+			position:absolute;
+			left:-0.55rem;
+			top:-0.1rem;
+		}*/
+		/*.door{
+			background-position:-1.92rem 0rem;
+			position:absolute;
+			left:-0.55rem;
+			top:-0.1rem;
+		}*/
+		.activeTime,.place{
+		 	float:left;
+		 	color:#555;
+		 	font-size:0.3rem;
+		}
+		.article{
+		 	font-size:0.3rem;
+		 	color:#555;
+		}
+		.notice{
+			margin-top:0.4rem;
+			width:100%;
+			font-size:0.36rem;
+			color:#555;	
+		}
+		.stake,.noticeCode{
+			box-sizing:border-box;
+			float:left;
+		}
+		.stake{	    
+			width:10%;
+    		padding-left:0.4rem;
+		}
+		.noticeCode{
+		    width:90%;
+		    padding-left:0.2rem;
+		}
+	</style>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		},false);
+	</script>
+	<body>
+		<div id="box">
+			<div id="top">
+				<a href="javascript:;" class="bgIcon back"></a>
+				<div class="head">aaa</div>
+			</div>
+			<div id="discountCont">
+				<div class="QRcode">
+					<p class="code">门店优惠二维码:</p>
+					<i class="codeImg"></i>
+				</div>
+				<div class="faceValue">面值<span class="value">20</span>元，前往门店购买参加活动的产品即可使用。</div>
+				<div class="action">	
+					<i class="bgIcon time"></i>
+					<p class="activeTime">活动时间:</p> 
+					<p class="article">11</p>
+				</div>
+				<div class="address">		
+					<i class="bgIcon door"></i>
+					<p class="place">门店地址:</p>	 
+					<p class="article">余杭区余杭区五常大道五常大道五常大道五常大道</p>
+				</div>
+				<div class="notice">
+					<p class="stake">注：</p>
+					<p class="noticeCode">该二维码为您的专属返利二维码，使用失效后，请妥善保管</p>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script type="text/javascript" src="lib/iscroll.js" ></script>
+	<script type="text/javascript" src="lib/iscroll-probe.js" ></script>
+	<script type="text/javascript" src="lib/wpCommon.js" ></script>
+</html>

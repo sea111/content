@@ -1,0 +1,109 @@
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em { font-style:normal; }
+ul,ol,dl{list-style:none;}
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; border:none;}
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:"微软雅黑" "Time New Roman"; }
+a { text-decoration:none;color:#5d5d5d; }
+a:hover{text-decoration:underline;color:#f60;}
+
+
+
+html,body{height:38rem;width:100%;}
+
+#top{height:1.5rem;width:100%;background: #de4943;position: relative;}
+#top .i1{float:left;margin-left: 0.5rem;margin-top: 0.3rem;}
+#top p{text-align: center;width:100%;height:1.5rem;
+color:#fff;line-height: 1.5rem;font-size: 0.55rem;}
+
+
+
+#main{width:95%;padding-left: 0.5rem;}
+
+
+
+#main .div1{height:4rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div1 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div1 .p2{height:2.5rem;width:13rem;line-height: 2.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;}
+
+#main .div1 .p2 .span1{height:1.3rem;width:6rem;line-height: 1.3rem;
+margin-left: 0.5rem;font-size: 0.5rem;float:left;display: block;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}
+#main .div1 .p2 .span2{height:1.3rem;width:6rem;line-height: 1.3rem;
+margin-left: 0.5rem;font-size: 0.5rem;float:left;display: block;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}
+#main .div1 .p2 .span3{height:1.3rem;width:6rem;line-height: 1.3rem;
+margin-left: 0.5rem;font-size: 0.5rem;float:left;display: block;white-space:nowrap;text-overflow:ellipsis;overflow: hidden;}
+
+#main .div1 .img1{position: absolute;right:0.5rem;bottom: 0.8rem;}
+
+#main .div2{height:3rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div2 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div2 .p2{height:1.5rem;width:13rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div2 .img1{position: absolute;right:0.5rem;bottom: 0.5rem;}
+
+#main .div3{height:4.5rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div3 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div3 .p2{height:3rem;width:14rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;position: relative;z-index: 2;}
+#main .div3 .p3{height:1.5rem;width:14rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;position: absolute;bottom: 0;}
+#main .div3 .img1{position: absolute;right:0.5rem;bottom: 1.2rem;}
+
+#main .div4{height:3rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div4 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div4 .p2{height:1.5rem;width:14rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;display: inline-block;
+z-index: 2;position: relative;}
+#main .div4 .p3{height:1.5rem;width:5.8rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;position:absolute;
+bottom: 0;left:7.3rem;display: inline-block;}
+#main .div4 .img1{position: absolute;right:0.5rem;bottom: 0.5rem;}
+
+#main .div5{height:3rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div5 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div5 .p2{height:1.5rem;width:13rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;}
+
+#main .div6{height:4.5rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;overflow: hidden;}
+#main .div6 .p1{height:1.5rem;line-height: 1.5rem;font-size: 0.5rem;padding-left: 0.3rem;}
+#main .div6 textarea{height:3rem;width:14.4rem;border:1px solid #ccc;
+position: relative;font-size:0.8rem;padding-left:0.4rem;
+line-height: 1.1rem;overflow: hidden;}
+
+#main .div7{height:8rem;width:14.8rem;border:1px solid #ccc;
+margin-top: 0.5rem;position: relative;}
+#main .div7 .p1{height:1.5rem;width:14rem;line-height: 1.5rem;
+border-bottom: 1px solid #ccc;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div7 .p1 .span1{float: left;font-size: 0.5rem;}
+#main .div7 .p1 .span2{float:left;margin-left: 6rem;font-size: 0.5rem;}
+#main .div7 .p1 .span3{float: left;margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div7 .p2{height:1.5rem;width:14rem;line-height: 1.5rem;
+margin-left: 0.5rem;font-size: 0.5rem;}
+#main .div7 ul{margin-left: 0.5rem;width:13rem;height:5rem}
+#main .div7 ul li{float:left;height:1.5rem;line-height: 1.5rem;
+width:6rem}
+#main .div7 ul li p{float:left;width:2.5rem}
+main .div7 ul li span{float:left;margin-left: 0.1rem;}
+
+
+#bottom {height:1.3rem;width:100%;text-align: center;
+margin-top: 0.8rem;margin-bottom: 1rem;}
+#bottom p{text-align: center;height:1.2rem;width:100%;}
+#bottom img{height:1.2rem;width:8rem;}
+
+
+

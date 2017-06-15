@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<ul>
+			<li></li>
+		</ul>-->
+		<!--<li class="product-item">
+			<i class=""></i>
+			<a href="javascript:;">
+				<span class="cont">DUORA 10</span>
+				<span class="delete-btn">删除</span>
+			</a>
+		</li>
+		<li class="product-item">
+			<i class=""></i>
+			<a href="javascript:;">
+				<span class="cont">DUORA 9</span>
+				<span class="delete-btn">删除</span>
+			</a>
+		</li>
+		<li class="product-item">
+			<i class=""></i>
+			<a href="javascript:;">
+				<span class="cont">DUORA 8</span>
+				<span class="delete-btn">删除</span>
+			</a>
+		</li>
+		<li class="product-item">
+			<i class=""></i>
+			<a href="javascript:;">
+				<span class="cont">DUORA 7</span>
+				<span class="delete-btn">删除</span>
+			</a>
+		</li>-->
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script>
+		//product_item获取产品名
+		/*	var ele=$(".product-item").eq(0).clone();
+		ele.find(".cont").html(productName)
+		ele.show();
+		$(".cont-list").append(ele);*/
+	
+	
+		/*for(var i=0;i<5;i++){
+			var str="";
+			str+='<li class="product-item">'
+			str+='<i class=""></i>'
+			str+='<a href="javascript:;">'
+			str+='<span class="cont">DUORA 10</span>'
+			str+='<span class="delete-btn">删除</span>'
+			str+='</a>'
+			str+='</li>'
+			$("ul").append(str)
+		}*/
+		
+		var arra=[1,2,3,4];
+		localStorage.setItem('key',JSON.stringify(arra));		
+		var read=JSON.parse(localStorage.getItem('key'));	
+		console.log(read,read.length);
+		
+		//localStorage存储数组以及取数组方法。
+		var weekArray = ['周一','周二','周三','周四','周五']
+		//存：
+		localStorage.setItem('weekDay',JSON.stringify(weekArray));
+		//取：
+		weekArray = JSON.parse(localStorage.getItem('weekDay'));
+		console.log(weekArray)
+		
+		function unique(addNameArr){
+		     var newArr = [];//新建一个数组
+		     for(var i=0,len=addNameArr.length;i<len;i++){
+		         if(newArr.indexOf(addNameArr[i]) == -1){//若新数组中未包含该项则将其存入新数组
+		          newArr.push(addNameArr[i]);
+		      }
+		     }
+		     return newArr;
+		     console.log(newArr)
+		}    
+		unique(1,2,1,3,1)
+	</script>
+</html>

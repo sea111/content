@@ -1,0 +1,274 @@
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#box{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+#box .head{
+	width: 100%;
+	height: 2rem;
+	background: #de4943;
+	display: -webkit-box;
+}
+#box .head a{
+	display: block;
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	-webkit-box-flex: 1;
+	font-size: 0.5rem;
+	color: #fff;
+}
+#box .head .back img{
+	width: 50%;
+	height: 100%;
+}
+#box .head p{
+	height: 2rem;
+	line-height: 2rem;
+	text-align: center;
+	-webkit-box-flex: 5;
+	font-size: 0.7rem;
+	color: #fff;
+}
+#box .list{
+	width: 100%;
+	height: 1rem;
+}
+#box .list ul{
+	width: 100%;
+	height: 1rem;
+	display: -webkit-box;
+}
+#box .list ul li{
+	height: 1rem;
+	line-height: 1rem;
+	text-align: center;
+	width: 24.5%;
+	-webkit-box-flex: 1;
+	border-right: 1px solid #ccc;
+	background: #CCCCCC;
+}
+#box .list ul li span{
+	float: left;
+}
+#box .list ul li.one p{
+	float: left;
+	height: 1rem;
+	line-height: 1rem;
+	margin-left: 1.4rem;
+}
+#box .list ul li.one span{
+	width: 10px;
+	height: 15px;
+	background: url(../img/listicon.png);
+	background-position: 0 0;/*-0.8rem*/
+	margin-top: 0.2rem;
+	display: none;
+}
+#box .list ul li.two span{
+	width: 15px;
+	height: 15px;
+	background: url(../img/listicon.png);
+	background-position: -45px 0;/*-2.6rem*/
+	margin-top: 0.2rem;
+	margin-left: 1.5rem;
+}
+#box .goods{
+	width: 100%;
+	height: 25.5rem;
+}
+#box .goods .products{
+	width: 100%;
+	height: 25.5rem;
+}
+#box .goods .products li{
+	width: 100%;
+	height: 22%;
+	border-bottom: 1px dashed #ccc;
+	cursor: pointer;
+}
+#box .goods .products li dl{
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+#box .goods .products li dl dt{
+	width: 30%;
+	height: 80%;
+	margin-top: 5%;
+	margin-left: 5%;
+	float: left;
+}
+#box .goods .products li dl dt img{
+	width: 100%;
+	height: 100%;
+}
+#box .goods .products li dl dd.one{
+	width: 50%;
+	float: left;
+	margin-top: 5%;
+	margin-left: 5%;
+	margin-right: 10%;
+	font-size: 0.5rem;
+}
+#box .goods .products li dl dd.two{
+	float: left;
+	font-size: 0.5rem;
+	margin-left: 3%;
+	color: red;
+	margin-top: 7%;
+	margin-right: 45%;
+	font-weight: bold;
+}
+#box .goods .products li dl dd.three{
+	float: left;
+	margin: 2% 5% 0 5%;
+	color: #666;
+}
+#box .goods .products li dl dd.four{
+	float: left;
+	margin: 2% 0 0 5%;
+	color: #666;
+}
+#box .more{
+	width: 100%;
+	height: 93.5%;
+	margin-top: 12%;
+	background: #111;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+#box .more .left_side{
+	width: 20%;
+	height: 100%;
+	float: left;
+}
+#box .more .left_side .more_hide{
+	width: 45px;
+	height: 30px;
+	margin: 373% 0;
+	background: url(../img/listicon.png);
+	background-size:300%;
+	background-position: -20px -21px;
+}
+#box .more .variety{
+	width: 80%;
+	height: 100%;
+	float: left;
+	background: #fff;
+	opacity: 1;
+}
+#box .more .variety .condition{
+	width: 100%;
+}
+#box .more .variety .chose_f1{
+	width: 100%;
+	height: 70%;
+}
+#box .more .variety .chose_f1 li{
+	/*width: 80%;*/
+	height: 50px;
+	line-height: 50px;
+	font-size: 14px;
+	margin-left: 4%;
+	padding-left: 2%;
+	border-bottom: 1px dashed #ccc;
+}
+#box .more .variety .chose_f1 li p{
+	float: left;
+}
+#box .more .variety .chose_f1 li span{
+	float: right;
+}
+#box .more .variety a{
+	display: block;
+	width: 40%;
+	height: 5%;
+	line-height: 1.3rem;
+	text-align: center;
+	margin-left: 30%;
+	margin-top: 10%;
+	color: #fff;
+	font-size: 16px;
+	background: #de4943;
+	border-radius: 10px;
+}
+#box .more .sort{
+	width: 80%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 20%;
+	background: #fff;
+	display: none;
+}
+#box .more .sort .sort_top{
+	width: 100%;
+	height: 5%;
+	background: #abcdef;
+}
+#box .more .sort .sort_top a{
+	float: left;
+	width: 0.4rem;
+	height: 0.75rem;
+	margin-left: 0.5rem;
+	background: url(../img/listicon.png);
+	background-position: -100px 0;
+	margin-top: 2%;
+}
+#box .more .sort .sort_top p{
+	float: left;
+	width: 2.0rem;
+	height: 100%;
+	font-size: 16px;
+	line-height: 30px;
+	margin-left: 40%;
+}
+#box .more .sort ul{
+	width: 100%;
+	height: 60%;
+	position: absolute;
+	top: 5%;
+	left: 3%;
+	background: #fff;
+	 overflow-y: scroll;
+	 display: none;
+}
+#box .more .sort ul li{
+	 width: 90%;
+	 height: 12%;
+	 line-height: 55px;
+	 border-bottom: 1px dashed #ccc;
+	 font-size: 16px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

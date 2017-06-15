@@ -1,0 +1,53 @@
+{
+  	"success":true,
+ 	"data":[
+ 		{
+            "categoryName":"集成灶进风箱",
+            "categoryValues":[
+                {
+                    "proId":515,
+                    "proName":"集成灶进风箱 集成灶进风箱"
+                }
+            ]
+        },
+        {
+            "categoryName":"居家V6系列",
+            "categoryValues":[
+                {
+                    "proId":506,
+                    "proName":"居家V6系列 集成灶1"
+                },
+                {
+                    "proId":505,
+                    "proName":"居家V6系列 集成灶2"
+                }
+            ]
+        },
+        {
+            "categoryName":"智能GT系列",
+            "categoryValues":[
+                {
+                    "proId":508,
+                    "proName":"智能GT系列 集成灶1"
+                },
+                {
+                    "proId":507,
+                    "proName":"智能GT系列 集成灶2"
+                }
+            ]
+        },
+        {
+            "categoryName":"111",
+            "categoryValues":[
+                {
+                    "proId":504,
+                    "proName":"1q"
+                },
+                {
+                    "proId":503,
+                    "proName":"3"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,403 @@
+/* reset */
+body,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,form,input,textarea,th,td,select { margin:0; padding:0; }
+em { font-style:normal; }
+ul,ol,dl{list-style:none;}
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none; border:none;}
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:"微软雅黑" "Time New Roman"; }
+a { text-decoration:none;color:#5d5d5d; }
+a:hover{text-decoration:underline;color:#f60;}
+
+html,body{
+	width: 100%;
+	height: 100%;
+}
+#box{
+	width: 100%;
+	height: 100%;
+}
+.head{
+	width: 100%;
+	
+}
+.head .main{
+	width: 100%;
+	height: 2rem;
+	background: #de4943;
+	color: #fff;
+}
+
+.backs,.neir,.daohang{
+	width: ;
+	display: block;
+	float: left;
+}
+.head .main .backs{
+	margin-left:0.5rem ;
+	width: 1.5rem;
+	height: 1.85rem;
+	padding-top: 0.15rem;
+}
+.head .main .backs img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+.head .main .neir{
+	width: 10rem;
+	height: 100%;
+	line-height: 2rem;
+	text-align: center;
+	font-size:1rem ;
+	padding-left: 1rem;
+}
+
+.head .main .daohang1{
+	float: right;
+	margin-right:0.5rem ;
+	width: 1.5rem;
+	height: 1.4rem;
+	text-align: center;
+	line-height: 2rem;
+	padding-top: 0.6rem;
+}
+.head .main .daohang2{
+	float: right;
+	margin-right:0.5rem ;
+	width: 1.5rem;
+	height: 1.4rem;
+	text-align: center;
+	line-height: 2rem;
+	padding-top: 0.6rem;
+}
+.nav{
+	display: none;
+	width: 100%;
+	height: 2rem;
+	background: #efefef;
+}
+.nav li{
+	float: left;
+	width: 25%;
+	height: 2rem;
+	text-align: center;
+	line-height: 2rem;
+}
+.nav li a{
+	padding-top: 0.2rem;
+	line-height: 10px;
+	display: inline-block;
+	height: 1.8rem;
+	
+}
+.li1 i{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../img/headIcon.png) no-repeat;
+	background-position: -5px -5px; ;
+}
+.li2 i{
+	display: block;
+	width: 1.2rem;
+	height: 1.2rem;
+	background: url(../img/headIcon.png) no-repeat;
+	background-position: -39px -5px; ;
+}
+.li3 i{
+	display: block;
+	width: 1rem;
+	height: 1.2rem;
+	background: url(../img/headIcon.png) no-repeat;
+	background-position: -75px -5px; 
+	padding-left: 0.5rem;
+	margin-left: 0.2rem;
+}
+.li4 i{
+	display: block;
+	width: 1rem;
+	height: 1.2rem;
+	background: url(../img/headIcon.png) no-repeat;
+	background-position: -116px -5px; 
+	padding-left: 0.5rem;
+	
+	margin-left:0.6rem ;
+}
+#biaodan{
+	
+	height: 24rem;
+	padding-top: 0.2rem;
+	margin-left: 1rem;
+	margin-right:1rem ;
+	
+	
+}
+#biaodan input{
+	border: none;
+	border: 1px solid #ddd;
+	height: 2rem;
+	border-radius:5px ;
+	padding-left: 15px;
+}
+#biaodan .queding{
+	padding-left: 0;
+}
+.one,.two,.three,.four,.five,.sex{
+	width: 100%;
+	height: 2rem;
+	margin-bottom: 1.5rem;
+	position: relative;
+}
+.phonenum,.yanzheng,.jiaoyan,.pass,.repass,.queding{
+	width: 100%;
+	height: 100%;
+	
+}
+.phonenum,.pass,.repass{
+	width: 12rem;
+}
+.mess1,.mess2,.mess3,.mess4,.mess5{
+	position: absolute;
+	left: 0;
+	top: 2.4rem;
+	display: none;
+	font-family:"微软雅黑";
+	color: #007AFF;
+	letter-spacing: 3px;
+}
+.one{
+	margin-top: 1.5rem;
+}
+.yanshu{
+	width: 4.6rem;
+	float: left;
+	
+}
+.yansheng{
+	
+	margin-left: 2px;
+	float: left;
+	width: 5.5rem;
+	height: 100%;
+	border: 1px solid #DE4943;
+	border-radius: 5px;
+}
+.yanbtn{
+	width: 2rem;
+	height: 100%;
+	float: right;
+	font-size: 0.6rem;
+	line-height: 2rem;
+	text-align: center;
+}
+.jiaoshu{
+	float: left;
+	width: 6rem;
+	height: 100%;
+}
+.jiaobtn{
+	float: right;
+	width: 4.5rem;
+	height: 2rem;
+	opacity: 1;
+}
+.jiaobtn img{
+	float: right;
+	width: 100%;
+	height:2rem;
+}
+#biaodan .phonenum {
+	padding-left: 1.4rem;
+	background: url(../img/bg1.jpg) no-repeat;
+	background-position: 0.6rem 0.6rem;
+	
+}
+#biaodan .pass{
+	padding-left: 1.7rem;
+	background: url(../img/bg2.jpg) no-repeat;
+	background-position: 0.6rem 0.5rem;
+	
+}
+#biaodan .repass{
+	padding-left: 1.7rem;
+	background: url(../img/bg2.jpg) no-repeat;
+	background-position: 0.6rem 0.5rem;
+	
+}
+#biaodan .queding{
+	height: 1.7rem;
+	background: url(../img/btn2.jpg) no-repeat;
+	background-size: 100% 100%;
+	opacity: 1;
+}
+.yansheng{
+	font-size: 1.7rem;
+	text-align: center;
+	line-height: 2rem;
+}
+/*.queding{
+	margin-top: 2rem;
+	margin-bottom:0;
+}*/
+#box1{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:#000;
+	opacity: 0.5;
+	z-index: 1;
+	
+}
+ .qingk1{
+ 	display: none;
+ 	z-index: 2;
+	opacity: 1;
+	width: 60%;
+	height: 30%;
+	border: 3px solid #0ff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left:-30%;
+	margin-top: -35%;
+	border-radius: 15%;
+	background: #fff;
+	position: absolute;
+}
+ .qingk1 .conn{
+	
+	font-family: "微软雅黑";
+	margin: 2rem auto;
+	color: #007AFF;
+	width: 80%;
+	height: 15%;
+	text-align: center;
+	padding-top: 5%;
+	letter-spacing: 2px;
+	border: 2px dashed #0ff;
+	font-size: 0.6rem;
+	border-radius:5% ;
+}
+.qingk1 #btn1{
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	height: 20%;
+	background: #ff0;
+	color: #00f;
+	letter-spacing: 5px;
+	border-radius: 10%;
+}
+#box2{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:#000;
+	opacity: 0.5;
+	z-index: 1;
+	
+}
+ .qingk2{
+ 	display: none;
+ 	z-index: 2;
+	opacity: 1;
+	width: 60%;
+	height: 30%;
+	border: 3px solid #0ff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left:-30%;
+	margin-top: -35%;
+	border-radius: 15%;
+	background: #fff;
+	position: absolute;
+}
+ .qingk2 .conn2{
+	
+	font-family: "微软雅黑";
+	margin: 2rem auto;
+	color: #007AFF;
+	width: 80%;
+	height: 15%;
+	text-align: center;
+	padding-top: 5%;
+	letter-spacing: 2px;
+	border: 2px dashed #0ff;
+	font-size: 0.6rem;
+	border-radius:5% ;
+}
+.qingk2 #btn2{
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	height: 20%;
+	background: #ff0;
+	color: #00f;
+	letter-spacing: 5px;
+	border-radius: 10%;
+}
+#box3{
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background:#000;
+	opacity: 0.5;
+	z-index: 1;
+	
+}
+ .qingk3{
+ 	display: none;
+ 	z-index: 2;
+	opacity: 1;
+	width: 60%;
+	height: 30%;
+	border: 3px solid #0ff;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left:-30%;
+	margin-top: -35%;
+	border-radius: 15%;
+	background: #fff;
+	position: absolute;
+}
+ .qingk3 .conn3{
+	
+	font-family: "微软雅黑";
+	margin: 2rem auto;
+	color: #007AFF;
+	width: 80%;
+	height: 15%;
+	text-align: center;
+	padding-top: 5%;
+	letter-spacing: 2px;
+	border: 2px dashed #0ff;
+	font-size: 0.6rem;
+	border-radius:5% ;
+}
+.qingk3 #btn3{
+	display: block;
+	margin: 0 auto;
+	width: 30%;
+	height: 20%;
+	background: #ff0;
+	color: #00f;
+	letter-spacing: 5px;
+	border-radius: 10%;
+}
+
+
+
+
+
+
+
+
+
+

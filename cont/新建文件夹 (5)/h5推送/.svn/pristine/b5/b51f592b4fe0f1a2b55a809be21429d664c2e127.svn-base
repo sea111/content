@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正品控-推送</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript">
+			document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+			window.addEventListener("resize",function(){
+				document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+			},false);
+		</script>
+		<style>
+			body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+			body,html{
+				width: 100%;
+				height: 100%;
+			}
+			a{text-decoration: none;}
+			body{font-size: 0.3rem}
+			.top{width: 100%;height: 0.88rem;background: #333;color: white;font-size: 0.35rem;position: relative;z-index: 9}
+			.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/message-sprite.png) no-repeat ;background-size:3.84rem 0.64rem;position:absolute;}
+			#back{background-position:0rem 0rem;left:0.1rem;bottom:0.12rem;}
+			#share{background-position:-0.64rem 0rem;right:0.1rem;bottom:0.12rem;}
+			.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+			.banner{height:4rem;/*background: red;*/}
+			#poster{width:100%;height:100%}
+			.info_card{background: grey;box-sizing: border-box;padding-top:0.56rem;border-radius:0.2rem;width:91%;height:7.8rem;position:absolute;top:4.08rem;margin:0 auto;left:0;right:0;bottom:0;}
+			.items{position:relative;margin:0 auto;width:2.7rem;text-align: center;height:0.52rem;line-height: 0.52rem;;}
+			.l-quote{background-position:-3.2rem 0rem;left:0.1rem;bottom:0.12rem;}
+			.r-quote{background-position:-2.56rem 0rem;right:0.1rem;top:0.11rem;}
+			.items span{color:#333;font-size:0.34rem}
+			#detail{font-size:0.3rem}
+			.items strong{margin-bottom:0.12rem;width:0.6rem;border-bottom: 1px solid #333;height: 0;display: inline-block;}
+			.act_content{margin-top:0.4rem;padding:0 0.5rem;line-height: 0.42rem;margin-bottom:0.4rem}
+			.info_card p{font-size:0.3rem;height:0.64rem;line-height: 0.64rem;position:relative;margin-left:1rem}
+			.info_card p strong{font-weight: normal;}
+			.time{background-position:-1.28rem 0rem;left:-0.6rem;top:0rem;}
+			.place{background-position:-1.92rem 0rem;left:-0.6rem;top:0rem;}
+			.sure a{display: block;margin:0.5rem auto;width:1.9rem;height:0.72rem;text-align: center;line-height:0.72rem ;color:#fff;font-size:0.34rem;background:#f9b80f;border-radius:0.4rem;box-shadow: 0 0 40px #f9b80f;}
+		</style>
+	</head>
+	<body>
+		<div class="top">
+			<i class="bg-icon" id="back"></i>
+			<div></div>
+			<i class="bg-icon" id="share"></i>
+		</div>
+		<div class="banner">
+			<img src="" alt="" id="poster"/>
+		</div>
+		<div class="info_card">
+			<div class="act_title">
+				<div class="items">
+					<i class="bg-icon l-quote"></i>
+					<span>活动介绍</span>
+					<i class="bg-icon r-quote"></i>
+				</div>
+				<div class="items">
+					<strong></strong>
+					<span id="detail">DETAIL</span>
+					<strong></strong>
+				</div>
+			</div>
+			<div class="act_content">
+				通过使用微信JS-SDK，网页开发者可借助微信高效地使用拍照、选图、语音、
+				位置等手机系统的能力，同时可以直接使用微信分享、扫一扫、卡券、
+				支付等微信特有的能力，为微信用户提供更优质的网页体验。
+			</div>
+			<p class="act_time">
+				<i class="bg-icon time"></i><span>活动时间: </span><strong id="act_time">dd</strong>
+			</p>
+			<p class="act_place">
+				<i class="bg-icon place"></i><span>活动地点: </span><strong id="act_place">cc</strong>
+			</p>
+			<div class="sure">
+				<a href="javascript:;" id="alright">好的</a>
+			</div>
+		</div>
+		<script>
+
+			
+			function saveItem(){
+				$("act_time").innerHTML='xx';
+				$("act_time").innerHTML='xx';
+				$("poster").src="1.jpg"
+			}
+			saveItem()
+			function $(id){
+				return document.getElementById(id)
+			}
+			window.onload=function(){
+				wpCommon.viewShow();
+			}
+			
+			ajax({
+				url:,
+				type:'post',
+				data:{
+					
+				},
+				success:function(res){
+					if()
+					$("")
+				}
+				
+			})
+			function ajax(opt) {
+		        opt = opt || {};
+		        opt.method = opt.method.toUpperCase() || 'POST';
+	        	opt.url = opt.url || '';
+		       	opt.async = opt.async || true;
+		        opt.data = opt.data || null;
+		        opt.success = opt.success || function () {};
+		        var xmlHttp = null;
+		        if (XMLHttpRequest) {
+		            xmlHttp = new XMLHttpRequest();
+		        }
+		        else {
+		            xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
+		        }
+		        var params = [];
+	         	for (var key in opt.data){
+	            	params.push(key + '=' + opt.data[key]);
+	         	}
+	         	var postData = params.join('&');
+	         	if (opt.method.toUpperCase() === 'POST') {
+	            	xmlHttp.open(opt.method, opt.url, opt.async);
+	            	xmlHttp.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded;charset=utf-8');
+	            	xmlHttp.send(postData);
+	        	}
+	         	else if (opt.method.toUpperCase() === 'GET') {
+	            	xmlHttp.open(opt.method, opt.url + '?' + postData, opt.async);
+	            	xmlHttp.send(null);
+	        	} 
+		        xmlHttp.onreadystatechange = function () {
+		             if (xmlHttp.readyState == 4 && xmlHttp.status == 200) {
+		                 opt.success(xmlHttp.responseText);
+		            }
+		        };
+	     	}
+		</script>
+	</body>
+</html>

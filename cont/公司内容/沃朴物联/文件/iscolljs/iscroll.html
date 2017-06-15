@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/iscroll.js" ></script>
+		<script type="text/javascript" src="js/zepto.js" ></script>
+		<script type="text/javascript" src="js/rem.js" ></script>
+		<style>
+			*{padding:0;margin:0;}
+			html,body{
+				width:100%;
+				height:100%;
+				/*overflow:hidden;*/
+			}
+			
+			#box{
+				width:100%;
+				height:100%;
+				overflow:hidden;
+				position: relative;
+				
+			}
+			.list{
+				position: absolute;
+			}
+			dl{
+				/*width:100%;*/
+				height:250px;
+				
+			}
+			dl dt img{
+				display:block;
+				width:160px;
+				height:160px;
+			}
+			dl dd{
+				width:100%;
+				line-height:1rem;
+				font-size:20px;
+				color:#333;
+			}
+			.shuaxin{
+				width:100%;
+				height:20px;
+				color:#fff;
+				background:#000;
+				font-size:20px;
+				text-align: center;
+				position: absolute;
+				top:0;
+				left:0;
+				display:none;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div class="list">	
+			</div>
+			<div class="shuaxin">刷新</div>
+		</div>
+		<script>
+			var myscroll;
+			ajaxs()
+			function ajaxs(){
+				$.ajax({
+					url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+					dataType:"jsonp",
+					async:true,
+					data:{
+						classID:2
+					},
+					success:function(data){
+						var str="";
+						for(var i in data){
+							str+="<dl>"
+							str+='<dt><img src="'+data[i].goodsListImg+'"/></dt>'
+							str+="<dd>"+data[i].goodsName+"</dd>"
+							str+="</dl>"
+						}
+						$(".list").append(str)
+						scroll()
+					}
+				});
+			}
+			
+			function scroll(){
+			myscroll=new IScroll("#box",{})
+			}
+			$("#box").on("touchmove",function(){
+				//if(myscroll.y>50){
+//					$(".shuaxin").show()
+//					shuaxin()
+				//}
+//				if(myscroll.y<myscroll.maxScrollY-50){
+//					ajaxs()
+//				}
+			})
+
+//			$("#box").on("touchend",function(){
+//				if(myscroll.y>50){
+//					$(".shuaxin").hide()
+//					shuaxin()
+//				}
+//				
+//			})
+//			 function shuaxin(){
+//			 	console.log("执行刷新")
+//			 	myscroll.refresh()
+//			 }
+			         
+			         
+			         
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

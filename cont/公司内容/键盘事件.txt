@@ -1,0 +1,80 @@
+for (var i = 0, j = btns.length; i < j; i++) {  
+    btns[i].addEventListener('focus', function () { 
+       inp = this }, false)   
+ }   
+ window.onresize = function () {      
+      var inpPos = inp.getBoundingClientRect()     
+          if (inpPos.bottom > innerHeight) {inp.scrollIntoView()     
+       }   
+ }
+
+
+
+
+
+
+
+var inputTextBox = document.getElementById('input-text-box');
+setInterval(function(){
+  inputTextBox.scrollIntoView(false);
+},200)
+这个在https://developer.mozilla.org/zh-CN/docs/Web/API/Element/scrollIntoView#Browser_compatibility 中说还是个实验中的属性，
+但我现在加上这个属性后，感觉世界都美好了，大家快试试，现在还没有测出bug。
+有问题提出大家一起讨论
+
+作者：无知的狗
+链接：https://www.zhihu.com/question/32746176/answer/133676587
+来源：知乎
+著作权归作者所有。
+
+
+
+
+
+
+
+ <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.4.2.min.js"></script>
+<input type="text" id="txt" />
+<div id="dv"></div>
+<script>
+   var timer, windowInnerHeight;
+    function eventCheck(e) {
+        if (e) { //blur,focus事件触发的
+            $('#dv').html('android键盘' + (e.type == 'focus' ? '弹出' : '隐藏') + '--通过' + e.type + '事件');
+            if (e.type == 'click') {//如果是点击事件启动计时器监控是否点击了键盘上的隐藏键盘按钮，没有点击这个按钮的事件可用，keydown中也获取不到keyCode值
+                setTimeout(function () {//由于键盘弹出是有动画效果的，要获取完全弹出的窗口高度，使用了计时器
+                    windowInnerHeight = window.innerHeight;//获取弹出android软键盘后的窗口高度
+                    timer = setInterval(function () { eventCheck() }, 100);
+                }, 500);
+            }
+            else clearInterval(timer);
+        }
+        else { //计时器执行的，需要判断窗口可视高度，如果改变说明android键盘隐藏了
+            if (window.innerHeight > windowInnerHeight) {
+                clearInterval(timer);
+                $('#dv').html('android键盘隐藏--通过点击键盘隐藏按钮');
+            }
+        }
+    }
+    $('#txt').click(eventCheck).blur(eventCheck);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

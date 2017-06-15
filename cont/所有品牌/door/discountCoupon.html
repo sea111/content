@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>正品控-优惠券</title>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		},false);
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/common.css"/>
+	<link rel="stylesheet" href="css/discountCoupon.css" />
+	<body>
+		<div class="top">
+			<i class="bg-icon" id="back"></i>
+			<div>优惠券</div>
+		</div>
+		<div id="box">
+			<!--当前优惠券-->
+			<div id="discountContent" class="current dis_content" content="discountContent">
+				
+			</div>
+			<!--失效优惠券-->
+			<div id="undiscountContent" class="dis_content" content="undiscountContent">
+				
+			</div>
+			<div class="look"><span class="more" content="undiscountContent">查看更多</span>已使用/已过期返利券</div>
+		</div>
+		<div class="loading">
+			<div class="loadEffect"> 
+				<p></p>
+				<span>Loading</span> 
+			</div>
+			<div class="middle" style="display:none;"><img src="images/scan_net.png"/><p>网络异常，点击<a href="javascript:;" id="wpReload">重新加载</a></p></div>
+		</div>
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script src="lib/laytpl.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript" src="lib/wpCommon.js" ></script>
+	<script type="text/javascript" src="js/discountCoupon.js" ></script>
+	<script type="text/html" id="rebate_vouchers">
+		{{# for(var i=0;i<d.length;i++){ }}
+			{{# if(d[i].type==1){ }}
+				<div class="discountBox">
+			{{# }else{ }}
+				<div class="discountBox unactivity">
+			{{# } }}
+				<div class="cont">
+					<div class="left">
+						<span class="num"><i class="sign">￥</i>{{d[i].num}}</span>
+					</div>
+					<div class="introduce">
+						<p class="title">{{d[i].title}}</p>
+						<p class="intro">{{d[i].intro}}</p>
+						<p class="data">时间:<span class="data"> {{d[i].data}}</span></p>
+					</div>
+				</div>
+				{{# if(d[i].type==1){ }}
+					<div class="status">还有7天过期</div>
+				{{# }else if(d[i].type==0){ }}
+					<div class="status">该优惠券已使用</div>
+				{{# }else if(d[i].type==2){ }}
+					<div class="status">该优惠券已过期</div>
+				{{# } }} 
+			</div>
+		{{# } }}
+	</script>
+</html>

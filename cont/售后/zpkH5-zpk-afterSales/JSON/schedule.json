@@ -1,0 +1,36 @@
+{
+"data": {
+    "list": [
+	    {
+		    "workOrder":"XXXX20160217XXXX",
+		    "gmtTime":"2016-12-07 10: 51",
+		    "name":"集成灶11",
+		    "standard":"wl-09384",
+		    "status":"已完成",
+		    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474676486395-86bb5b868c654680b63650848acab3a5.png",
+		    "workOrder":"num1111111",
+			"serviceType ":"售后服务类型：1-安装服务，2-维修服务"
+	    },
+	    {
+		    "workOrder":"售后进度工单编号",
+		    "gmtTime":"服务时间",
+		    "name":"产品名称222",
+		    "standard":"型号",
+		    "status":"已评价",
+		    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474676486395-86bb5b868c654680b63650848acab3a5.png",
+		    "workOrder":"num2222222",
+			"serviceType ":"售后服务类型：1-安装服务，2-维修服务"
+	    },
+	    {
+		    "workOrder":"售后进度工单编号",
+		    "gmtTime":"服务时间",
+		    "name":"产品名称333",
+		    "standard":"型号",
+		    "status":"已完成",
+		    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474676486395-86bb5b868c654680b63650848acab3a5.png",
+		    "workOrder":"num3333333",
+			"serviceType ":"售后服务类型：1-安装服务，2-维修服务"
+	    }
+   ] },
+   "success": true
+}

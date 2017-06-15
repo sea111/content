@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>正品控-填写评价</title>
+	</head>
+	<link rel="stylesheet" href="css/evaluation.css" />
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		},false);
+	</script>
+	<body>
+		<div id="box">
+			<div class="top">
+				<i class="bg-icon back" id="back"></i>
+				<div>填写评价</div>
+			</div>
+			<div id="valuate-content">
+				<div class="valuate-list">
+					<div class="valuate-top">
+						<dl class="valuate-top-left">
+							<dt class="valuate-left"><img src=""/></dt>
+							<dd class="valuate-character">
+								<p class="valuate-name">康森医疗设备</p>
+								<p class="valuate-model">NPD-4BS 家庭经济型</p>
+							</dd>
+						</dl>
+					</div>
+					<div class="valuate-bottom">						
+						<div class="com work-number">工单编号：<span class="work">XXXX20160217XXXX</span></div>
+						<div class="com service-type">服务类型：<span class="type">安装</span></div>					
+					</div>
+				</div>
+				<div class="grade-box">
+					<span class="public grade">评分</span>
+					<span class="public star">
+						<img class="gray star-one" src="images/grayStar.png" index="1"/>
+						<img class="gray star-two" src="images/grayStar.png"/ index="2">
+						<img class="gray star-three" src="images/grayStar.png"/ index="3">
+						<img class="gray star-four" src="images/grayStar.png"/ index="4">
+						<img class="gray star-five" src="images/grayStar.png"/ index="5">
+					</span>
+					<span class="public satisfaction-level">不满意</span>					
+				</div>
+				<div class="feeling">
+					<div class="feel">感受</div>
+					<textarea class="feel-inp" type="text" placeholder="这次售后服务还令您满意吗？来叨叨几句吧..." ></textarea>
+					<span class="number">0/100</span>
+				</div>
+				<div class="photo-list">
+					<div class="photo-item"></div>
+					<div class="addPhoto"><form onsubmit="return filefileCountCheck(this)"><input type="file" id="choose-pic" multiple="multiple" maxlength="5" accept="image/png,image/jpg"></form></div>
+				</div>
+			</div>
+			<div class="submit">提交</div>
+			<canvas id="myCanvas"></canvas>
+		</div>
+		<script src="lib/jquery-2.1.0.min.js"></script>
+		<script type="text/javascript" src="js/evaluation.js"></script>
+	</body>
+</html>

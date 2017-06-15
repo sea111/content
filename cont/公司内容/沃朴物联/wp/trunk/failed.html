@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script src="lib/zepto.min.js" type="text/javascript" charset="utf-8"></script>
+	<script type="text/javascript">
+		document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+		},false);
+	</script>
+	<style type="text/css">
+		body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+		body,html{
+			width: 100%;
+			height: 100%;
+			position:absolute;
+		}
+		a{text-decoration: none;/*-webkit-tap-highlight-color:rgba(255,0,0,0);*/}
+		input{}
+		body{font-size: 0.3rem}
+		.top{width: 100%;height: 0.88rem;background: #333;color: white;font-size: 0.35rem;position: relative;}
+		.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/failed-sprite.png) no-repeat ;background-size:1.28rem 0.64rem;position:absolute;}
+		#back{background-position:0rem 0rem;left:0.1rem;top:0.12rem;}
+		.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 1rem;}
+		.result{width: 100%;height: 65%;text-align: center;position: relative;}
+		.middle{width:100%;position:absolute;height:6rem;;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto;}
+		.middle img{width: 2.1rem;margin:0 auto;margin-bottom:0.6rem;display:block;}
+		.middle .scan_delay{width: 2.54rem;margin-bottom: 0.4rem;}
+		.middle .verify_error{width: 2.3rem;}
+		.middle p{color: #999;}
+		.info_item{width: 100%;height: 1rem;margin-bottom: 0.6rem;}
+		#rescan{width: 4.7rem;height: 1rem;background:#cb9418 ;display: block;margin: 0 auto;text-align: center;color: white;border-radius: 10px;line-height: 1rem;font-size: 0.36rem;}
+		.search_item{width: 100%;height: 1rem; text-align: center}
+		.search_wrap{position:relative;width: 4.7rem;height: 1rem;margin: 0 auto;border-radius: 10px;border: 2px solid #e6e6e6}
+		label.bg-icon{background-position:-0.64rem 0rem;left:0.15rem;top:0.18rem;}
+		#search{-webkit-tap-highlight-color:rgba(255,0,0,0);width: 3.8rem;height: 1rem;color: #c6c7cc;border-radius: 10px;outline: none;border: 0;font-size: 0.3rem;color: #333;float:right}
+	</style>
+</head>
+<body>
+	<div class="top">
+		<span id="back" class="bg-icon"></span>
+		<div>验证有误</div>
+	</div>
+	<div class="result">
+		<div class="middle">
+			<img src="" alt="">
+			<p>很抱歉，没有找到您扫描的商品</p>
+		</div>
+	</div>
+	<div class="info_item">
+		<a href="javascript:;" id="rescan">再次扫描</a>
+	</div>
+	<div class="search_item">
+		<div class="search_wrap">
+			<label for="search" class="bg-icon"></label>
+			<input type="search" id="search" placeholder="请输入您要找的商品"/>
+		</div>
+	</div>
+	<script type="text/javascript">
+		$(function(){
+			result=[0,1,1,0]
+			if(result[2]){
+				//1.验证有误（标签未绑定产品或无种子）
+				$(".top div").html('验证有误');
+				$(".result img").attr("src",'images/vrf_wrong.png').addClass('verify_error');
+				$(".result p").html('很抱歉，没有找到您扫描的商品');
+			}else if(result[1]){
+				//2. 扫描超时
+				$(".top div").html('扫描超时');
+				$(".result img").attr("src",'images/scan_delay.png').addClass('scan_delay');
+				$(".result p").html('扫描超时，请重新扫描')
+			}else if(result[2]){
+				//3. 电子签验证码错误
+				$(".top div").html('扫描失败');
+				$(".result img").attr("src",'images/scan_failed.png').addClass('scan_failed')
+				$(".result p").html('扫描失败，是否在找')
+			}else {
+				//4. 网络问题
+				$(".top div").html('扫描失败');
+				$(".result img").attr("src",'images/scan_net.png').addClass('scan_error');
+				$(".result p").html('抱歉，网络受阻，请再次扫描');
+
+			}
+		})
+//		$(document).ready(function () {
+//			　$('body').height($('body')[0].clientHeight);
+//		});
+		
+		$(function(){
+			$("#rescan").click(function(e){
+//				WPBridge.callMethod("JsInvokeJavaScope",'',{},function(){})
+				point();
+				//调用原生
+				e.preventDefault()
+			})
+			$("#search").on("blur",function(){
+				if($(this).val()!=''){
+//					WPBridge.callMethod("JsInvokeJavaScope",'',{},function(){})					
+				}
+			})
+			$("#back").click(function(){
+				//WPBridge.callMethod('JsInvokeJavaScope',"",{},function(){})
+				window.history.back()
+			})
+		})
+		
+			function point(){
+				var date=new Date();
+				var	data={
+							"acPointLog": {
+						    "pointType": "0",
+						    "pointName": "xxx",
+						    "pointCode": "xxx",
+						    "pointStartTime": "xxx",
+						    "pointTime": "",
+						    "stayTime": "",
+						    "pointParam": "xxx",
+						    "pointOrder": "1"
+						     },
+						    "acDevicePositionInfo": {
+						        "districtCode": "xxx",
+						        "longitude": "xxx",
+						        "latitude": "xxx"
+						    },
+							"deviceUUID": "xxx",
+							"sessionId": "xxx"
+						}
+				var pointDatas=JSON.parse(localStorage.getItem("pointDatas"));
+				pointDatas.push(data)
+				localStorage.setItem("pointDatas",JSON.stringify(pointDatas))
+			}
+	</script>
+</body>
+</html>

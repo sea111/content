@@ -1,0 +1,373 @@
+/* reset */
+body,div,li,input,p,h1,h2,h3,h4,h5,p,dl,dd,ul,ol,img,input{ margin:0; padding:0; }
+em,i{ font-style:normal; }
+ul,ol,dl{list-style:none;}
+img { border:none; vertical-align:top; }
+table { border-collapse:collapse; }
+input,textarea { outline:none;}
+textarea { resize:none; overflow:auto; }
+body { font-size:12px; font-family:"微软雅黑"}
+a { text-decoration:none;color:#5d5d5d; }
+a:hover{text-decoration:underline;color:#f60;}
+html,body{
+	width:100%;
+}
+/*============================head==================================*/
+#box{
+	width:100%;
+}
+#head{
+	width:100%;
+	height:2rem;
+	background:#de4943;
+	position:fixed;
+}
+#head .lef img{
+	float:left;
+	display:block;
+	height:2rem;
+	width:1.5rem;
+	position:absolute;
+	left:10px;
+	top:0;
+}
+.pin{
+	float:left;
+	width:11rem;
+	background:#de4943;
+	color:#fff;
+	line-height:2rem;
+	font-size:0.8rem;
+	text-align:center;
+	margin-left:14%;
+}
+#head .rig{
+	float:left;
+	display:block;
+	height:2rem;
+	width:1rem;
+	background:url(../img/headIcon.png) -156px -6px no-repeat;
+	position:absolute;
+	right:10px;
+	top:12px;
+}
+/*=====================================nav===============================*/
+#nav1{
+	width:100%;
+	height:2.25rem;
+	background:#efefef;
+	display: none;
+	position:fixed;
+	top:2rem;
+}
+.nav{
+	width:100%;
+	height:2.75rem;
+}
+#nav1 .nav li .i1{
+	margin-left:32%;
+	margin-top:8%;
+	width:1.3rem;
+	height:1rem;
+	display:block;
+	background:url(../img/headIcon.png) no-repeat -3px -5px;
+}
+#nav1 .nav li .i2{
+	margin-left:32%;
+	margin-top:8%;
+	width:1.3rem;
+	height:1rem;
+	display:block;
+	background:url(../img/headIcon.png) no-repeat -37px -5px;
+}
+#nav1 .nav li .i3{
+	margin-left:32%;
+	margin-top:8%;
+	width:1.25rem;
+	height:1rem;
+	display:block;
+	background:url(../img/headIcon.png) no-repeat -72px -5px;
+}
+#nav1 .nav li .i4{
+	margin-left:32%;
+	margin-top:8%;
+	width:1.3rem;
+	height:1rem;
+	display:block;
+	background:url(../img/headIcon.png) no-repeat -113px -5px;
+}
+#nav1 .nav li{
+	width:25%;
+	float:left;
+	color:#848d96;
+	text-align: center;
+}
+/*==================================banner===============================*/
+.banner{
+	padding-top:2rem;
+}
+.banner img{
+	display: block;
+	width:100%;
+	height:100%;
+}
+/*===================================content=====================================*/
+#content{
+	width:100%;
+	overflow:hidden;
+	background:#eee;
+	padding-top:1rem;
+}
+#content .top{
+	width:100%;
+}
+#content .top img{
+	display:block;
+	width:100%;
+	height:2rem;
+}
+#content .more{
+	width:100%;
+	overflow: hidden;
+}
+#content .more dl{
+	width:48%;
+	float:left;
+	padding-top:0.6rem;
+	padding-left:4px;
+	background:#eee;
+
+}
+#content .more dl dt img{
+	display: block;
+	width:100%;
+	height:100%;
+}
+#content .more dl dd{
+	background:#fff;
+}
+#content .more dl dd p{
+	color:#000;
+	font-size:0.6rem;
+	height:1rem;
+	padding-top:1rem;
+	text-align: center;
+}
+#content .more dl .dd1{
+	overflow:hidden;
+	width:100%;
+	padding-top:1rem;
+	background:#fff;
+}
+#content .more dl .dd1 span{
+	float:left;
+	font-size:12px;
+	color:#ff0000;
+	padding-right:7px;
+}
+#content .more dl .dd1 em{
+	float:left;
+	text-decoration:line-through;
+	display:block;
+	color:#7a7a8e;
+	font-size:12px;
+}
+#content .more dl .dd1 a{
+	display:block;
+	background:#ff0000;
+	color:#fff;
+	text-align:center;
+	line-height:150%;
+	width:35%;
+	float:right;
+	margin-right:10px;
+	border-radius:5px;
+}
+.hot{
+	width:100%;
+	background:#eee;
+}
+.hot img{
+	display:block;
+	width:100%;
+	height:2rem;
+	padding-top:5%;
+}
+#content .hotM{
+	width:100%;
+	overflow: hidden;
+}
+#content .hotM dl dd{
+	background:#fff;
+}
+#content .hotM dl{
+	width:48%;
+	height:100%;
+	float:left;
+	padding-top:0.6rem;
+	padding-left:4px;
+	background:#eee;
+
+}
+#content .hotM dl dt img{
+	display: block;
+	width:100%;
+	height:100%;
+}
+#content .hotM dl dd p{
+	color:#000;
+	font-size:0.6rem;
+	height:1rem;
+	padding-top:1rem;
+	text-align: center;
+	background:#fff;
+}
+#content .hotM dl .dd1{
+	width:100%;
+	padding-top:1rem;
+	overflow: hidden;
+	background:#fff;
+}
+#content .hotM dl .dd1 span{
+	float:left;
+	font-size:12px;
+	color:#ff0000;
+	padding-right:7px;
+}
+#content .hotM dl .dd1 em{
+	float:left;
+	text-decoration:line-through;
+	display:block;
+	color:#7a7a8e;
+	font-size:12px;
+}
+#content .hotM dl .dd1 a{
+	display:block;
+	background:#ff0000;
+	color:#fff;
+	text-align:center;
+	line-height:150%;
+	width:35%;
+	float:right;
+	margin-right:10px;
+	border-radius:5px;
+}
+.discont{
+	width:100%;
+	background:#eee;
+}
+.discont img{
+	display:block;
+	width:100%;
+	height:2rem;
+	padding-top:5%;
+}
+#content .discontM{
+	width:100%;
+	overflow: hidden;
+}
+#content .discontM dl dd{
+	background:#fff;
+}
+#content .discontM dl{
+	width:48%;
+	float:left;
+	padding-top:0.6rem;
+	padding-left:4px;
+	background:#eee;
+
+}
+#content .discontM dl dt img{
+	display: block;
+	width:100%;
+	height:100%;
+}
+#content .discontM dl dd p{
+	color:#000;
+	font-size:0.6rem;
+	height:1rem;
+	padding-top:1rem;
+	text-align: center;
+}
+#content .discontM dl .dd1{
+	width:100%;
+	padding-top:1rem;
+	overflow: hidden;
+	background:#fff;
+}
+#content .discontM dl .dd1 span{
+	float:left;
+	font-size:12px;
+	color:#ff0000;
+	padding-right:7px;
+}
+#content .discontM dl .dd1 em{
+	float:left;
+	text-decoration:line-through;
+	display:block;
+	color:#7a7a8e;
+	font-size:12px;
+}
+#content .discontM dl .dd1 a{
+	display:block;
+	background:#ff0000;
+	color:#fff;
+	text-align:center;
+	line-height:150%;
+	width:35%;
+	float:right;
+	margin-right:10px;
+	border-radius:5px;
+}
+/*=================================footer=====================================*/
+#footer{
+	width:100%;
+	height:5.7rem;
+	background: #eee;
+	padding-top:12%;
+}
+#footer .he{
+	width:20%;
+	height:15%;
+	background: #fff;
+	border-radius:50%;
+	border:3px solid #ff2753;
+	margin:0 auto;
+	padding-top:15%;
+}
+#footer .jian{
+	width:100%;
+	height:0.4rem;
+	display:block;
+	margin-top: -56%;
+    margin-left: 39%;
+}
+#footer .return{
+	width:2.5rem;
+	height:1.5rem;
+	color:#280130;
+	font-size:12px;
+	line-height:16px;
+	margin-left: 32%;
+	margin-top: 4%;
+	display:block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

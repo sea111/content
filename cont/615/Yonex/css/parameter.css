@@ -1,0 +1,366 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,
+cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,
+dt,dd,ol,ul,li,fieldset,form,input,select,textarea,label,legend,article,aside,canvas,details,embed,
+figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline
+}
+table,caption,tbody,tfoot,thead,tr,th,td {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline
+}
+ol,ul {
+	list-style: none
+}
+a {
+	text-decoration: none
+}
+img {
+	vertical-align: top
+}
+input,select,textarea {
+	margin: 0;
+	padding: 0;
+	font-size: 100%;
+	font: inherit;
+	-webkit-tap-highlight-color: transparent;
+	tap-highlight-color: transparent;
+	outline: 0;
+	box-shadow: none
+}
+html {
+	word-wrap: break-word;
+	word-break: break-all;
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%
+}
+html {
+	background-color: #ededed;
+	/*font: 16px/1 "PingFang SC", Helvetica,SimSun;*/
+	font: 16px/1 Helvetica,SimSun;
+	color: #444
+}
+@font-face {
+	font-family: "iconfont";
+	src: url("//s.autoimg.cn/mass/v2/font/iconfont-v20170406.eot");
+	src: url("//s.autoimg.cn/mass/v2/font/iconfont-v20170406.eot?#iefix") format("embedded-opentype"), url("//s.autoimg.cn/mass/v2/font/iconfont-v20170406.woff") format("woff"), url("//s.autoimg.cn/mass/v2/font/iconfont-v20170406.ttf") format("truetype"), url("//s.autoimg.cn/mass/v2/font/iconfont-v20170406.svg#iconfont") format("svg")
+}
+/*----------头部-------*/
+.top {
+	position: relative;
+	height: 2.5rem;
+	line-height: 1;
+	background-color: #333
+}
+.bg-icon{
+	width:2rem;
+	height:2rem;
+	display:block;
+	background:url(../images/back-icon.png) no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	top:0.3rem;
+	left:0.1rem;
+}
+.top .back:visited {
+	color: #fffffe
+}
+.top .download:visited{
+	color: #fffffe
+}
+.top div {
+	margin: 0 5rem;
+	padding: 0.625rem 0;
+	font-size: 1.25rem;
+	color: #fff;
+	text-align: center
+}
+/*----------参数对比-------*/
+.parameter-detail {
+	position: relative;
+	min-height: calc(100vh - 130px);
+	border: solid #d7d7d7;
+	border-width: 1px 0;
+	overflow: hidden;
+	border-bottom:none;
+}
+.parameter-detail .detail {
+	display: table;
+	width: 100%;
+	background-color: #fff
+}
+.parameter-detail .detail .group {
+	width: 6rem
+}
+.parameter-detail .detail .group h4 {
+	position: relative;
+	z-index: 1;
+	width: 100vw;
+	padding: 9px 0;
+	font-size: 0.75rem;
+	color: #666;
+	background-color: #f0f0f0;
+	pointer-events: none
+}
+.parameter-detail .detail .group h4::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-top: solid #d7d7d7 1px
+}
+.parameter-detail .detail .group h4::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-bottom: solid #d7d7d7 1px
+}
+.parameter-detail .detail .group h4 strong {
+	margin-left: 0.5rem
+}
+.parameter-detail .detail .group h4 .markup {
+	position: absolute;
+	top: 0.5625rem;
+	right: 0.5rem;
+	font-size: 0
+}
+.parameter-detail .detail .group h4 .markup em {
+	font-size: 0.75rem;
+	margin-left: 0.5rem
+}
+.parameter-detail .detail .group h4 .markup .iconcss {
+	margin-right: 0.25rem
+}
+.parameter-detail .detail .group h4 .markup em:nth-child(1) .iconcss {
+	display: inline-block;
+	height: 0.375rem;
+	padding: 0.125rem;
+	vertical-align: top;
+	border: solid #666 1px;
+	border-radius: 50%
+}
+.parameter-detail .detail .group h4 .markup em:nth-child(1) .iconcss::before {
+	content: "";
+	display: inline-block;
+	width: 0.375rem;
+	height: 0.375rem;
+	vertical-align: top;
+	background-color: #666;
+	border-radius: 50%
+}
+.parameter-detail .detail .group h4 .markup em:nth-child(2) .iconcss {
+	display: inline-block;
+	height: 0.375rem;
+	padding: 0.125rem;
+	vertical-align: top;
+	border: solid #666 1px;
+	border-radius: 50%
+}
+.parameter-detail .detail .group h4 .markup em:nth-child(2) .iconcss::before {
+	content: "";
+	display: inline-block;
+	width: 0.25rem;
+	height: 0.25rem;
+	vertical-align: top;
+	border: solid #666 1px;
+	border-radius: 50%
+}
+.parameter-detail .detail .group h4 .markup em:nth-child(3) .iconcss {
+	display: inline-block;
+	width: 0.25rem;
+	height: 1px;
+	margin-top: 0.3125rem;
+	vertical-align: top;
+	background-color: #666
+}
+.parameter-detail .detail .group .item {
+	display: table;
+	width: 100%
+}
+.parameter-detail .detail .group .item .inner {
+	display: table-cell;
+	height: 3rem;
+	/*padding: 0 0.25rem;*/
+	font-size: 0.75rem;
+	color: #666;
+	line-height: 1.3;
+	text-align: center;
+	vertical-align: middle;
+	white-space: normal;
+	border-top: solid #d7d7d7 1px
+}
+.parameter-detail .detail .group .item .inner:empty {
+	background-color: transparent !important;
+	border-bottom: 0
+}
+.parameter-detail .detail .group .item .inner.highlight {
+	background-color: #e5edf9
+}
+.parameter-detail .detail .group .item strong {
+	color: #f43531
+}
+.parameter-detail .detail .group .item a {
+	color: #2f75bb
+}
+.parameter-detail .detail .group .item .enquire {
+	display: inline-block;
+	width: 3.75rem;
+	margin-top: 0.375rem;
+	padding: 0.125rem 0;
+	color: #fff;
+	line-height: 1;
+	text-align: center;
+	background-color: #2f75bb;
+	border-radius: 0.125rem
+}
+.parameter-detail .detail .left {
+	display: table-cell;
+	width: 6rem;
+	border-right: solid #d7d7d7 1px;
+	border-bottom: 1px solid #d7d7d7;
+}
+.parameter-detail .detail .left .group:first-child h4 {
+	display: none
+}
+.parameter-detail .detail .left .group:first-child .item-floorprice .inner {
+	height: 4.375rem
+}
+.parameter-detail .detail .left .group .item .inner {
+	background-color: transparent !important
+}
+.parameter-detail .detail .main {
+	position: relative;
+	display: table-cell;
+	overflow: hidden
+}
+.parameter-detail .detail .main .slide {
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	font-size: 0;
+	white-space: nowrap
+}
+.parameter-detail .detail .main .data {
+	position: relative;
+	height: 100%
+}
+.parameter-detail .detail .main .group {
+	width: auto
+}
+.parameter-detail .detail .main .group .item {
+	width: auto;
+	table-layout: fixed
+}
+.parameter-detail .detail .main .group .item:first-child {
+	margin-top: 1.875rem
+}
+.parameter-detail .detail .main .group .item .inner {
+	width: 5.9375rem;
+	color: #444;
+	border-right: solid #d7d7d7 1px
+}
+.parameter-detail .detail .main .group:first-child .item:first-child {
+	margin-top: 0
+}
+.parameter-detail .detail .main .group:first-child .item-floorprice .inner {
+	height: 4.375rem
+}
+.parameter-detail.solo .detail .main .slide,
+.parameter-detail.solo .detail .main .data,
+.parameter-detail.solo .detail .main .group .item {
+	width: 100%
+}
+.parameter-detail.solo .detail .main .slide .inner,
+.parameter-detail.solo .detail .main .data .inner,
+.parameter-detail.solo .detail .main .group .item .inner {
+	border-right: 0
+}
+.parameter-detail.picture .compare .main .column {
+	width: 9.375rem
+}
+.parameter-detail.picture .detail .main .slide {
+	position: relative
+}
+.parameter-detail.picture .detail .main h4 {
+	position: relative;
+	z-index: 1;
+	width: 100vw;
+	margin-bottom: -1.875rem;
+	padding: 9px 0;
+	font-size: 0.75rem;
+	color: #666;
+	background-color: #f0f0f0;
+	pointer-events: none
+}
+.parameter-detail.picture .detail .main h4:first-child {
+	display: none
+}
+.parameter-detail.picture .detail .main h4:first-child+.group .item {
+	margin-top: 0
+}
+.parameter-detail.picture .detail .main h4::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-top: solid #d7d7d7 1px
+}
+.parameter-detail.picture .detail .main h4::after {
+	content: "";
+	position: absolute;
+	bottom: -1px;
+	left: 0;
+	width: 100%;
+	height: 0;
+	border-bottom: solid #d7d7d7 1px
+}
+.parameter-detail.picture .detail .main h4 strong {
+	margin-left: 0.5rem
+}
+.parameter-detail.picture .detail .main .group {
+	overflow: hidden
+}
+.parameter-detail.picture .detail .main .group .item .inner {
+	width: 8.75rem;
+	padding: 0.3125rem;
+	border-top: 0;
+	vertical-align: top
+}
+.parameter-detail.picture .detail .main .group .item .inner img {
+	width: 8.75rem;
+	height: 6.5625rem
+}
+.parameter-detail.picture .detail .main .group .item .inner small {
+	display: block;
+	width: 8.75rem;
+	height: 0.75rem;
+	margin-top: 0.625rem;
+	font-size: 0.75rem;
+	color: #888;
+	line-height: 1;
+	vertical-align: top;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden
+}
+.parameter-detail.picture .detail .main .group .item:first-child .inner {
+	padding-top: 0.625rem
+}
+.parameter-detail.picture .detail .main .group .item:last-child .inner {
+	padding-bottom: 0.625rem
+}

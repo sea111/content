@@ -1,0 +1,279 @@
+body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img,label{margin:0;padding:0;}
+li{list-style: none;}
+a{text-decoration:none;}
+b,strong{font-weight:normal;}
+i,em{font-style:normal;}
+body{
+	font-size:0.3rem;
+}
+#box{
+	width:100%;
+	height:100%;
+}
+.top{
+	width:100%;
+	height:0.88rem;
+	background:#333;
+	color:white;
+	font-size:0.35rem;
+	position:fixed;
+	top:0;
+	left:0;
+	z-index:3;
+}
+.top div{
+	width:100%;
+	height:0.88rem;
+	line-height:0.88rem;
+	text-align:center;
+}
+.bg-icon{
+	width:0.64rem;
+	height:0.64rem;
+	display:block;
+	background:url(../images/back-icon.png) no-repeat;
+	background-size:100% 100%;
+	position:absolute;
+	top:0.1rem;
+	left:0.1rem;
+}
+.back{
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+}
+.application-schedule{
+	width:100%;
+	height:0.89rem;
+	line-height:0.89rem;
+	background:#fff;
+	font-size:0.3rem;
+	text-align:center;
+	margin-top:0.88rem;
+}
+.common{
+	float:left;	
+	height:0.84rem;
+	width:50%;	
+}
+.after-application{
+	color:#fff;
+	background:#d6a41d;
+	border-bottom:1px solid #d6a41d;
+}
+.aftermarket-schedule{
+	color:#343434;
+	border-bottom:1px solid #ccc;
+}
+/*===============售后申请===================*/
+#application-content{
+	width:100%;
+	margin:0 auto;
+}
+.application-list{
+	height:1.8rem;
+	margin-top:0.16rem;
+	border-top:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+	display:none;
+}
+.application{
+	float:left;
+    width:75%;
+}
+.application-left{
+	width:1.4rem;
+	height:1.4rem;
+	border:1px solid #ccc;
+	border-radius:4px;
+	float:left;
+	margin-left:0.2rem;
+	margin-top:0.2rem;
+	font-size:1rem;
+	text-align:center;
+	vertical-align:middle;
+	background:#fff;
+}
+.application-left img.icon-url{
+	display:inline-block;
+	max-width:100%;
+	max-height:100%;
+	vertical-align:middle;	
+}
+.character{
+	float:left;
+	margin-left:0.2rem;
+	margin-top:0.2rem;
+}
+.title{
+	font-size:0.32rem;
+	color:#333;
+	margin-top:0.2rem;
+}
+.model{
+	font-size:0.26rem;
+	color:#ccc;
+	margin-top:0.3rem;
+}
+.application-right{
+	float:left;
+	width:25%;
+	height:100%;
+	cursor:pointer;
+}
+.schedule-top{
+	margin-left:0.2rem;
+}
+.line{
+	display:inline-block;
+	float:left;
+	height:50%;
+	border-right:1px solid #ccc;
+	margin-top:0.45rem;
+}
+.telephone{
+	display:inline-block;
+	float:left;
+	background:url(../images/sale-telephone.png) no-repeat;
+	background-size:100% 100%;
+	width:0.4rem;
+	height:0.38rem;
+	/*width:1rem;
+	height:100%;*/
+	text-align:center;
+	margin:0.7rem 0 0 0.7rem;
+	cursor:pointer;
+	-webkit-tap-highlight-color:rgba(255,0,0,0);
+	-webkit-appearance:none;
+}
+/*===============售后进度===================*/
+#schedule-content{
+	width:100%;
+	margin:0 auto;
+	display:none;
+}
+.schedule-list{
+	overflow: hidden;
+	margin-top:0.16rem;
+	box-shadow: 0 0 10px #ccc;
+	display:none;
+}
+.same{
+	height:1.4rem;
+	border-bottom:1px solid #ccc;
+}
+.schedule-title{
+	width:80%;
+	float:left;
+}
+.com{
+	margin:0.2rem 0 0 0.2rem;
+	color:#666;
+}
+.finish{
+	width:15%;
+	float:left;
+	color:#333;
+	margin-top:0.2rem;
+}
+.schedule-bottom{
+	height:1.4rem;
+}
+.schedule-bottom-left{
+	height:1.4rem;
+	width:60%;
+	float:left;
+}
+.schedule-left{
+	width:1rem;
+	height:1rem;
+	border:1px solid #ccc;
+	border-radius:4px;
+	float:left;
+	margin-left:0.2rem;
+	margin-top:0.2rem;
+	font-size:0.7rem;
+	text-align:center;
+	vertical-align:middle;
+	background:#fff;
+}
+.schedule-left img.icon-url{
+	display:inline-block;
+	max-width:100%;
+	max-height:100%;
+	vertical-align:middle;	
+}
+.schedule-character{
+	float:left;
+	margin-left:0.2rem;
+	margin-top:0.2rem;
+}
+.schedule-name{
+	font-size:0.32rem;
+	color:#333;
+}
+.schedule-model{
+	font-size:0.26rem;
+	color:#ccc;
+	margin-top:0.2rem;
+}
+.schedule-bottom-right{
+	float:left;
+	width:40%;
+	position:relative;
+	cursor:pointer;
+}
+.public{
+	float:left;
+	border-radius:0.4rem;
+	background:#ffdc1e;
+	font-size:0.26rem;
+	height:0.5rem;
+	line-height:0.5rem;
+	text-align:center;
+	color:#f1a406;
+	padding:0 0.2rem;
+	margin-top:0.6rem;
+}
+.evaluate{
+	position:absolute;
+    top:0rem;
+    left:0rem;
+    cursor:pointer;
+}
+.see-details{
+	margin-left:0.2rem;
+	position:absolute;
+    top:0rem;
+    left:1.2rem;
+    cursor:pointer;
+}
+
+/*===============异常===================*/
+.loading{
+	width:100%;
+	position:absolute;
+	height:100%;
+	z-index:99;
+	left:0;
+	top:0.88rem;
+	display:none;
+}
+.loading .middle{
+	width:100%;
+	position:absolute;
+	height:6rem;
+	text-align:center;
+	left:0;
+	top:0;
+	bottom:0;
+	right:0;
+	margin:auto;
+}
+.middle img{
+	width:2.1rem;
+	margin:0 auto;
+	margin-bottom:0.3rem;
+	display:block;
+}
+#wpReload{
+	color:#0AA1F8;
+}

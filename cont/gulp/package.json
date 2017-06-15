@@ -1,0 +1,19 @@
+{
+  	"name": "gulp_handle",
+  	"version": "0.0.1",
+  	"description": "gulp",
+  	"main": "gulpfile.js",
+  	"author": "",
+  	"license": "ISC",
+  	"devDependencies":{
+  		"gulp":"*",
+  		"gulp-htmlmin":"*",
+  		"gulp-less":"*",
+  		"gulp-imagemin":"*",
+  		"gulp-uglify":"*",
+  		"gulp-concat":"*",
+  		"gulp-autoprefixer":"*",
+  		"gulp-livereload":"*",
+      "gulp-minify-css":"*"
+  	}
+}

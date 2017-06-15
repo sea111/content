@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<script type="text/javascript" src="js/iscroll.js" ></script>
+		<script type="text/javascript" src="js/zepto.js" ></script>
+		<script type="text/javascript" src="js/rem.js" ></script>
+		<style>
+			*{padding:0;margin:0;}
+			html,body{
+				width:100%;
+				height:100%;
+			}
+			#box{
+				width:100%;
+				display:-webkit-box;
+				-webkit-box-orient: vertical;
+				height:100%;
+				
+			}
+			#wrapper{
+				height:100%;
+				overflow: hidden;
+				-webkit-box-flex: 1;
+				position:relative;
+			}
+			img{
+				width:70%;
+				height:200px;
+				overflow:hidden;
+			}
+			.list{
+				position:absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="wrapper">
+				<div class="list">
+				<!--<div>
+						<div>图片加载</div>
+						<div>name</div>
+					</div>-->
+				</div>
+			</div>
+		</div>
+		<script>
+		var myscroll; 
+			ajaxs()
+		function scrolls(){
+			myscroll=new IScroll("#wrapper",{})
+		}
+		scrolls()
+		function ajaxs(){
+			$.ajax({
+				url:"http://datainfo.duapp.com/shopdata/getGoods.php",
+				dataType:"jsonp",
+				data:{
+					classID:1
+				},
+				success:function(data){
+					//console.log(data)
+					$.each(data,function(index){
+						var odiv=$("<div></div>")
+						var odivpic=$("<div>图片加载</div>")
+						var pic=$("<img src='"+data[index].goodsListImg+"'/>")
+						var name=$("<div>"+data[index].goodsName+"</div>")
+						var jiage=$("<div>"+data[index].price+"</div>")
+						odiv.append(odivpic)
+						odiv.append(name)
+						odiv.append(jiage)
+						
+						pic.on("load",function(){
+							odivpic.html(pic)
+							myscroll.refresh()
+						})
+						$(".list").append(odiv)
+					})
+				}
+			})
+		}
+			
+//			$("#wrapper").on("touchend",function(){
+//				if(myscroll.y>50){
+//					myscroll.refresh()
+//					
+//				}
+//				console.log(myscroll.maxScrollY)
+//				if(myscroll.y<myscroll.maxScrollY-50){
+//					ajaxs()
+//				}
+//			})
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,89 @@
+/*
+*浏览器样式重置
+*/
+
+html, body, div, span, object,
+h1, h2, h3, h4, p, em, img, i, s, ul, li,
+form, label, article, aside, canvas,
+footer, header,  menu, nav, section,
+time, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration: none;
+}
+
+body {
+    line-height:1;
+}
+
+:focus {
+    outline:none ;
+}
+
+article,aside,canvas,details,figcaption,figure,
+footer,header,menu,nav,section,summary {
+    display:block;
+}
+
+li {
+     list-style:none;
+ }
+
+a {
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+hr {
+    display:block;
+    height:1px;
+    border:0;
+    border-top:1px solid #cccccc;
+    margin:1em 0;
+    padding:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+.fr{
+    float: right;
+}
+
+.fl{
+    float: left;
+}
+.clearfix:after{
+    content:".";
+    display:block;
+    height:0;
+    clear:both;
+    visibility:hidden
+}
+.clearfix{
+    *+height:1%;
+}
+.hide{
+    display: none;
+}
+.show{
+    display: block;
+}
+.hidden {
+    overflow: hidden;
+}

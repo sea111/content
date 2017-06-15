@@ -1,0 +1,81 @@
+http://doc.wpwl-inc.com/pages/viewpage.action?pageId=11829624 //文档
+
+
+
+方案：采用https://github.com/coderifous/jquery-localize/ 一个本地化插件 
+http://laytpl.layui.com/ 不用字符串拼接的模块
+https://github.com/aui/artTemplate
+http://blog.csdn.net/smartsmile2012/article/details/18005107 封装函数
+http://www.cnblogs.com/pifoo/archive/2011/05/28/webkit-webapp.html移动端内容
+http://www.cnblogs.com/liulinjie/p/5663015.html  兼容
+
+
+input框问题///https://www.zhihu.com/question/32746176
+////////移动web页面，input获取焦点弹出系统虚拟键盘时，挡住input
+for (var i = 0, j = btns.length; i < j; i++) {      btns[i].addEventListener('focus', function () {        inp = this      }, false)    }    window.onresize = function () {      var inpPos = inp.getBoundingClientRect()      if (inpPos.bottom > innerHeight) {        inp.scrollIntoView()      }    }
+
+
+作者：taoeer
+链接：https://www.zhihu.com/question/32746176/answer/135060991
+来源：知乎
+著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+
+手机点击输入框时，当键盘弹起，界面上弹，键盘收起，界面下来
+http://blog.csdn.net/u012480620/article/details/52228754
+var wHeight = window.innerHeight;   //获取初始可视窗口高度  
+window.addEventListener('resize', function(){       //监测窗口大小的变化事件  
+    var hh = window.innerHeight;     //当前可视窗口高度  
+    ar viewTop = $(window).scrollTop();   //可视窗口高度顶部距离网页顶部的距离  
+    if(wHeight > hh){           //可以作为虚拟键盘弹出事件  
+        $(".content").animate({scrollTop:viewTop+100});    //调整可视页面的位置  
+    }else{         //可以作为虚拟键盘关闭事件  
+        $("content").animate({scrollTop:viewTop-100});  
+    }  
+    wHeight = hh;  
+});  
+
+
+http://blog.csdn.net/smile_watermelon?viewmode=contents左滑删除
+
+http://ask.dcloud.net.cn/question/183网络判断
+
+http://www.cnblogs.com/Uncle-Keith/p/5792485.html js函数
+
+http://blog.csdn.net/sheng6110/article/details/52679241?locationNum=8&fps=1//前端h5遇到的问题
+http://blog.csdn.net/u012377333/article/details/52326158?locationNum=13&fps=1
+
+http://www.cnblogs.com/binmengxue/p/6113878.html//前端资料。css js 
+
+http://www.cnblogs.com/zhengjialux/archive/2017/01/16/6291394.html web前端资料集
+
+http://www.cnblogs.com/leejersey/p/3666161.html前端
+
+http://www.cnblogs.com/TomXu/archive/2011/12/15/2288411.html  js教程
+
+http://younglibin.iteye.com/blog/466763//全选
+
+http://www.cnblogs.com/kongxianghai/p/5568893.html 行星运动
+
+http://www.cnblogs.com/jesse007/p/5644110.html   移动端 事件委托解决方法
+
+
+//判断是苹果手机
+if (/(iPhone|iPad|iPod|iOS)/i.test(navigator.userAgent)) {
+    //alert(navigator.userAgent);  
+    window.location.href ="iPhone.html";
+} else if (/(Android)/i.test(navigator.userAgent)) {
+    //alert(navigator.userAgent); 
+    window.location.href ="Android.html";
+} else {
+    window.location.href ="pc.html";
+};
+
+http://www.cnblogs.com/tylerdonet/p/5543813.html//js的知识
+
+
+
+
+
+
+
+

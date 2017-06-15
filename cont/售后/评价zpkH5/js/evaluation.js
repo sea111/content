@@ -1,0 +1,241 @@
+$(function(){
+	WPBridge.callMethod("JsInvokeNative", "wpShowLoadingDialog", {},function() {});	
+	window.aesFail = "";
+	var crop;
+	var base64picUrl = "";
+	var canvas=document.getElementById('myCanvas');
+	var context=canvas.getContext('2d');
+	var base64DataArray=[];
+	var serviceDetail=JSON.parse(localStorage.getItem('serviceDetail'));
+	var workOrder=serviceDetail.workOrder;	
+	var contents;
+	var stars;
+	//加密
+	$.ajax({
+		type:"post",
+		url:wpCommon.Url+"/wpwl/getKey",
+		async:true,
+		success:function(datas){
+			key=datas.data;
+			localStorage.setItem('key',datas.data)
+			getDatas(key);
+		}
+	});
+	$('.valuate-left img').attr('src',serviceDetail.iconURL);
+	$(".valuate-name").html(serviceDetail.name).siblings('.schedule-model').html(serviceDetail.standard);
+	$(".work").html(serviceDetail.workOrder).siblings('.type').html(serviceDetail)
+	$(".gray").click(function(){
+		localStorage.setItem('stars',stars)
+		var $ele=$(".gray")
+		var num=$(this).attr('index');
+		var satisfy=$(".satisfaction-level");
+		for(var i=0;i<num;i++){
+			$ele.eq(i).attr('src','images/lightStar.png')
+		}
+		for(var j=num;j<5;j++){
+			$ele.eq(j).attr('src','images/grayStar.png')
+		
+		}
+		switch(Number(num)){
+			case 1:satisfy.html('很不满意');break;
+			case 2:satisfy.html('不满意');break;
+			case 3:satisfy.html('满意');break;
+			case 4:
+				satisfy.html('比较满意');
+			break;
+			case 5:satisfy.html('非常满意');break;
+		}
+	})
+	
+	$("#choose-pic").one("click", function () {
+		var imgEle=document.createElement('img');
+//		crop=null;
+//      crop = new Crop({ fileId: "fileGet", canvasId: "myCanvas" });
+//		imgEle.src=crop.getPicture();
+		$(".photo-item").append(imgEle);
+		
+//      $(".img_tips").append('<canvas id="myCanvas" width="740" height="394" style="border:1px dashed #d3d3d3;display: none"></canvas>')
+        //$('#file_get').click();
+   });
+    $("#choose-pic").on('change',function(){
+    	$('.mask').show();
+			var files = event.target.files,
+		        file;
+		        console.log(typeof files)
+		    if (files && files.length > 0) {
+		        file = files;
+		    }
+		    if(file.length>5){
+//		    	alert("2")
+		    }
+		    for(var i=0;i<file.length;i++){
+		    	var fileReader = new FileReader();
+		    	fileReader.readAsDataURL(file[i])
+				fileReader.onload = function (event) {
+					console.log(event.target.result)
+					var ele="<div><img src="+event.target.result+"></div>"
+				    $('.photo-item').append(ele);
+				    picTimer=setInterval(function(){
+				    	if(event.target.result){
+				    		clearInterval(picTimer);
+				    		$(canvas).show()
+				    		var base64Data=canvas.toDataURL('image/jpeg');
+				    		$(canvas).hide();
+				    		base64Data=base64Data.split('data:image/jpeg;base64,')[1];
+				    		base64DataArray.push(base64Data);
+				    		$('.mask').hide();
+				    	}
+				    },30)
+				};
+		    }
+		    
+//			addForm();
+//			img++;
+    })
+	//点击文本域
+	var regRule = /\uD83C[\uDF00-\uDFFF]|\uD83D[\uDC00-\uDE4F]/g;
+	var pattern = new RegExp("[`~!@#$^&*()=|{}':;',\\[\\].<>/?~！@#￥……&*（）|{}【】‘；：”“'。，、？]");
+	$(".feel-inp").blur(function(){
+		var feelText=$(".feel-inp").val()
+		if(regRule.test(feelText) || pattern.test(feelText)){
+	    	WPBridge.callMethod("JsInvokeNative", "wpShowToast", {
+				message: "不支持表情及特殊字符，提交失败。"
+			}, "")
+	    }
+	})
+	$(".feel-inp").click(function(){
+		localStorage.setItem('contents',contents)	
+	})
+	function getDatas(key){
+		WPBridge.callMethod("JsInvokeNative","wpEncrypt",{
+				key:key,
+				params:[workOrder,contents,stars]
+		},function(msg){
+			codeValue=msg.data.result;    	
+	    	$.ajax({
+	    		type:"post",
+	    		url:wpCommon.Url+"wpwl/asevaluation/evaluation",
+	    		async:true,
+	    		timeout:10000,
+	    		data:{
+	    			workOrder:codeValue[0],
+					contents:codeValue[1],
+					stars:codeValue[2]
+	    		},
+	    		success:function(res){
+	    			if(res.errMsg == "AES加密解密失败") {
+	    				if(!aesFail){		    				
+							$.ajax({
+								type:"post",
+								url:wpCommon.Url+"/wpwl/getKey",
+								async:true,
+								success:function(datas){
+									key=datas.data;
+									localStorage.setItem('key',datas.data)
+									getDatas(key)
+								}
+							});
+							aesFail=true;
+						}
+					}else if(res.success==false){
+						$("#valuate-content").hide();
+						$(".submit").hide();
+						$("#myCanvas").hide();
+						$(".loading").show();
+						$(".middle img").attr('src',"images/error_else.png");
+						$(".middle p").html("出错了，请稍后再试");
+						$(".top div").html("异常页面");
+						wpCommon.viewShow();
+					}else{
+						wpCommon.viewShow();
+					}
+	    		},
+	    		error:function(jqXHR, textStatus, errorThrown){
+	    			if(textStatus=="timeout"){
+						$("#valuate-content").hide();
+						$(".submit").hide();
+						$("#myCanvas").hide();
+						$(".loading").show();
+						$(".top div").html("网络异常")
+					}
+					wpCommon.viewShow();
+	    		}
+	    	});
+    	});
+	}
+	getDatas(key);
+	//返回键
+	$("#back").click(function(){
+		WPBridge.callMethod('JsInvokeNative','wpH5Back',{},'');
+	})
+    //点击提交
+   	$(".submit").click(function(){
+		window.stars=localStorage.getItem("stars")	
+		window.contents=localStorage.getItem("contents");
+		getDatas(key)
+    	WPBridge.callMethod("JsInvokeNative", "wpHitDotEvent", {
+	        eventId:"h5_e094",
+	        otherId:""
+	   	},
+	    function() {});
+	   	window.location.href="afterSaleDetail.html";
+
+    })
+   	//点击重新加载
+	$("#wpReload").click(function(){
+		getDatas(key);
+	})
+	//点击图片放大
+	function addMaskImg(data,imgIndex){
+	 	var html = template("test", data);
+		$("#box").append(html);
+		var transDis = -document.documentElement.clientWidth * (imgIndex);
+		$(".swiper-mask .swiper-wrapper").css("transform", "translate3d(" + transDis + "px, 0px, 0px)");
+		refreshMaskBig();
+	}
+	$(document).click(function(e){
+		if(e.target.tagName=='I'){
+			var index=$('.swiper-mask img').attr('index');
+			$(".photo-item div").eq(index-1).remove();
+		}
+	})
+   	$(document).on('click','.photo-item img',function(){
+   		var data={
+   			imgUrl:[this.src]
+   		}
+	 	addMaskImg(data,0)
+	})
+   	function refreshMaskBig() {
+		new Swiper(".swiper-mask", {
+			zoom: true,
+			onClick: function(e) {
+				$(".swiper-mask").remove();
+			},
+			onSlideChangeEnd: function(swiper) {
+				$(".swiper-mask img").each(function() {
+					var $t = $(this);
+					if($t.css("transform") != "none") {
+						$t.css("transition-duration", 0)
+					}
+				})
+			}
+		})
+	}
+	
+	
+	
+})
+	 function fileCountCheck(objForm){
+	 	if (window.File && window.FileList) {
+	   		var fileCount = objForm["mulUp[]"].files.length;
+		   	if(fileCount > 2){
+		    	window.alert('文件数不能超过10个，你选择了' + fileCount + '个');
+		   	}
+		   	else {
+		    window.alert('符合规定');
+		   	}
+		}else {
+		   window.alert('抱歉，你的浏览器不支持FileAPI，请升级浏览器！');
+		 }
+	  return false;
+	 }

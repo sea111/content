@@ -1,0 +1,72 @@
+<!--<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p class="intro">即日起，分享该活动给好友，好友前往门店消费后，你即可获得活动返利！</p>
+	</body>
+	<script>
+		var intro=document.getElementsByClassName("intro")[0];
+		var	str=intro.innerHTML;
+			artical=str.substr(0,20);
+			console.log(artical);
+			intro.innerHTML=artical;
+			console.log(intro.innerHTML)
+			
+	</script>
+</html>-->
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p id="tel">15812345678</p>
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script type="text/javascript">
+//	    var tel = document.getElementById('tel'),
+//	    telVal = tel.innerText;
+//	    var newTelVal = '';
+//	    if(telVal.length > 0){
+//	        for(var i = 0; i < telVal.length; i++){
+//	            if(i < 3 || i >= telVal.length-3){
+//	                newTelVal += telVal[i];
+//	            }else{
+//	                newTelVal += '*';
+//	            }
+//	        }
+//	    }
+//	    tel.innerText = newTelVal;
+		var Tel=$("#tel").text();
+		console.log(Tel)
+		var newTel="";
+		if(Tel.length>0){
+	
+			for(var i=0;i<Tel.length;i++){
+				if(i<3 || i>=Tel.length-4){
+					console.log(Tel.length-4)
+					newTel+=Tel[i];
+					console.log(newTel);
+				}else{
+					newTel+='*'
+					console.log(newTel)
+				}
+			}
+		}
+		$("#tel").text(newTel);
+		console.log($("#tel").text(newTel))
+
+		var a={
+			A:1
+		}
+		var b=a;
+		b.B=2;
+		console.log(a)
+	
+		
+	</script>
+</html>

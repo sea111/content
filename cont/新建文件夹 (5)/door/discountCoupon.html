@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<title>正品控-优惠券</title>
+	</head>
+	<script>
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		window.addEventListener("resize",function(){
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		},false);
+	</script>
+	<link rel="stylesheet" href="css/discountCoupon.css" />
+	<body>
+		<div id="box">
+			<div class="top">
+				<a href="javascript:;" class="bgIcon back"></a>
+				<div class="head">优惠券</div>
+			</div>
+			<div id="discountContent">
+				<div class="discountBox">
+					<div class="cont">
+						<div class="left">
+							<span class="num"><i class="sign">￥</i>20</span>
+						</div>
+						<div class="line"></div>
+						<div class="introduce">
+							<p class="title">优惠券</p>
+							<p class="intro">购买指定产品即可指定产品即可可指定产品即可</p>
+							<p class="data">时间:<span class="data"> 2017.3-2017.4</span></p>
+						</div>
+					</div>
+					<div class="status">还有7天过期</div>
+				</div>	
+				<div class="discountBox">
+					<div class="cont">
+						<div class="left">
+							<span class="num"><i class="sign">￥</i>20</span>
+						</div>
+						<div class="line"></div>
+						<div class="introduce">
+							<p class="title">优惠券</p>
+							<p class="intro">购买指定产品即可使用</p>
+							<p class="data">时间:<span class="data"> 2017.3-2017.4</span></p>
+						</div>
+					</div>
+					<div class="status">还有7天过期</div>
+				</div>
+				<div class="look"><span class="more">查看更多</span>已使用/已过期优惠券</div>
+			</div>
+			<div id="outDiscountContent">
+				<div class="outDiscountBox">
+					<div class="outcont">
+						<div class="outleft">
+							<span class="num"><i class="sign">￥</i>20</span>
+						</div>
+						<div class="line"></div>
+						<div class="outintroduce">
+							<p class="title">优惠券</p>
+							<p class="outIntro">购买指定产品即可使用</p>
+							<p class="outData">时间:<span class="data"> 2017.3-2017.4</span></p>
+						</div>
+					</div>
+					<div class="status">该券已使用</div>
+				</div>	
+				<div class="outDiscountBox">
+					<div class="outcont">
+						<div class="outleft">
+							<span class="num"><i class="sign">￥</i>20</span>
+						</div>
+						<div class="line"></div>
+						<div class="outintroduce">
+							<p class="title">优惠券</p>
+							<p class="outIntro">购买指定产品即可使用</p>
+							<p class="outData">时间:<span class="data"> 2017.3-2017.4</span></p>
+						</div>
+					</div>
+					<div class="status">该券已过期</div>
+				</div>
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+	<script type="text/javascript" src="lib/iscroll-probe.js" ></script>
+	<script type="text/javascript" src="lib/iscroll.js" ></script>
+	<script type="text/javascript" src="lib/wpCommon.js" ></script>
+	<script type="text/javascript" src="js/discountCoupon.js" ></script>
+	<script>
+ 		(function(){
+			var count=Math.ceil($('.discountBox').width()/19);
+			$('.discountBox').width(19*count);
+		})()	
+		(function(){
+			var count=Math.ceil($('.outDiscountBox').width()/19);
+			$('.outDiscountBox').width(19*count);
+		})()
+	</script>
+</html>
+

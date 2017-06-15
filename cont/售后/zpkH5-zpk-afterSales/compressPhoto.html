@@ -1,0 +1,239 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+</head>
+<script>
+	document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+	window.addEventListener("resize",function(){
+		document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+	},false);
+</script>
+<style>
+	body{
+		margin: 0;
+	}
+	.progress{
+		width: 100%;
+		height: 5px;
+		background: #ccc;
+		margin-bottom: 10px;
+	}
+	.progress_bar{
+		width: 0px;
+		height: 5px;
+		background: #0099ff;
+	}
+	.unshow{
+		display: none;
+	}
+	#getCamera{
+	}
+	form{
+		font-size:0.5rem
+	}
+	.preview{
+		display: none;
+		width: 100%;
+	}
+	.getImage{
+		display: none;
+	}
+	.mask{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		top: 0;
+		left: 0;
+		display: none;
+		z-index: 10;
+		background: rgba(0,0,0,0.5);
+	}
+	.mask img{
+		width: 1.5rem;
+		height: 1.3rem;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		margin-left: -0.75rem;
+		margin-top: -0.65rem;
+	}
+</style>
+<body>
+	<div class="progress unshow">
+		<div class="progress_bar"></div>
+	</div>
+	<div class="mask">
+		<img src="img/loading2.gif" alt="">
+	</div>
+	<input type="button" id="chooseImage" value="拍摄照片">
+	<input type="button" id="uploadbtn" value="上传图片">
+	<form method="post" target="targetFrame" action="/upload/uploadImg" enctype="multipart/form-data" class="uploadFile">
+		<input type="file" name="file" value="" class="getImage">
+	</form>
+	<canvas id="canvas"></canvas>
+</body>
+<script src="https://cdn.bootcss.com/jquery/2.1.0/jquery.min.js"></script>
+<script src="libs/jquery.form.min.js"></script>
+<script>  
+	$(function(){
+		var progressTimer=null;
+		var n=0;
+		var img=0;
+		var imgView=0;
+		var success=false;
+		var $progress=$('.progress');
+		var $progress_bar=$('.progress_bar');
+		var progressWidth=$progress.width();
+		var canvas=document.getElementById('canvas');
+		var context=canvas.getContext('2d');
+		var base64DataArray=[];
+		var checkProgress=0;
+		alert('请从多个角度拍摄整个标签，建议拍摄5张，然后点击上传照片进行验伪');
+		//进度条
+		function progress(){
+			$progress.removeClass('unshow');
+			progressTimer=setInterval(function(){
+				if(n<=90){
+					n+=0.9;
+				}else if(n<=98 && n>90){
+					n+=0.1
+				}else{
+					n+=0;
+				}
+				if(success){
+					n=100;
+					clearInterval(progressTimer);
+					$progress.addClass('unshow');
+			     	n=0;
+			     	success=false
+				}
+				$progress_bar.width(progressWidth*n/100);
+			},100)
+		}
+		//调用摄像机
+		$('#chooseImage').on('click',function(){
+			$('.getImage').eq(img).click();
+		})
+		//新增表单
+		function addForm(){
+			var html='<form method="post" target="targetFrame" action="/upload/uploadImg" enctype="multipart/form-data" class="uploadFile">';
+			html+='<input type="file" capture="camera" accept="image/*" name="file" value="" class="getImage">';
+			html+='</form>';
+			$('body').append(html);
+		}
+		var picTimer=null;
+		//展现图片
+		$('body').on('change','.getImage',function(event){
+			$('.mask').show();
+			var files = event.target.files,
+		        file;
+		    if (files && files.length > 0) {
+		        file = files[0];
+		    }
+		    console.log(files)
+		    var fileReader = new FileReader();
+		    fileReader.readAsDataURL(file)
+			fileReader.onload = function (event) {
+			    var newImage=new Image();
+			    newImage.src=event.target.result;
+			    $('body').append(newImage);
+			    picTimer=setInterval(function(){
+			    	var imgH=$(newImage).height();
+			    	if(imgH){
+			    		clearInterval(picTimer);
+			    		$(canvas).show()
+			    		var imgW=$(newImage).width();
+			    		canvas.width=imgW/2;
+			    		canvas.height=imgH/2;
+			    		context.drawImage(newImage,0,0,canvas.width,canvas.height);
+			    		$(newImage).width('100%');
+			    		var base64Data=canvas.toDataURL('image/jpeg');
+			    		$(canvas).hide();
+			    		base64Data=base64Data.split('data:image/jpeg;base64,')[1];
+			    		base64DataArray.push(base64Data);
+			    		$('.mask').hide();
+			    	}
+			    },30)
+			};
+//			addForm();
+			img++;
+		})
+		// 上传成功函数
+		function ajaxSuccess(number,len,res){
+			if(res.success){
+				location.href=res.targetUrl;
+			}else{
+				if(number===(len-1)){
+					success=true;
+					$progress.addClass('unshow');
+					n=0;
+					if(Math.floor(res.processRatio)>=checkProgress){
+						checkProgress=res.processRatio
+					}
+					if(checkProgress==0){
+						alert('您拍摄的照片不能通过验伪，请从不同角度拍摄整个标签，建议拍摄5张');
+					}else{
+						alert('验伪完成'+checkProgress+'%，请继续从多个角度拍摄整个标签完成验伪');
+					}
+					base64DataArray.length=0;
+					addForm()
+					n=0;
+					img=0;
+				}else{
+					number++;
+					uploadImage(number);
+				}
+			}
+		}
+		function uploadImage(num){
+			var len=base64DataArray.length;
+			if(len==0){
+				alert('请从多个角度拍摄整个标签，建议拍摄5张');
+			}else{
+				if(num<len){
+					$.ajax({  
+					 	url: 'upload/uploadImgBase641',  
+					 	type: 'POST',  
+					 	data: {
+					 		image:base64DataArray[num]
+					 	},
+					 	beforeSend:function(){
+					 		if($progress.hasClass('unshow')){
+					 			$progress.removeClass('unshow');
+								progress();
+					 		}
+					 	}, 
+					 	success: function (res) {
+					 		alert(JSON.stringify(res));
+					 		ajaxSuccess(num,len,res)
+					 	},  
+					 	error: function (XMLHttpRequest, textStatus, errorThrown) {  
+					 	    alert('上传失败');
+					 	    alert(textStatus)
+					 	    $progress.addClass('unshow');
+					 	    var newArray=[];
+					 	    for(var i=0;i<len;i++){
+					 	    	if(i>=num){
+					 	    		newArray.push(base64DataArray[i])
+					 	    	}
+					 	    }
+					 	    alert(newArray.length);
+					 	    base64DataArray=newArray;
+					 	    n=0;
+					 	    img=0;
+					 	    success=false;
+					 	}
+					});
+				}
+			}
+		}
+		//上传
+		$('#uploadbtn').on('click',function(){
+			uploadImage(0)
+		})
+	})
+</script>
+</html>

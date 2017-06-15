@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>扫描结果</title>
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+	<script>
+		if(document.documentElement.clientWidth>760){
+			document.documentElement.style.fontSize=54+"px";
+		}else{
+			document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+		}
+		window.addEventListener("resize",function(){
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+		},false);
+	</script>
+	<style type="text/css">
+		body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+		a{
+			text-decoration:none;
+		}
+		@media screen and (min-width:767px){
+			#wrap{width:10rem;margin: 0 auto;position:relative;height:100%}
+			#footer{width:10rem;}
+			#goods_info .goods_img{width:25%;}
+			#goods_info .goods_word{width:75%}
+			.goods_word #wt_details{right:0.4rem}
+		}
+		@media screen and (max-width:767px){
+			#wrap{width: 100%;height:100%}
+			#footer{width:100%}
+		}
+		body,html{
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+		.top{width: 100%;height: 0.88rem;background:#333;color: white;font-size: 0.35rem;position: relative;}
+		.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/success-sprite.png) no-repeat ;background-size:1.92rem 0.64rem;position:absolute;}
+		#back{background-position:-0.64rem 0;left:0.1rem;top:0.12rem;}
+		#personal{right: 0.2rem;top: 0.12rem;background-position:0rem 0;}
+		.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+		.brand{width: 100%;height: 49%;font-size: 0.25rem;position: relative;}
+		.brand-bg{width:5.58rem;height:1.1rem;margin:0 auto;position:absolute;left:50%;margin-left:-2.75rem;top:1.51rem;background:url("images/fireworks.png") no-repeat 0rem 0rem;background-size:5.58rem 1.1rem;}
+		#brand_logo{height: 60%;position:relative}
+		.imgWrap{width:2.36rem;height: 2.36rem;position:absolute;border-radius:50%;left:0;top:0;right:0;bottom:0;margin:auto;overflow: hidden;}
+		#brand_logo img{width:100%;height:100%}
+		.brand .brand-info{position: absolute;bottom: 1.3rem;width: 100%;height: }
+		#brand_name{font-size: 0.38rem;color: #333}
+		#product_name{font-size: 0.34rem;color: #666}
+		.brand p{text-align: center;margin-top: 0.2rem;}
+		.brand #product_name{color: #606060}
+		#result{width: 100%;height: 1rem;background: green;text-align: center;line-height: 0.5rem;font-size:0.15rem;}
+		#goods_info{width: 100%;height: 2.2rem;font-size:0.15rem;}
+		.goods_outer{width: 100%;height: 100%;display: flex;background: green;}
+		.goods_img{width: 2.1rem;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;height: 100%;float:left}
+		.goods_img .img-border{width: 100%;height: 100%;border-radius: 3px;border:1px solid #d3d3d3;}
+		.goods_word{width: 5.4rem;position: relative;float:left;}
+		h3.goods_name{color: #daaf39;font-size: 0.32rem;height:0.5rem;line-height: 0.5rem;margin-top:0.3rem;padding-left:0.35rem;font-weight:normal;}
+		#goods_detail{margin-top:0.20rem;margin-bottom:0.2rem;display: block;font-size: 0.3rem;color:#333}
+		.goods_name .bg-icon{left:-0.2rem;background-position:-1.28rem 0;top:0.21rem;}
+		#footer{font-size: 0.15rem;position: absolute;bottom: 0.3rem;width: 100%;color: #666;font-size: 0.26rem;}
+		#footer p{text-align: center;margin-bottom: 0.22rem;}
+		#footer span{text-align: center;width: 100%;display: block;color: #6f6f6f}
+		strong.goods_name{color:#daaf39;font-weight:normal;}
+		#wt_details{width: 1.82rem;height: 0.69rem;background: #fdd100;color: white;border-radius: 0.4rem;display: block;position: absolute;right: 0.2rem;top: 0.76rem;text-align: center;line-height: 0.69rem;font-size: 0.28rem;}
+		#time{display: block;color: #666;font-size: 0.26rem;}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div class="top">
+			<i id="back" class="bg-icon"></i>
+			<div>扫描结果</div>
+			<i id="personal" class="bg-icon"></i>
+		</div>
+		<div class="brand">
+			<div id="brand_logo">
+				<div class="imgWrap"><img src="http://image.wpwl.org/uploadfile/1/20161207/new/1481096754639-f680a57c3ce64ec6853b180b47a424d0.jpg" alt=""></div>
+				<div class="brand-bg"></div>
+			</div>
+			<div class="brand-info">
+				<p id="brand_name">SANFER 帅丰</p>
+				<p id="product_name">帅丰集成灶</p>
+			</div>
+		</div>
+		<!-- <div id="result">恭喜你 你的宝贝是正品</div> -->
+		<div id="goods_info">
+			<dl class="goods_outer">
+				<dt class="goods_img">
+					<p class="img-border"><img src=""></p>
+				</dt>
+				<dd class="goods_word">
+					<h3 class="goods_name"><i class="bg-icon"></i><span>沃朴产品演示</span></h3>
+					<span id="goods_detail">演示产品02 W0000040000</span>
+					<b id="time">2016-04-01</b>
+					<a href="javascript:;" id="wt_details">查看详情</a>
+				</dd> 
+			</dl>
+		</div>
+		<input type="file" />
+		<div id="footer">
+			<p>正品数据来源于<strong class="goods_name">接口</strong></p>
+			<span>中国防伪行业协会成员理事单位--正品控 提供支持</span>
+		</div>
+	</div>
+	<script src="lib/WPBridge.js"></script>
+	<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+	<!--<script type="text/javascript" src="lib/aes.js"></script>
+	<script type="text/javascript" src="lib/mode-ecb.js"></script>
+  	<script type="text/javascript" src="lib/base64  16.js"></script>-->
+	<script type="text/javascript">
+		
+		var wpwlResult={
+			saveItem:function(data){
+				localStorage.setItem("data",JSON.stringify(data))
+			}
+		}
+		//存打点数据到本地
+		localStorage.setItem("pointDatas",JSON.stringify([]));
+//		$.ajax({
+//			url:"JSON/productInfo.json",
+//			success:function(res){
+//				var productDetails=res[0].data;
+//				console.log(productDetails)
+//				localStorage.setItem('productDetails',JSON.stringify(productDetails))
+//			}
+//		})
+
+		$.ajax({
+			url:'http://127.0.0.1/wpwl/product/productInfo',
+			type:"post",
+			data:{
+				productId:'525'
+			},
+			success:function(res){
+				var productDetails=res;
+				console.log(productDetails)
+				localStorage.setItem('productDetails',JSON.stringify(productDetails))
+			}
+		})
+		$("#wt_details").click(function(){
+//			window.location.href="http://wpwl12.duapp.com/index.html"
+			localStorage.setItem("H5",true);
+			alert(5);
+			window.location.href="details.html";
+//			pushPoint()
+		})
+		var date=new Date();
+
+		//native交互
+		$(function(){
+			$("#personal").click(function(){
+				//调用Native跳转到个人中心
+//				pushPoint();
+//				WPBridge.callMethod("JsInvokeNative",'',{},function(){})
+				window.location.href="failed.html";
+				
+			})
+			$("#back").click(function(){
+				
+				//返回到native扫描页面
+				WPBridge.callMethod("JsInvokeNative","backMethod",{},function(){})
+//				pushPoint()
+			})
+		})	
+			function pushPoint(){
+				var datas={
+							"acPointLog": {
+						    "pointType": "0",
+						    "pointName": "xxx",
+						    "pointCode": "xxx",
+						    "pointStartTime": "xxx",
+						    "pointTime": "",
+						    "stayTime": "xxx",
+						    "pointParam": "xxx",
+						    "pointOrder": "xxx"
+						     },
+						    "acDevicePositionInfo": {
+						        "districtCode": "xxx",
+						        "longitude": "xxx",
+						        "latitude": "xxx"
+						    },
+							"deviceUUID": "xxx",
+							"sessionId": "xxx"
+					}
+				var pointDatas=JSON.parse(localStorage.getItem("pointDatas"));
+				pointDatas.push(datas)
+				localStorage.setItem("pointDatas",JSON.stringify(pointDatas))
+			}
+//			function Encrypt(word,pwd){  
+//		         var key = CryptoJS.enc.Utf8.parse(pwd);   
+//		  		console.log(key)
+//		         var srcs = CryptoJS.enc.Utf8.parse(word);  
+//		         var encrypted = CryptoJS.AES.encrypt(srcs, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});  
+//		         return encrypted.toString();  
+//		    }  
+//		    function Decrypt(word){  
+//		         var key = CryptoJS.enc.Utf8.parse("abcdefgabcdefg12");   
+//		  
+//		         var decrypt = CryptoJS.AES.decrypt(word, key, {mode:CryptoJS.mode.ECB,padding: CryptoJS.pad.Pkcs7});  
+//		         return CryptoJS.enc.Utf8.stringify(decrypt).toString();  
+//		    }  
+			$(function(){
+//				pwd=doDecode('VZ0pIjDyDf1TQc7FcppsNZNozQtOGcNSyO7i4U5DD18=');
+//				var beforeBase=doDecode('2zYZfFM9WN2YGGaVHwgnpQ==');
+//				var beforeAes=Decrypt(beforeBase)
+//				console.log(beforeAes)
+//		        var b=new Base64();
+//				$.ajax({
+//					url:'http://192.168.199.182/wpwl/getKey',
+//					success:function(res){
+//						dd=res.data;
+//						pwd=doDecode(dd);
+////						console.log(pwd)
+//						aesResult=Encrypt('520');
+//						console.log(aesResult)
+//						str=doEncode(aesResult)
+//						console.log(str)
+//						$.ajax({
+//							url:'http://192.168.199.182/wpwl/product/productInfo',
+//							type:'post',
+//							data:{
+//								productId:str
+//							},
+//							success:function(data){
+//								console.log(data)	
+//							}
+//						})
+//					}
+//				})
+			})
+				
+//				$.ajax({
+//					url:'http://127.0.0.1/wpwl/getKey',
+//					success:function(res){
+//						pwd=res.data;
+//						$.ajax({
+//							url:"http://127.0.0.1/wpwl/test/aes/aesEncodeTest",
+//							data:{
+//								TestStr:"525",
+//								key:pwd
+//							},
+//							success:function(res){
+//								console.log(res)
+//							}
+//						})
+//					}
+//					
+//				})
+		
+	</script>
+</body>
+</html>

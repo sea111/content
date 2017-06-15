@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	    <meta charset="utf-8" />
+	    <title>for循环遍历设置所有DIV块元素背景色为红色</title>
+	</head>
+    <style>
+        #outer{           /*外部DIV容器，内含3个子DIV*/
+            width:330px;
+            height:100px;
+            margin:10px auto;  /*左右置中*/
+        }
+
+        #outer div{
+            float:left;    /*左浮动，水平排列*/
+            width:100px;
+            height:100px;
+            margin:0 5px;
+            background:black;  /*默认背景色为黑色*/
+        }
+
+    </style>
+	<body>
+	    <!--<center><button>点击将DIV变成红色</button></center>  <!--center元素已经废弃-->
+	   <!-- <div id="outer">   一个div包含3个子div
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </div>-->
+	    <ul id="ul">
+	    	
+	    </ul>
+	   <button class="btn"></button>
+	</body>
+	<script>
+		var oUl=document.getElementById("ul");
+		var oBtn=document.getElementByClassName("btn")[0]
+		var arr = ['red','yellow','blue','green'];
+		var num = 0;
+		oBtn.onclick=function(){
+		for(i=0;i<10;i++){
+			if(num==4){
+				num=0;
+			}
+			oUl.innerHTML += "<li>"+i+"</li>"
+			oUl.getElementsByTagName("li")[i].style.background=arr[num];
+			num++;
+		}		
+		//      window.onload = function () {
+		//          var oDiv = document.getElementById("outer").getElementsByTagName("div"); //链式调用，获取outer中的所有div元素
+		//          var oBtn = document.getElementsByTagName("button")[0];//获取按钮引用
+		//          oBtn.onclick = function () {   //给按钮注册事件处理程序
+		//              for (var i = 0; i < oDiv.length; i++) { //循环遍历，设置div元素的style属性的background值为red.
+		//                  oDiv[i].style.background = "red";
+		//              }
+		//          }
+		//      }
+	</script>
+</html>

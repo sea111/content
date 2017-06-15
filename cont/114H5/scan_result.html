@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正品控 scan_result</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<script>
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+			window.addEventListener("resize",function(){
+				if(document.documentElement.clientWidth>760){
+					document.documentElement.style.fontSize=54+"px";
+				}else{
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+				}
+			},false);
+		</script>
+		<style type="text/css">
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{margin:0;padding:0}a{text-decoration:none}@media screen and (min-width:767px){#wrap{width:10rem;margin:0 auto;position:relative;height:100%}#footer{width:10rem}#goods_info .goods_img{width:25%}#goods_info .goods_word{width:75%}.goods_word #wt_details{right:.4rem}}@media screen and (max-width:767px){#wrap{width:100%;height:100%;position:relative;left:0}#footer{width:100%}}body,html{width:100%;height:100%;overflow:hidden}.top{width:100%;height:.88rem;background:#333;color:white;font-size:.35rem;position:relative}.bg-icon{width:.64rem;height:.64rem;display:block;background:url(images/result_sprite.png) no-repeat;background-size:1.92rem .64rem;position:absolute}#back{background-position:-0.64rem 0;left:.1rem;bottom:.12rem}#personal{right:.2rem;top:.12rem;background-position:0rem 0}.top div{margin:0 auto;width:100%;height:100%;text-align:center;line-height:.88rem}.brand{width:100%;height:55%;font-size:.25rem;position:relative}.brand-bg{width:5.58rem;height:1.1rem;margin:0 auto;position:absolute;left:50%;margin-left:-2.75rem;top:1.51rem;background:url("images/fireworks.png") no-repeat 0rem 0rem;background-size:5.58rem 1.1rem}#brand_logo{height:60%;position:relative}.imgWrap{width:2.36rem;height:2.36rem;position:absolute;border-radius:50%;left:0;top:0;right:0;bottom:0;margin:auto;overflow:hidden;border:2px solid #e5e5e5;text-align:center}.img-border:before,.imgWrap:before{content:"";display:inline-block;height:50%;width:1px;margin-right:-1px}.imgWrap .zoomImg{width:100%;height:100%}.zoomImg{display:inline-block;max-height:100%;max-width:100%;margin:0;padding:0;width:auto;height:auto;vertical-align:middle}.brand .brand-info{position:absolute;bottom:1.3rem;width:100%;height:}#brand_name{font-size:.38rem;color:#333}#product_name{font-size:.34rem;color:#666}.brand p{text-align:center;margin-top:.2rem}.brand #product_name{color:#606060}#findItem{color:#0aa1f8}#goods_info{width:100%;height:2.2rem;font-size:.15rem;box-shadow:0 0 10px #f1f1f1}.goods_outer{width:100%;height:100%;display:flex;background:white}.goods_img{width:2.1rem;box-sizing:border-box;padding:.3rem .3rem .3rem .2rem;height:100%;float:left}.goods_img .img-border{width:100%;height:100%;border-radius:3px;border:1px solid #d3d3d3;text-align:center}.goods_word{width:5.4rem;position:relative;float:left}h3.goods_name{color:#daaf39;font-size:.32rem;height:.5rem;line-height:.5rem;margin-top:.3rem;padding-left:.35rem;font-weight:normal}#goods_detail{margin-top:.20rem;margin-bottom:.2rem;display:block;font-size:.3rem;color:#333;width:62%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.goods_name .bg-icon{left:-0.2rem;background-position:-1.28rem 0;top:.21rem}#footer{font-size:.15rem;position:absolute;bottom:.3rem;width:100%;color:#666;font-size:.26rem}#footer p{text-align:center;margin-bottom:.22rem}#footer em{text-align:center;width:100%;display:block;color:#6f6f6f;font-style:normal}strong.goods_name{color:#daaf39;font-weight:normal}#wt_details{width:1.82rem;height:.69rem;background:#fdd100;color:white;border-radius:.4rem;display:block;position:absolute;right:.2rem;top:.76rem;text-align:center;line-height:.69rem;font-size:.28rem;box-shadow:0 0 10px #fdd100}#time{display:block;color:#666;font-size:.26rem}strong{font-size:normal}.fail,.success{height:100%;display:none}.result{width:100%;height:65%;text-align:center;position:relative}.middle{width:100%;position:absolute;height:6rem;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto}.middle img{width:2.1rem;margin:0 auto;margin-bottom:.6rem;display:block}.middle .scan_delay{width:2.54rem;margin-bottom:.4rem}.middle .verify_error{width:2.3rem}.middle p{color:#999;font-size:.3rem}.info_item{width:100%;height:1rem;margin-bottom:.6rem}#rescan{width:4.7rem;height:1rem;background:#cb9418;display:block;margin:0 auto;text-align:center;color:white;border-radius:10px;line-height:1rem;font-size:.36rem}.search_item{width:100%;height:1rem;text-align:center}.search_wrap{position:relative;width:4.7rem;height:1rem;margin:0 auto;border-radius:10px;border:2px solid #e6e6e6}label.bg-icon{background-position:0rem 0rem;left:.15rem;top:.18rem}#search{-webkit-tap-highlight-color:rgba(255,0,0,0);width:3.8rem;height:1rem;color:#c6c7cc;border-radius:10px;outline:0;border:0;font-size:.3rem;color:#333;float:right}.loading{width:100%;position:absolute;height:100%;display:none;z-index:99;left:0;top:.88rem}.errInfo{width:100%;position:absolute;height:6rem;text-align:center;left:0;top:0;bottom:0;right:0;margin:auto}.errInfo img{width:2.1rem;margin:0 auto;margin-bottom:.6rem;display:block}.errInfo p{font-size:.3rem}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="top">
+				<i id="back" class="bg-icon"></i>
+				<div></div>
+			</div>
+			<div class="success" >
+				<div class="brand">
+					<div id="brand_logo">
+						<div class="imgWrap"><img src="images/default_error2.png" alt="" class="zoomImg"></div>
+						<div class="brand-bg"></div>
+					</div>
+					<div class="brand-info">
+						<p id="brand_name"></p>
+						<p id="product_name"></p>
+					</div>
+				</div>
+				<!-- <div id="result">恭喜你 你的宝贝是正品</div> -->
+				<div id="goods_info">
+					<dl class="goods_outer">
+						<dt class="goods_img">
+							<p class="img-border"><img src="" class="zoomImg"></p>
+						</dt>
+						<dd class="goods_word">
+							<h3 class="goods_name"><i class="bg-icon"></i><span></span></h3>
+							<span id="goods_detail"></span>
+							<b id="time"></b>
+							<a href="javascript:;" id="wt_details">查看详情</a>
+						</dd> 
+					</dl>
+				</div>
+				<div id="footer">
+					<p>正品数据来源于<strong class="goods_name"><span>接口</span></strong></p>
+					<em>中国防伪行业协会成员理事单位--沃朴物联 提供支持</em>
+				</div>
+			</div>
+			<div class="fail">
+				<div class="result">
+					<div class="middle">
+						<img src="" alt="">
+						<p>很抱歉，没有找到您扫描的商品</p>
+					</div>
+				</div>
+				<div class="info_item">
+					<a href="javascript:;" id="rescan">再次扫描</a>
+				</div>
+				<div class="search_item">
+					<div class="search_wrap">
+						<form action="javascript:return true;" style="overflow-x:hidden">
+							<label for="search" class="bg-icon"></label>
+							<input type="search" id="search" placeholder="请输入您要找的商品" maxLength="30"/>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="loading">
+			<div class="errInfo"><img src="images/notFound.png"/><p>出错啦，请稍后再试</p></div>
+		</div>
+		<script src="lib/wpCommon.js"></script>
+		<script type="text/javascript" src="lib/jquery-2.1.0.min.js"></script>
+		<script>
+			eval(function(p,a,c,k,e,d){e=function(c){return(c<a?"":e(parseInt(c/a)))+((c=c%a)>35?String.fromCharCode(c+29):c.toString(36))};if(!''.replace(/^/,String)){while(c--)d[e(c)]=k[c]||e(c);k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1;};while(c--)if(k[c])p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c]);return p;}('s.w("z","2V",{},7(){});N.O="";$.S({T:j.Q+"/R/1b",8:{P:"27"},H:7(d){h=d.8;q.A("h",d.8);X(h)}});7 X(h){c y=1v().2p;c I=1v().I;f(y=="1"){s.w("z","1E",{h:h,1H:[I]},7(16){17=16.8.B[0];$.S({T:j.Q+"/R/1w/o",y:"1F",8:{"I":17,"P":"27"},H:7(d){f(d.1r=="1n"){f(!O){$.S({T:j.Q+"/R/1b",8:{P:"27"},H:7(d){h=d.8;q.A("h",d.8);X(h)}});O=1d}}t{f(d.H==2r){$(".k K").b("1L");$(".B l").x("m","E/1J.C").W("1O").r("p").b("1I，1D");$(".V").i().r(".k").i();j.F()}t{2q{c 8=d.8;q.A("o",12.11(8.o));$("#1p").b(d.8.o.1t);1M 8.o;c n=8.n;c L=8.L;N.G=n.G;q.A("n",12.11(8));c 1s=n.1j+8.2n.2k;c Z="<15 2j=\'2m:#2l\'>"+n.1j+"</15>";$(".k K").b("2y");f(L.1x!=" "){$("#1A").1i("l").x("m",L.1x)}t{$("#1A").1i("l").x("m","E/1e.C").J({2x:"1y%",2A:"1y%",2z:"0.2w"})}$("#2t").b(L.1o+"2s").r("#2v").b("2u"+Z+"29");$(".25 28").b(L.1o);$(".l-2a").1i("l").x("m",n.24[0]);$("#23").b(1s);$("l").1K(7(){c Y=$.1q();$(v).10("1z",7(){Y.1u()}).10("18",7(){$(v).x("m","E/1e.C")})});j.F();s.w("z","1Q",{U:G},7(){});$(".H").i().r(".k").i()}2b(e){}}}},18:7(){j.F();$(".1Z").J("21",22+"20").i()}})})}t{f(y=="0"||y=="2"||y=="3"){$(".k K").b("1L");$(".B l").x("m","E/1J.C").W("1O").r("p").b("1I，1D");$(".V").i().r(".k").i();j.F()}t{f(y=="4"){$(".k K").b("1B");$(".B l").x("m","E/1C.C").W("1C");$(".B p").b("1B，2f");$(".V").i().r(".k").i();j.F()}t{f(y=="6"){$(".k K").b("1g");s.w("z","1E",{h:h,1H:[I]},7(16){17=16.8.B[0];$.S({T:j.Q+"/R/1w/o",y:"1F",8:{"I":17,"P":"27"},H:7(d){f(d.1r=="1n"){f(!O){$.S({T:j.Q+"/R/1b",8:{P:"27"},H:7(d){h=d.8;q.A("h",d.8);X(h)}});O=1d}}t{c 8=d.8;c 1G=8.n.1j;c 1a=8.n.G;N.G=1a;q.A("o",12.11(8.o));$("#1p").b(d.8.o.1t);1M 8.o;q.A("n",12.11(8));c Z="<15 2J=\'1P\'>"+1G+"</15>";$(".B l").x("m","E/1N.C").W("1N").r("p").b("1g，2I"+Z);$(".V").i().r(".k").i();$("#1P").14(7(){N.1h.1c="1R.b?1U=1X&U="+1a});$("l").1K(7(){c Y=$.1q();$(v).10("1z",7(){Y.1u()}).10("18",7(){$(v).x("m","E/1e.C")})});s.w("z","1Q",{U:G},7(){});j.F()}},18:7(){j.F();$(".1Z").J("21",22+"20").i()}})})}t{f(y=="5"){$(".k K").b("1g");$(".B l").x("m","E/2R.C").W("2S");$(".B p").b("33，34，2C");$(".V").i().r(".k").i();j.F()}}}}}}$(7(){$("#2E").14(7(){q.A("2D",1d);N.1h.1c="1R.b?1U=1X&U="+G})});$(7(){$("#2G").14(7(){s.w("z","2L",{},7(){})});$("#2M").14(7(){s.w("z","2K",{},7(){})});c u=2P.2Q;$("#1f").1m("2N",7(){f(u.1T("2O")>-1||u.1T("2B")>-1){$("#1k").J({"1l":"2H",})}});$("#1f").1m("2F",7(){$("#1k").J({"1l":""})});$("#1f").1m("2U",7(e){f($(v).M()!=""&&e.1V==13){s.w("z","30",{31:"2Y",U:$(v).M()},7(){});$("#1k").J({"1l":""});c 2Z=$(v).M();c 1Y=32 2T("[ /a-2X-2W-9\\2i-\\2h-——()（）]");f(1Y.X($(v).M())){c D=$(v).M().19(/（/g,"(");c D=D.19(/）/g,")");c D=D.19(/—/g,"-");c D=D.19(/<[^>]*>/g,"");q.A("2g",D);q.2d("2e");N.1h.1c="2c.b"}t{s.w("z","1W",{1S:"26"},7(){})}}t{f($(v).M()==""&&e.1V==13){s.w("z","1W",{1S:"2o"},7(){})}}})});',62,191,'|||||||function|data|||html|var|res||if||key|show|wpCommon|top|img|src|productDetails|productGoodsInfo||localStorage|siblings|WPBridge|else||this|callMethod|attr|type|JsInvokeNative|setItem|result|png|inpt|images|viewShow|productId|success|labelCode|css|div|brand|val|window|aesFail|versionId|Url|wpwl|ajax|url|otherId|fail|addClass|test|dfd|tag|bind|stringify|JSON||click|strong|msg|codeValue|error|replace|prtId|getKey|href|true|default_error2|search|扫描失败|location|find|productName|wrap|bottom|on|AES加密解密失败|brandName|time|Deferred|errMsg|nameType|produceDate|resolve|getUrlRequest|product|brandIcon|75|load|brand_logo|扫描超时|scan_delay|没有找到您扫描的商品|wpEncrypt|post|name|params|很抱歉|vrf_wrong|each|验证有误|delete|scan_failed|verify_error|findItem|wpUpOtherId|details|message|indexOf|pageId|keyCode|wpShowToast|H5_A008|pat|loading|px|height|wholeHei|goods_detail|productUrls|goods_name|您输入的字符不合法||span|是正品|border|catch|searchResult|removeItem|brandid|请重新扫描|searchVal|u9fa5|u4e00|style|standard|d8a31f|color|productParams|请输入您要查询的内容|failType|try|false|提示您|brand_name|您购买的|product_name|20rem|maxWidth|扫描结果|marginTop|maxHeight|Linux|请再次扫描|H5|goods_info|blur|back|5rem|是否在找|id|wpStartScan|wpFinishH5|rescan|focus|Android|navigator|userAgent|scan_net|scan_error|RegExp|keypress|wpShowLoadingDialog|Z0|zA|h5_e037|value|wpHitDotEvent|eventId|new|抱歉|网络受阻'.split('|'),0,{}))
+		</script>
+	</body>
+</html>

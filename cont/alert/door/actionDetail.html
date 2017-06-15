@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>正品控</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<meta name="format-detection" content="telephone=no" />
+		<script type="text/javascript">
+			document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+			window.addEventListener("resize",function(){
+				document.documentElement.style.fontSize = document.documentElement.clientWidth /7.5 + "px";
+			},false);
+		</script>
+		<style>
+			body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,input,p,img,section{margin:0;padding:0;}
+			a{text-decoration:none;}
+			ul,li{list-style:none;}
+			b,strong{font-weight:normal;}
+			i,em{font-style:normal;}
+			html,body{
+				width:100%;
+				height:100%;
+				overflow:hidden;
+			}
+			#box{
+				width:100%;
+				height:100%;
+				margin:0 auto;
+			}
+			#top{
+				width:100%;
+				height:0.88rem;
+				background:#333;
+				color:white;
+				font-size:0.35rem;
+				position:fixed;
+				top:0;
+				left:0;
+				z-index:9;
+			}
+			.bgIcon{
+				width:0.64rem;
+				height:0.64rem;
+				display:block;
+				background:url(images/message-sprite.png) no-repeat;
+				background-size:3.84rem 0.64rem;
+				position:absolute;
+			}
+			.back{
+				background-position:0rem 0rem;
+				left:0.1rem;
+				bottom:0.12rem;
+			}
+			.share{
+				background-position:-0.64rem 0rem;
+				right:0.1rem;
+				bottom:0.12rem;
+			}
+			#top div{
+				margin:0 auto;
+				width:100%;
+				height:100%;
+				text-align:center;
+				line-height:0.88rem;
+			}
+			.banner{
+				height:4rem;
+				border-bottom:1px solid #e6e6e6;
+			}
+			#poster{
+				width:100%;
+				height:100%;
+			}
+			#content{
+				top:0.88rem;
+				position:relative;
+			}
+			.info_card{
+				box-shadow:0 0 40px #ccc;
+				background:white;
+				box-sizing:border-box;
+				padding-top:0.56rem;
+				border-radius:0.2rem;
+				width:91%;
+				margin:0 auto;
+				position:absolute;
+				top:3.36rem;
+				left:0;
+				right:0;
+			}
+			.act_title{
+				width:100%;
+				margin:0 auto;
+			}
+			.active{
+				margin:0 auto;
+				font-size:0.34rem;
+				color:#333;
+				text-align:center;
+			}
+			.act_cont{
+				font-size:0.3rem;
+				color:#333;
+
+				text-align:center;
+				margin:0 auto;
+			}	
+			.time{
+				background-position:-1.28rem 0rem;
+				position:absolute;
+				left:-0.55rem;
+				top:-0.1rem;
+			}		
+			.place{
+				background-position:-1.92rem 0rem;
+				position:absolute;
+				left:-0.55rem;
+				top:-0.1rem;
+			}
+			.act_times,.act_place{
+				margin-left:0.68rem;
+				position:relative;
+			}
+			.act_place{
+				margin-top:0.3rem;
+			}
+			 .activeTime,.activePlace{
+			 	display:inline-block;
+			 	color:#666;
+			 	font-size:0.30rem;
+			 }
+			.article{
+				font-weight:100;
+				line-height:0.4rem;
+			}
+			.act_content{
+				color:#666;
+				padding:0 0.3rem;
+				line-height:0.42rem;
+				margin-top:0.3rem;
+				margin-bottom:0.3rem;
+				text-indent:2em;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<div id="top">
+				<i class="bgIcon" class="back"></i>
+				<div class="head">aaaaaaa</div>
+				<i class="bgIcon" class="share"></i>
+			</div>
+			<div id="content">
+				<div class="banner">
+					<img src="" alt="" id="poster"/>
+				</div>
+				<div class="info_card">
+					<div class="active">活动介绍</div>
+					<div class="act_cont">
+						小钢炮冲击钻，现推出返利活动!即日起分享该活动页面给好友，好友可获现金优惠！另外，好友在该门店销售成功后，您可获得现金返利。											
+					</div>
+					
+					<div class="act_times">	
+						<i class="bgIcon time"></i>
+						<span class="activeTime">活动时间:<strong class="article" id="act_time">或嘿嘿或</strong></span> 
+					</div>
+					<div class="act_place">		
+						<i class="bgIcon place"></i>
+						<span class="activePlace">活动地点:<strong class="article" id="act_place">嘿嘿或或</strong></span>	 
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="lib/jquery-2.1.0.min.js" ></script>
+		<script type="text/javascript" src="lib/iscroll-probe.js" ></script>
+		<script type="text/javascript" src="lib/wpCommon.js" ></script>
+	</body>
+</html>

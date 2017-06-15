@@ -1,0 +1,17 @@
+{
+"data": {
+	    "workOrder":"xxx20170510xxx",
+	    "gmtTime":"2017-005-10 16:20",
+	    "name":"康森医疗设备",
+	    "standard":"NPD-SOK 家用经济型",
+	    "stars":"3",
+		"contents":"维修人员效率高，很快就修好，换完台面之后又像新的一样，很开心。",
+	    "iconURL":"http://image.wpwl.org:80/uploadfile/3/20160924/new/1474676486395-86bb5b868c654680b63650848acab3a5.png",
+	    "serviceType":"维修",
+	    "question":"集成灶台面损坏，请求维修服务",
+	    "solution":"台面重做",
+	    "address":"杭州市西湖区古墩路秀月家园北区14楼1102"
+     
+    },
+   "success": true
+}

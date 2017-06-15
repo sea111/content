@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>消息卡片</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/share.css" />
+		<style>
+			body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+			@media screen and (min-width:767px){
+				#wrap{width:10rem;margin: 0 auto;}
+				#top{width:10rem;}
+			}
+			@media screen and (max-width:767px){
+				#wrap{width: 100%;}
+				#top{width:100%}
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.top{width: 100%;height: 0.88rem;padding-top:20px;background:#333;color: white;font-size: 0.35rem;position: relative;}
+			.bg-icon{width:0.64rem;height:0.64rem;display: block;background: url(images/result_sprite.png) no-repeat ;background-size:1.92rem 0.64rem;position:absolute;}
+			#back{background-position:-0.64rem 0;left:0.1rem;bottom:0.12rem;}
+			.top div{margin: 0 auto;width: 100%;height: 100%;text-align: center;line-height: 0.88rem;}
+			.productImg{height:3rem;}
+			.productImg img{height:100%;width:100%}
+			.brandInfo{width:100%;overflow:hidden;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;overflow: hidden;}
+			.product_name{font-weight: normal;margin-bottom: 0.1rem;font-size: 0.34rem;color: #333;height:0.88rem;}
+			.line{display:block;float: left;height:0.34rem;width:2px;background:#d6a41d;margin-right:0.1rem;}
+			#productDes{font-size: 0.25rem;color: #666;padding-left:0.4rem}
+			.codeArea{overflow:hidden;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;}
+			.codeArea dt{float:left;}
+		</style>
+		<script type="text/javascript">
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+			window.addEventListener("resize",function(){
+				if(document.documentElement.clientWidth>760){
+					document.documentElement.style.fontSize=54+"px";
+				}else{
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+				}
+			},false);
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="top">
+				<i id="back" class="bg-icon"></i>
+				<div>分享卡片</div>
+			</div>
+			<div class="">
+				<div class="productImg">
+					<img src="" alt="" />
+				</div>
+				<div class="brandInfo">
+					<h3 class="product_name"><i class="bg-icon" id="brandLogo"></i><span id="productName"></span></h3>
+					<p id="productDes">欧琳水槽双槽套餐83460厨房洗菜盆双槽 304不锈钢水槽套餐 洗菜池</p>
+				</div>
+				<div class="codeArea">
+					<dl>
+						<dt id="code"><img src="" alt="" /></dt>
+						<dd>
+							<p>长按二维码查看产品详情</p>
+							<p>分享自</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

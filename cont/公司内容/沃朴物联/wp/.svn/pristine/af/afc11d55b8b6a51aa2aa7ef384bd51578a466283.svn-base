@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>消息卡片</title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link rel="stylesheet" href="css/share.css" />
+		<style>
+			body, div, dl, dt, dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,select,img{ margin: 0; padding:0}
+			@media screen and (min-width:767px){
+				#wrap{width:10rem;margin: 0 auto;}
+				#top{width:10rem;}
+			}
+			@media screen and (max-width:767px){
+				#wrap{width: 100%;box-sizing: border-box;padding:0.3rem 0.24rem 0 0.24rem;
+			}
+			body,html{
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+			}
+			.outer{border-radius:5px;border:1px solid #ccc;height:8.56rem;overflow:hidden;box-shadow:0 0 10px black;}
+			.productImg{height:4rem;position:relative}
+			.productImg img{height:100%;width:100%}
+			.bg-wave{width:100%;height:100%;position:absolute;bottom:0;background:url('images/card_wave.png') repeat-x 0 bottom;background-size:6.98rem 0.96rem;}
+			.brandInfo{width:100%;overflow:hidden;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;overflow: hidden;}
+			.product_name{font-weight: normal;margin-bottom: 0.1rem;font-size: 0.34rem;color: #333;height:0.88rem;}
+			.line{display:block;float: left;height:0.34rem;width:2px;background:#d6a41d;margin-right:0.1rem;}
+			#productDes{font-size: 0.28rem;color: #666;padding-left:0.4rem;line-height:0.4rem}
+			.codeArea{overflow:hidden;box-sizing: border-box;padding: 0.3rem 0.3rem 0.3rem 0.2rem;margin-top:10px}
+			.codeArea dt{float:left;width:1.4rem;height:1.4rem;margin-right:0.22rem;position:relative}
+			#zpk_icon{left:0;top:0;right:0;bottom:0;margin:auto;z-index:9;width:0.42rem;height:0.42rem;display: block;background: url(images/logo.png) no-repeat ;background-size:0.42rem 0.42rem;position:absolute;}
+			.codeArea dd{float:left;color:#999}
+			.codeArea dd p{margin:0.2rem 0 0.2rem 0}
+		</style>
+		
+		<script type="text/javascript">
+			if(document.documentElement.clientWidth>760){
+				document.documentElement.style.fontSize=54+"px";
+			}else{
+				document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+			}
+			window.addEventListener("resize",function(){
+				if(document.documentElement.clientWidth>760){
+					document.documentElement.style.fontSize=54+"px";
+				}else{
+					document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + "px";
+				}
+			},false);
+		</script>
+		
+	</head>
+	<body>
+		<div id="wrap">
+			<div class="outer">
+				<div class="productImg">
+					<img src="http://image.wpwl.org/uploadfile/1/20161207/new/1481096962967-27a9bf75c2c2430fb5f8786c79771c6f.jpg" alt="" />
+					<div class="bg-wave"></div>
+				</div>
+				<div class="brandInfo">
+					<h3 class="product_name"><i class="bg-icon" id="brandLogo"></i><span id="productName"></span></h3>
+					<p id="productDes">欧琳水槽双槽套餐83460厨房洗菜盆双槽 304不锈钢水槽套餐 洗菜池</p>
+				</div>
+				<div class="codeArea">
+					<dl>
+						<dt id="code"><i class="bg-icon" id="zpk_icon"></i></dt>
+						<dd>
+							<p>长按二维码查看产品详情</p>
+							<p>by:正品控APP</p>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+		<script src="lib/qrcode.js"></script>
+		<script>
+			var wid=document.documentElement.style.fontSize.slice(0,2);
+			console.log(1.5*wid)
+			var qrcode = new QRCode(document.getElementById("code"), {
+	            width : 1.4*wid,//设置宽高
+	            height : 1.4*wid
+	        });
+	        qrcode.makeCode("http://wpwl12.duapp.com/details.html");
+		</script>
+	</body>
+</html>

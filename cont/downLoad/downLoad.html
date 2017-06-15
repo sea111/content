@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<meta name="format-detection" content="telephone=no">
+		<meta name="apple-mobile-web-app-capable" content="yes">		
+		<title>正品控</title>
+	</head>
+	<style>
+    body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td{
+    	margin:0;
+    	padding:0;
+    }
+    body{
+    	line-height:1em;
+    	height:100%;
+    }
+    html{
+    	position:relative;
+    	height:100%;
+    }
+    table{
+    	border-collapse:collapse;
+    	border-spacing:0;
+    }
+    fieldset,img{
+    	border:0;
+    }
+    address,caption,cite,code,dfn,em,th,var{
+    	font-style:normal;
+    	font-weight:normal;
+    }
+    ul{
+    	list-style:none;
+    }
+    caption,th{
+    	text-align:left;
+    }
+    h1,h2,h3,h4,h5,h6{
+    	font-size:100%;
+    	font-weight:normal;
+    }
+    q:before,q:after{
+    	content:'';
+    }
+    abbr,acronym{
+    	border:0;
+    }
+    body{
+    	font-family:Microsoft YaHei,"微软雅黑",Arial,Helvetica,sans-serif;
+    	-webkit-touch-callout:none;
+    	-webkit-text-size-adjust:none;
+    	-webkit-tap-highlight-color:rgba(0,0,0,0);
+    	-webkit-user-select:none;
+    }
+    a,a:link,a:visited,a:hover,a:active{
+    	text-decoration:none;
+    }
+    .invisible:not(.visible){
+    	display:none;
+    }
+    *{
+    	-webkit-box-sizing:border-box;
+    	box-sizing:border-box;
+    }
+    body{
+    	font-size:15px;
+    }
+    article{
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:column;
+		flex-direction:column;
+		-webkit-box-align:stretch;
+		-webkit-align-items:stretch;
+		align-items:stretch;
+		position:absolute;
+		top:0;
+		left:0;
+		width:100%;
+		height:100%;
+		color:#999;
+		background:#f6f6f6;
+    }
+	.main{
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		overflow:hidden;
+		-webkit-box-flex:1;
+		-webkit-flex:1 1 0;
+		flex:1 1 0;
+		-webkit-box-orient:vertical;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:column;
+		flex-direction:column;
+		-webkit-box-pack:center;
+		-webkit-justify-content:center;
+		justify-content:center;
+		-webkit-box-align:center;
+		-webkit-align-items:center;
+		align-items:center;
+		font-size:16px;
+		line-height:1.583;
+	}
+	.main .action{
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		-webkit-box-orient:horizontal;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:row;
+		flex-direction:row;
+		-webkit-box-pack:justify;
+		-webkit-justify-content:space-between;
+		justify-content:space-between;
+		margin-top:20px;
+		width:100%;
+	}
+	.main .action:before,.main .action:after{
+		content:"";
+	}
+	.main .action .btn-strong{
+		width:120px;
+		height:43px;
+	}
+	.style3 .main{
+		background-position:center center;
+		background-repeat:no-repeat;
+		background-size:100% 100%;
+		-webkit-box-pack:end;
+		-webkit-justify-content:flex-end;
+		justify-content:flex-end;
+		padding-bottom:30%;
+	}
+	.main.showbanner,.style2 .main.showbanner,.style3 .main.showbanner,.style4 .main.showbanner{
+		padding-bottom:77px;
+	}
+	.btn-strong{
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		flex:nowrap;
+		-webkit-box-pack:center;
+		-webkit-justify-content:center;
+		justify-content:center;
+		-webkit-box-align:center;
+		-webkit-align-items:center;
+		align-items:center;
+		position:relative;
+		line-height:1em;
+		font-size:16px;
+		-webkit-border-radius:12px;
+		border-radius:12px;
+		-webkit-background-clip:padding-box;
+		background-clip:padding-box;
+		background:#56bfff;
+		-webkit-box-shadow:0 0 1px 1px #87CE3B,inset 0 2px 1px 1px rgba(255,255,255,0.2),0px 1px 1px 1px rgba(0,0,0,0.2);
+		box-shadow:0 0 0 1px #2fb0ff,inset 0 2px 0 rgba(255,255,255,0.2),0px 1px 0 1px rgba(0,0,0,0.2);
+	}
+	.btn-strong,.btn-strong:link,.btn-strong:visited,.btn-strong:hover,.btn-strong:active{
+		color:#fff;
+	}
+	.btn-strong .text{
+		display:-webkit-box;
+		display:-webkit-flex;
+		display:flex;
+		-webkit-box-orient:horizontal;
+		-webkit-box-direction:normal;
+		-webkit-flex-direction:row;
+		flex-direction:row;
+		-webkit-box-align:center;
+		-webkit-align-items:center;
+		align-items:center;
+		position:relative;
+		z-index:3;
+		margin-left: -16px;
+	}
+	.btn-strong.normal>.status:not(.normal),.btn-strong.downloading>.status:not(.downloading){
+		display:none;
+	}
+	.btn-strong.btn-green{
+		-webkit-box-shadow:0 0 1px 1px #09ab1f,inset 0 2px 1px 1px rgba(255,255,255,0.2),0px 1px 1px 1px rgba(0,0,0,0.2);
+		box-shadow:0 0 0 1px #09ab1f,inset 0 2px 0 rgba(255,255,255,0.2),0px 1px 0 1px rgba(0,0,0,0.2);
+		background:#87CE3B;
+	}
+	.btn-strong.btn-yellow{
+		-webkit-box-shadow:0 0 1px 1px #d3b700,inset 0 2px 1px 1px rgba(255,255,255,0.2),0px 1px 1px 1px rgba(0,0,0,0.2);
+		box-shadow:0 0 0 1px #d3b700,inset 0 2px 0 rgba(255,255,255,0.2),0px 1px 0 1px rgba(0,0,0,0.2);
+		background:#ebcc00;
+	}
+	.icon-myapp{
+		margin-right:5px;
+		width:38px;
+		height:43px;
+		background:url(img/sprite.png) no-repeat;
+		background-size:38px auto;
+		background-position:19px 10px;
+	}
+	.icon-myapps{
+		margin-right:5px;
+		width:38px;
+		height:43px;
+		background:url(img/sprite.png) no-repeat;
+		background-size:38px auto;
+		background-position:-19px 10px;
+		position:relative;
+		left:20px;
+	}
+    @-webkit-keyframes dot {
+	  0% {
+	    width: 0;
+	    margin-right: 16px;
+	  }
+	  25% {
+	    width: 0;
+	    margin-right: 16px;
+	  }
+	  50% {
+	    width: 5px;
+	    margin-right: 11px;
+	  }
+	  75% {
+	    width: 10px;
+	    margin-right: 6px;
+	  }
+	  100% {
+	    width: 16px;
+	    margin-right: 0;
+	  }
+    }
+
+    @keyframes dot {
+      0% {
+        width: 0;
+        margin-right: 16px;
+      }
+      25% {
+        width: 0;
+        margin-right: 16px;
+      }
+      50% {
+        width: 5px;
+        margin-right: 11px;
+      }
+      75% {
+        width: 10px;
+        margin-right: 6px;
+      }
+      100% {
+        width: 16px;
+        margin-right: 0;
+      }
+    }</style>
+	<style>
+        .main {
+            background-image: url(img/bdPicture.jpg);
+        }
+        @media (-webkit-min-device-pixel-ratio: 2) and (min-width: 320px),(orientation:landscape) {
+            .main {
+                background-image: url(img/bdPicture.jpg);
+            }
+        }
+    </style>
+	<body>
+		<article class="style3">
+	        <section id="appdetail-wrapper" class="main">
+	            <div class="action" id="btn-download-wrapper">
+	               	<a href="javascript:;" class="btn-strong normal btn-green" id="btn-fast-download">
+	                    <div class="normal status">
+	                        <div class="text">
+	                            <div class="icon-myapp icon"></div>
+	                            <span id="normal-text">Download</span>
+	                        </div>
+	                    </div>	                  
+	                </a>
+	                <a href="javascript:;" class="btn-strong normal btn-yellow" id="btnFasDownload">
+	                    <div class="normal status">
+	                        <div class="text">
+	                            <div class="icon-myapps icon"></div>
+	                            <span id="normalText">Download</span>
+	                        </div>
+	                    </div>	                  
+	                </a>
+	            </div>            
+	        </section>
+	    </article>
+	</body>
+	<script type="text/javascript" src="js/jquery-2.1.0.min.js" ></script>
+	<script>
+		$("#btn-fast-download").click(function(){
+			window.location.href="http://www.baidu.com"
+		})
+		$("#btnFasDownload").click(function(){
+			window.location.href="ios.html"
+		})
+	</script>
+</html>
